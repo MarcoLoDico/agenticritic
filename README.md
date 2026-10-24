@@ -4,7 +4,7 @@ A synthetic customer panel that uses your product. It sends persona-driven brows
 
 The goal is to need constant customer testing less, not to replace real customers. `evaluate` measures how well the synthetic findings match real or known issues.
 
-See [TODO.md](TODO.md) for the roadmap.
+See [TODO.md](TODO.md) for the roadmap and [AGENTS.md](AGENTS.md) for contributor and agent guidance.
 
 ## Setup
 
