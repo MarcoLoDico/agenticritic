@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<h1>Runs</h1>
+<p class="muted">Each run sends a panel of simulated users through the product and aggregates their feedback.</p>
+
+
+<div class="panel">
+  <a href="runs/20261023-224941-cookd/index.html"><b>20261023-224941-cookd</b></a>
+  <span class="chip">done</span>
+  <div class="muted small">https://cookd.ca/ · 4 sessions · 13 findings
+    · 103s
+    </div>
+</div>
+
+<div class="panel">
+  <a href="runs/20261023-223949-ledgerly/index.html"><b>20261023-223949-ledgerly</b></a>
+  <span class="chip">done</span>
+  <div class="muted small">http://127.0.0.1:8100/ · 6 sessions · 17 findings
+    · 209s
+    · recall 80% · precision 38%</div>
+</div>
+
+<div class="panel">
+  <a href="runs/20261023-223306-ledgerly/index.html"><b>20261023-223306-ledgerly</b></a>
+  <span class="chip">done</span>
+  <div class="muted small">http://127.0.0.1:8100/ · 6 sessions · 16 findings
+    
+    · recall 70% · precision 40%</div>
+</div>
+
+<div class="panel">
+  <a href="runs/20261023-222948-ledgerly/index.html"><b>20261023-222948-ledgerly</b></a>
+  <span class="chip">done</span>
+  <div class="muted small">http://127.0.0.1:8100/ · 6 sessions · 11 findings
+    · 158s
+    · recall 40% · precision 44%</div>
+</div>
+
+</main>
+</body>
+</html>

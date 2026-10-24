@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s03-operations-lead-comparing-three-expense- · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-223306-ledgerly/index.html">← 20261023-223306-ledgerly</a></p>
+<h1>Tomás the Skeptical Buyer — Operations lead comparing three expense tools for a 25-person company</h1>
+<p class="muted">You are on a trial to decide whether Ledgerly is worth recommending, and you assume pricing will have hidden catches. You want straight answers on cost and limits before you invest effort setting anything up.</p>
+<p><span class="chip">abandoned</span><span class="chip">advanced_seeker</span>
+<span class="chip">patience 3/5</span><span class="chip">10 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 3/10 — I never got a published total for 25 seats, a definition of a seat, or a list of limits per plan. The Dashboard threw a backend error twice, Legal is empty, and Export CSV is &#39;coming soon&#39;. I won&#39;t enter company bank info or add teammates to a product where the core views fail and the pricing needs a sales call or guesswork. It stays off my shortlist until it fixes those things.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Figure out what this will cost me per month for 25 people</td><td class="no">partial</td><td class="small">Growth is listed at $12/user/mo billed annually with a 10-seat minimum, so I can estimate about $300/mo for 25 seats. That is my own arithmetic, not a published total. I couldn&#39;t confirm whether &#39;user&#39; means all 25 people or only active card holders, because /legal is an empty stub. Scale is &#39;Contact sales&#39; with no price. I couldn&#39;t find card fees, integration fees or tax details. I wouldn&#39;t put $300 in a budget request on this.</td></tr><tr><td>Find out which features are limited on the trial or on a cheaper plan</td><td class="no">failed</td><td class="small">The plans page names a few features per tier but has no comparison table or explicit limits. Reports, Expenses and Export CSV never say what is gated on the trial or on Starter. I never found out what the trial itself restricts.</td></tr><tr><td>See what a sample of the spending dashboard looks like before I add real data</td><td class="no">failed</td><td class="small">The Dashboard link threw a backend error twice. Reports showed only two category totals, and Expenses showed two entries &#39;Submitted by: You&#39;, with nothing labeling them as sample data. Export CSV is a &#39;coming soon&#39; page. I got nothing I could screenshot for my boss.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>The pricing page doesn&#39;t give a total for a 25-person team. &#39;Billed annually&#39; has no annual figure, taxes are excluded, and Scale is &#39;Contact sales&#39;.</b>
+    <div class="small muted">Expected: A comparison table with per-tier limits, an example total for 25 seats, and a defined price or at least a range for Scale. · Happened: Three tier cards with $12/user/mo for Growth, a 10-seat minimum, and no cost totals or limits table. · Why it matters: I can&#39;t commit budget without a clear number, and &#39;Contact sales&#39; is exactly the vague phrasing I distrust. My boss wants something screenshot-ready, and I&#39;d have to do the math myself.</div></li><li><a href="#step-0">step 0</a>: <b>&#39;Per user&#39; is not defined. It could mean every invited person or only active card holders.</b>
+    <div class="small muted">Expected: A one-line definition of a billable seat next to the price. · Happened: No definition on the plans page. · Why it matters: For 25 people, this decides whether I pay for 25 seats or 10. It&#39;s the main hidden-catch risk in per-seat pricing.</div></li><li><a href="#step-1">step 1</a>: <b>Reports shows two category totals (Travel $689.00, Software $412.50) with no date range, filters, export, or sample/real label.</b>
+    <div class="small muted">Expected: A dashboard-like view that is clearly labeled as sample or trial data, with a period and some comparison options. · Happened: A bare two-line list with no context. · Why it matters: I can&#39;t judge what the spending dashboard offers, or whether the trial limits it, from two numbers. There&#39;s nothing to show my boss.</div></li><li><a href="#step-2">step 2</a>: <b>The Dashboard nav link fails with the raw error &#34;&#39;NoneType&#39; object has no attribute &#39;first&#39;&#34;.</b>
+    <div class="small muted">Expected: The Dashboard loads, or at least shows an empty state with a sample. · Happened: A backend error on the first click, and the same error on the second (step 3). · Why it matters: The dashboard is the core thing I&#39;m evaluating, and it breaks before I&#39;ve entered any data. A raw error message on a trial makes me doubt the product&#39;s reliability.</div></li><li><a href="#step-4">step 4</a>: <b>/legal is an empty stub with one line of text and no terms or privacy policy.</b>
+    <div class="small muted">Expected: Real terms defining seats, fees, billing and cancellation. · Happened: &#39;Terms of service and privacy policy.&#39; and nothing else. · Why it matters: I was looking for a written definition of a seat and a fee schedule to settle the cost question. A company can&#39;t sign up for a finance tool with no published terms.</div></li><li><a href="#step-6">step 6</a>: <b>The Expenses page shows two entries &#39;Submitted by: You&#39;, both Approved, though I never entered anything. Nothing says whether they are sample data.</b>
+    <div class="small muted">Expected: Sample data labeled as such, or an empty state with a &#39;load sample data&#39; option. · Happened: Unlabeled entries that match the Reports totals. · Why it matters: I don&#39;t want to mix demo data with real data, and I can&#39;t tell whether this reflects what the trial really does.</div></li><li><a href="#step-7">step 7</a>: <b>Export CSV is a visible button, but it leads to a &#39;CSV export is coming soon!&#39; page.</b>
+    <div class="small muted">Expected: A CSV download, or a clear note that export is limited on the trial or the plan. · Happened: A placeholder page with no file and no plan or trial explanation. · Why it matters: I look for bulk actions and exports first. A dead button presented as a feature, with no plan label, makes me think the trial is a locked-down demo.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Plan comparison table with explicit limits (users, cards, integrations, export, reporting history) per tier</b> — <span class="small">I need to see what is gated on Starter versus Growth versus Scale in one screenshot-ready place.</span></li><li><b>Pricing calculator or example total for a given team size, including annual billing, taxes and card or integration fees</b> — <span class="small">I need a real monthly and annual number for 25 people, without doing the math myself or talking to sales.</span></li><li><b>Published price or range for the Scale tier</b> — <span class="small">&#39;Contact sales&#39; is a red flag for me. I need to know whether Scale could be required for a 25-person company.</span></li><li><b>Working spending dashboard with sample data, a date range and filters</b> — <span class="small">I want to see what the core product looks like before I enter bank info or add teammates.</span></li><li><b>Real terms of service and a fee schedule, including a definition of a billable seat</b> — <span class="small">Without these I can&#39;t verify the hidden-catch risks in per-seat pricing.</span></li><li><b>Working CSV export</b> — <span class="small">I need to pull data out for my boss and for comparison with competitors.</span></li><li><b>Trial status or limits indicator (what&#39;s included, what&#39;s locked, days left)</b> — <span class="small">I can&#39;t tell whether the trial shows real functionality or a restricted demo.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>The pricing page was public and findable without a sales call, and it showed a concrete per-user number for Growth ($12/user/mo) and the 10-seat minimum.</li><li>The Starter tier is free and states its limit plainly (up to 3 users).</li><li>The Reports totals match the Expenses entries (Travel $689.00, Software $412.50), so the data at least looks consistent.</li><li>The Expenses page has a clear New expense button and an Export CSV button, so the intended features are visible.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>I&#39;m not handing over company info or adding anyone just to find out what this costs. The Plans link is right there in the footer, so I&#39;ll go there directly.</i></div>
+      <div><b>Action:</b> <code>navigate /plans</code></div>
+      <div><b>Expectation:</b> A public pricing page with per-user or per-seat prices, a tier that covers 25 people, and a clear list of what&#39;s limited on each plan.</div>
+      <div><b>Result:</b> Navigated to /plans. Found three tiers: Starter $0 (up to 3 users, expense submission), Growth $12/user/mo billed annually (min 10 seats, cards, reports, accounting sync), and Scale &#39;Contact sales&#39; (SSO, advanced controls).</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The math for 25 people isn&#39;t spelled out. Growth is $12/user/mo, so roughly $300/mo, but the footnote says taxes excluded and &#39;billed annually&#39; with no total shown. Scale has no price, just &#39;Contact sales&#39;, which is exactly the vague thing I don&#39;t trust. I also don&#39;t know whether &#39;per user&#39; means per seat on a 25-person roster or only active card holders, and there&#39;s no table of limits per tier.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/plans</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Growth at 25 seats is about $3,600/year before tax, assuming every person counts as a user. Scale is hidden behind a sales call, so I can&#39;t compare it. I still need to know what &#39;Cards&#39; and &#39;accounting sync&#39; cost extra, if anything, and whether the Growth tier caps anything. I&#39;ll check the legal/terms page for seat definitions and any fees, since that&#39;s where the catches usually are.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> Reports page should show something I can compare, or at least a sample dashboard. If it&#39;s a locked empty state, that tells me the trial is gated.</div>
+      <div><b>Result:</b> Navigated to /reports. It shows only a &#39;Spending by category&#39; list with Travel $689.00 and Software $412.50, no date range, no export, no filters, and no label saying whether this is sample data or mine.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The Reports page gives me two category totals with no context. I can&#39;t tell if this is demo data, whether it&#39;s limited on the trial, or what period it covers. There&#39;s no export or comparison option, so I can&#39;t screenshot anything meaningful for my boss. I also still don&#39;t know which features are gated on Growth versus Starter.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/reports</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Two numbers and no date range or export doesn&#39;t tell me much. I&#39;ll check the Dashboard for a sample view, then go to Legal for seat and fee definitions. If those don&#39;t answer the cost question, I&#39;m done.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> Dashboard with a labeled sample or trial-limited spending view I can compare to the pricing.</div>
+      <div><b>Result:</b> <span class="no">&#39;NoneType&#39; object has no attribute &#39;first&#39;</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The Dashboard link threw an error instead of loading. I expected a sample spending view, but I got nothing, and the error text reads like a backend bug. A broken nav link on a trial is a bad sign before I&#39;ve even entered data.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/reports</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>That&#39;s a broken link, not a locked feature. I&#39;ll try once more. If the Dashboard still fails I&#39;ll go to the Legal page for seat and fee definitions, since the price question still isn&#39;t answered.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> The Dashboard loads with a sample or trial spending view I can compare against the Growth pricing.</div>
+      <div><b>Result:</b> <span class="no">&#39;NoneType&#39; object has no attribute &#39;first&#39;</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The Dashboard link fails every time. I wanted a sample spending view to compare against the Growth price, and I got a backend error twice. Reports still doesn&#39;t say whether the numbers are sample or real, and I still don&#39;t have a total cost for 25 seats.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/reports</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Two failed Dashboard clicks is enough. I&#39;ll check the Legal page for seat definitions and fees, since that&#39;s where the price catches usually are. If it doesn&#39;t give me a number, I&#39;m done with this tool.</i></div>
+      <div><b>Action:</b> <code>navigate /legal</code></div>
+      <div><b>Expectation:</b> Terms that define &#39;seat&#39; or &#39;user&#39; (active vs. invited), plus a list of fees for cards, integrations and taxes, so I can work out a real monthly total for 25 people.</div>
+      <div><b>Result:</b> Navigated to /legal. The page only says &#39;Terms of service and privacy policy.&#39; with no actual text, no seat definition, and no fee schedule.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The Legal page is an empty stub. I was hoping for seat definitions and fee terms, but there&#39;s only a one-line description and no document. I still can&#39;t tell whether &#39;per user&#39; means all 25 people or only active card holders, and I still have no monthly total.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/legal</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Three attempts at the cost question have failed: the pricing page has no total, Reports shows unlabeled numbers, and Legal is empty. Dashboard keeps erroring. I&#39;m at my limit for this goal. I&#39;ll give up on it, since I won&#39;t enter company info or add teammates just to find out a price.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Nothing further. I&#39;d need a published total, or a seat definition in writing, before I&#39;d recommend this to my boss.</div>
+      <div><b>Result:</b> Navigated to /legal, which still shows only &#39;Terms of service and privacy policy.&#39; with no document. Nothing new about seats or fees.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I&#39;m still stuck on the Legal stub and the Dashboard link keeps throwing the same backend error. I expected a sample dashboard I could screenshot, and I haven&#39;t gotten one after several tries.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · http://127.0.0.1:8100/legal</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>The pricing question is closed for me, so I&#39;ll look at the spending dashboard. The Dashboard link is broken, so I&#39;ll try the Expenses page, which might show a sample view or trial limits. If that&#39;s empty too, I&#39;m done with this tool.</i></div>
+      <div><b>Action:</b> <code>click #1</code></div>
+      <div><b>Expectation:</b> An Expenses list with sample or trial entries, plus some sign of what&#39;s limited on Starter versus Growth.</div>
+      <div><b>Result:</b> Expenses loaded with two entries: AWS $412.50 (Software) and Delta Air Lines $689.00 (Travel), both submitted by &#39;You&#39; and Approved. These match the Reports totals. There&#39;s also an Export CSV button and a New expense button.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The two entries are labeled as mine (&#39;Submitted by: You&#39;) but I haven&#39;t entered anything, so I can&#39;t tell if this is sample data or real history from someone&#39;s account. The Dashboard still errors. Export CSV is here, which I&#39;d like to test, but I&#39;m not sure it&#39;s the same data a trial would show.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · http://127.0.0.1:8100/expenses</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>Now I have a sample list, but it&#39;s unclear whether it&#39;s a trial sample. Before I trust it, I want to know whether Export CSV works and what it includes. I&#39;ll try the export as a quick check on what&#39;s limited.</i></div>
+      <div><b>Action:</b> <code>click #6</code></div>
+      <div><b>Expectation:</b> A CSV download of these two expenses, or a message saying exports are limited on the trial plan.</div>
+      <div><b>Result:</b> Clicking Export CSV opened /expenses/export, which says &#39;CSV export is coming soon!&#39; with a link back to expenses. No file, no trial limit explanation.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Export CSV is a dead button. It&#39;s listed as a feature on the Expenses page, but it&#39;s not built yet. Now I can&#39;t screenshot data or move anything into my own spreadsheet, and the Dashboard still errors. I&#39;ve had four or more failed attempts across goals.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-8">
+  <div class="small muted">Step 8 · http://127.0.0.1:8100/expenses/export</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>Pricing is unanswered, the Dashboard is broken, Legal is empty, and Export is &#39;coming soon&#39;. I&#39;ve hit my failure limit on this trial. I&#39;m going to stop here and tell my boss Ledgerly isn&#39;t ready to recommend.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Nothing more from this product. I&#39;d need a published per-seat price, a working dashboard, and a real export before I&#39;d put it on the shortlist.</div>
+      <div><b>Result:</b> Still on /expenses/export. The page shows the same &#39;CSV export is coming soon!&#39; message, and the only way out is the &#39;Back to expenses&#39; link.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I&#39;m stuck on a dead Export page with no file and no trial-limit explanation. The Dashboard still errors, Legal is an empty stub, and I never got a published per-seat price. I&#39;ve used up my attempts on this trial.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--08.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--08.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 8"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-9">
+  <div class="small muted">Step 9 · http://127.0.0.1:8100/expenses/export</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>I&#39;m done. I can&#39;t price 25 seats, the dashboard sample won&#39;t load, and the export is a placeholder. I&#39;ll write up my notes for my boss and mark Ledgerly as not ready for the shortlist.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> Nothing further from this product. I&#39;d need a published per-seat price, a working dashboard and a real export before I&#39;d recommend it.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--09.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s03-operations-lead-comparing-three-expense--09.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 9"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s02-product-designer-at-a-startup-who-just-g · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-223306-ledgerly/index.html">← 20261023-223306-ledgerly</a></p>
+<h1>Priya the Reluctant Expense Submitter — Product designer at a startup who just got told to use Ledgerly for expenses</h1>
+<p class="muted">You bought a conference ticket and a few lunches for a client and need to get reimbursed. You find expense tools tedious and just want to do the minimum correctly so you can stop thinking about it.</p>
+<p><span class="chip">abandoned</span><span class="chip">literal</span>
+<span class="chip">patience 2/5</span><span class="chip">5 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 1/10 — I couldn&#39;t get past the first screen after three tries, and nothing told me why or how to fix it. I&#39;ll ask finance for another way to get my $240 back.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Get paid back for the $240 I spent on a conference ticket</td><td class="no">abandoned</td><td class="small">I never got past the first onboarding screen. I tried typing the company name twice (steps 0 and 1) and clicking into the box once (step 2). Every attempt returned the same error and the box stayed empty. I gave up at step 3 and plan to ask finance for another way to get the $240 back.</td></tr><tr><td>Attach my receipt photo to an expense I already paid for</td><td class="no">failed</td><td class="small">I never reached it. I was stuck on onboarding, so I never saw anywhere to attach a receipt.</td></tr><tr><td>Check whether my last expense was approved yet</td><td class="no">failed</td><td class="small">I never reached it. I never got far enough to submit anything, so I couldn&#39;t check any status.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>The first thing I saw was a company-name setup screen. I typed &#39;Brightline Labs&#39; and got the error &#34;&#39;NoneType&#39; object has no attribute &#39;first&#39;&#34;.</b>
+    <div class="small muted">Expected: The name would fill in and I could press Continue toward submitting my receipt. · Happened: The box stayed empty and a raw programming error came back. It didn&#39;t say what went wrong or what to do. · Why it matters: I&#39;m not technical and I don&#39;t know what &#39;NoneType&#39; means. I can&#39;t tell whether I did something wrong or the tool is broken. I just want to be reimbursed, not debug software.</div></li><li><a href="#step-0">step 0</a>: <b>A new employee is asked to set up a workspace before submitting anything.</b>
+    <div class="small muted">Expected: My company would already be set up, since finance told me to use this tool. I&#39;d go straight to adding an expense. · Happened: I got an onboarding form asking for the company name, as if I were the one setting up the account. · Why it matters: I&#39;m not an admin and don&#39;t know what finance already configured. Being asked to set up a company makes me think I&#39;m in the wrong place.</div></li><li><a href="#step-1">step 1</a>: <b>I typed the company name again and got the identical error. The page had no message about it.</b>
+    <div class="small muted">Expected: Either it works this time, or the page tells me why not and what to try. · Happened: The same error came back and the box was still blank, with no explanation on the page. · Why it matters: I don&#39;t retry things more than a couple of times. With no hint of a fix, I assume it&#39;s broken and start looking for the exit.</div></li><li><a href="#step-2">step 2</a>: <b>Clicking into the box to focus it also failed with the same error.</b>
+    <div class="small muted">Expected: The cursor would appear in the box so I could type normally. · Happened: The same error again. I couldn&#39;t interact with the only field on the page. · Why it matters: I&#39;d now failed three times in a row and couldn&#39;t see any other way forward, so I stopped trying.</div></li><li><a href="#step-3">step 3</a>: <b>After I gave up, I was still on the same blank onboarding screen, with no other route to the expense part.</b>
+    <div class="small muted">Expected: Some other way out: a skip link, a help link, or a &#39;contact your admin&#39; message. · Happened: I was stuck on the same screen with nothing else to click. · Why it matters: A dead end sends me to bother finance by email, which is exactly what this tool was supposed to save me from.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>A visible error message in plain language that appears on the page (e.g. &#39;Something went wrong on our side, try again or contact support&#39;)</b> — <span class="small">I got a raw internal error and nothing I could act on.</span></li><li><b>A way to skip onboarding, or an &#39;I&#39;m an employee, my company is already set up&#39; path</b> — <span class="small">I&#39;m only here to submit an expense, not create a workspace.</span></li><li><b>A help or contact-support link on the onboarding screen</b> — <span class="small">When it breaks I need a next step other than giving up.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>The first screen only asked for one field, so it looked short, which is what I want.</li><li>The page was uncluttered, so I knew what it wanted from me (even though I couldn&#39;t do it).</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Ugh, I didn&#39;t sign up for a workspace, I just need to get paid back. Fine, I&#39;ll put in the company name and get through this as fast as possible.</i></div>
+      <div><b>Action:</b> <code>type #0 “Brightline Labs”</code></div>
+      <div><b>Expectation:</b> The company name goes in and I can move on to the next step, which I hope is quick.</div>
+      <div><b>Result:</b> <span class="no">&#39;NoneType&#39; object has no attribute &#39;first&#39;</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I have to set up a whole workspace before I can even submit my receipt. I just wanted to get paid back, not run admin.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Nothing got typed in. Okay, trying the company name again. Still don&#39;t see why I need to name a company to get a receipt paid.</i></div>
+      <div><b>Action:</b> <code>type #0 “Brightline Labs”</code></div>
+      <div><b>Expectation:</b> The company name fills in, and then I can hit Continue and get to the part where I submit my receipt.</div>
+      <div><b>Result:</b> <span class="no">&#39;NoneType&#39; object has no attribute &#39;first&#39;</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I&#39;ve tried to type my company name twice and it didn&#39;t take either time. I expected the box to fill in so I could hit Continue, but it&#39;s still blank, and nothing on the page says why.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>This is the second time it&#39;s refused the text. Let me click into the box first and try once more. If it fails again I&#39;m out, I just wanted to get paid back.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> The cursor goes into the company name box so I can type into it properly this time.</div>
+      <div><b>Result:</b> <span class="no">&#39;NoneType&#39; object has no attribute &#39;first&#39;</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I can&#39;t get past the first screen at all. I expected to type a company name, hit Continue, and get to where I submit a receipt. Instead the box won&#39;t take input and nothing on the page says why. I still haven&#39;t reached anything about getting paid back, so I can&#39;t tell whether this is even the right tool.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Three tries and it still won&#39;t let me type my company name. I&#39;m done with this. I&#39;ll tell my manager to send the receipt to finance some other way.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Nothing, since I&#39;m giving up on this goal. I&#39;ll probably ask finance to set up a different way to submit the receipt.</div>
+      <div><b>Result:</b> I gave up on the goal, but the page is still the same onboarding screen with the company name box empty.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I&#39;m back on the same onboarding screen after saying I was done with it. The company name box is still blank and I can&#39;t tell whether anything I did earlier actually counted.</div>
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Great, I&#39;m still stuck on this same screen. I already gave up, so I&#39;m going to leave instead of wasting more time on it.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> Nothing, since I&#39;m stopping here. I&#39;ll ask finance for another way to get the $240 back.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223306-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

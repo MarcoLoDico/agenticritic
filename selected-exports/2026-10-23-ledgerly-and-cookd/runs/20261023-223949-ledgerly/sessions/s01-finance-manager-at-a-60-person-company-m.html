@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s01-finance-manager-at-a-60-person-company-m · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-223949-ledgerly/index.html">← 20261023-223949-ledgerly</a></p>
+<h1>Marcus the Meticulous Finance Manager — Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider</h1>
+<p class="muted">You own month-end close and are evaluating whether Ledgerly can replace your current process. You read every label, check each setting before saving, and worry about permissions and audit trails.</p>
+<p><span class="chip">abandoned</span><span class="chip">careful</span>
+<span class="chip">patience 4/5</span><span class="chip">14 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 2/10 — I couldn&#39;t find or configure an approval rule, I couldn&#39;t review or reject an expense, and the existing expenses were auto-approved with no approver or audit trail. Team reporting and export are also missing. These are core controls for replacing my month-end process. I&#39;ll send the vendor my questions, and I&#39;d only reconsider if they confirm threshold approvals, an audit log and team reporting exist or are on a committed roadmap.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Set up an approval rule so expenses over a certain amount need my sign-off</td><td class="no">abandoned</td><td class="small">I checked Settings (Profile, Notifications, Workspace Administration, Billing), Seats &amp; Provisioning, Ledger Mapping and the Expenses pages. I found no approval policy or threshold setting anywhere. The only related item is the Approver entitlement on the seats form, and that assigns a role without defining a rule. The existing expenses were marked &#39;Approved (auto)&#39; with no rule behind that status. I gave up after about six dead ends.</td></tr><tr><td>Review a submitted expense and approve or reject it with a note</td><td class="no">failed</td><td class="small">I never got to try this properly. Both expenses were already auto-approved, and there is no review queue, approve or reject button, or comment box. The expense detail page for AWS only shows amount, category, date and status. I stopped at the end of the session without a real attempt because nothing in the product offered the action.</td></tr><tr><td>Find where I can see spending broken down by category and by team</td><td class="no">partial</td><td class="small">Reports has &#39;Spending by category&#39; (Travel $689.00, Software $412.50), and it ties to the $1,101.50 on the dashboard and the two expenses in the list. There is no team breakdown, date range, filter or export, so half of the goal is unmet.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-2">step 2</a>: <b>Onboarding step 2 pushes me to connect QuickBooks, Xero or NetSuite, and the only alternative is a small &#39;remind me later&#39; link.</b>
+    <div class="small muted">Expected: A clear statement of what skipping does, and confirmation that I can connect the ledger later without losing anything. · Happened: There was no explanation of the consequences of skipping, and the skip option was visually minor. · Why it matters: Connecting a ledger is a controlled decision for me. I don&#39;t want to be nudged into it before I know how the product handles approvals, and I can&#39;t tell if skipping leaves the setup half-configured.</div></li><li><a href="#step-3">step 3</a>: <b>The dashboard after onboarding shows 1 member and 0 cards for a 60-person company, with no pointer to approval setup or inviting people.</b>
+    <div class="small muted">Expected: A setup checklist covering inviting the team, setting approval policy and connecting the ledger. · Happened: I landed on a bare dashboard with two expenses and no next steps. · Why it matters: I can&#39;t tell what is still unconfigured, and I can&#39;t trust a workspace whose control state I can&#39;t see.</div></li><li><a href="#step-5">step 5</a>: <b>Workspace Administration has General, Seats &amp; Provisioning, Ledger Mapping and Identity Federation, and none of them is about approvals or spend policy.</b>
+    <div class="small muted">Expected: An &#39;Approval Policies&#39; or &#39;Spend Controls&#39; section. · Happened: I had to open sections one by one guessing where a rule might live, and none had it. · Why it matters: Approval policy is the core money control. If I can&#39;t find it, I assume it doesn&#39;t exist, and I can&#39;t justify the tool to my CFO.</div></li><li><a href="#step-6">step 6</a>: <b>Seats &amp; Provisioning offers an Approver entitlement but no threshold, and the &#39;principal identifier&#39; field doesn&#39;t say whether it wants an email or a user ID.</b>
+    <div class="small muted">Expected: Roles tied to a rule (e.g. over $X goes to this approver) and a clearly labelled email field. · Happened: There is a role dropdown (Submitter, Approver, Admin) with no connection to any amount or routing, and an ambiguous identifier field. · Why it matters: A role without a rule controls nothing, and ambiguous labels on a permissions form risk granting access to the wrong person.</div></li><li><a href="#step-7">step 7</a>: <b>Both expenses are submitted by &#39;You&#39; (the owner) and are already &#39;Approved&#39;, and the list has no policy link.</b>
+    <div class="small muted">Expected: Pending expenses, or at least the approver and the reason for approval shown in the list. · Happened: Everything is approved with no trail. · Why it matters: The owner submitting and effectively approving their own spend is a segregation-of-duties problem, and my auditors will ask about it.</div></li><li><a href="#step-8">step 8</a>: <b>The expense detail shows only amount, category, date and &#39;Status: Approved (auto)&#39;, with no approver, timestamp, note, audit trail, or reject and comment actions.</b>
+    <div class="small muted">Expected: Submitter, approver, approval timestamp, the rule that applied and an audit log of changes. · Happened: A one-line status with no explanation of which rule auto-approved it. · Why it matters: I can&#39;t prove who approved what or why. Expenses above my threshold might also be auto-approved, which is a control failure.</div></li><li><a href="#step-9">step 9</a>: <b>Ledger Mapping only says &#39;No accounting system connected&#39; and offers &#39;Connect QuickBooks&#39;, with no GL code or cost center mapping options visible.</b>
+    <div class="small muted">Expected: GL code and cost center mapping that I can configure before connecting, and a clear statement of which system is supported. · Happened: A single call to action pushing a connection. · Why it matters: I code expenses to GL accounts and cost centers every month. I can&#39;t evaluate the product&#39;s fit without seeing how it maps them.</div></li><li><a href="#step-10">step 10</a>: <b>When I gave up on the approval goal, nothing acknowledged it, and no message said whether the feature exists or where to get help.</b>
+    <div class="small muted">Expected: A note that threshold approvals aren&#39;t configurable here, or a support or docs pointer. · Happened: The screen was unchanged and nothing was logged. · Why it matters: I can&#39;t tell whether the feature is missing or I missed a setting, so I have to email the vendor to find out.</div></li><li><a href="#step-11">step 11</a>: <b>Reports has category totals only, with no team dimension, date range, filter or export.</b>
+    <div class="small muted">Expected: Spend by category and by team, with a period selector and CSV export. · Happened: Two category rows with no context about period or approval status. · Why it matters: I need team-level spend for cost center review, and I need exports to reconcile to the GL at month-end. The category numbers do tie to the expense list, which is good, but not enough.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Approval policy / threshold rules (e.g. expenses over $X require a named approver&#39;s sign-off)</b> — <span class="small">This is my main control, and I found no place to configure it.</span></li><li><b>Pending approval queue with approve/reject actions and a note field</b> — <span class="small">I need to review and reject with a documented reason, and no such action exists.</span></li><li><b>Audit log of approvals, setting changes and role changes</b> — <span class="small">Changes to money controls must be traceable and reversible, and I need to show this to my CFO and auditors.</span></li><li><b>Spend by team / cost center report</b> — <span class="small">I need team-level budget review and allocation.</span></li><li><b>Report date range, filters and CSV export</b> — <span class="small">I need them to reconcile reports to the GL at month-end.</span></li><li><b>Visible explanation of auto-approval and a setting to disable it</b> — <span class="small">Silent auto-approval without a stated rule is unacceptable for a low-risk-tolerance finance owner.</span></li><li><b>Team invitation and bulk member import</b> — <span class="small">A 60-person company can&#39;t run on one member, and I saw no clear path to onboard people beyond a single-principal form.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>The category totals on Reports tie exactly to the expense list and the dashboard total ($689.00 + $412.50 = $1,101.50), so the numbers can be verified.</li><li>Onboarding validated and saved the company name and size clearly, and I could see both values before continuing.</li><li>The Seats &amp; Provisioning page has an explicit Submitter, Approver and Admin role split, which suggests granular roles are intended.</li><li>Settings navigation is simple and quick to scan.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Fine, I&#39;ll get through onboarding first. Company name, then I&#39;ll fix the size dropdown, because 1-10 is wrong and I won&#39;t let a default slide through on a finance tool. I&#39;ll check both fields before hitting Continue.</i></div>
+      <div><b>Action:</b> <code>type #0 “Northbridge Components Ltd”</code></div>
+      <div><b>Expectation:</b> The company name field fills in and I can then set the size to 51-200 before continuing.</div>
+      <div><b>Result:</b> Company name field now shows &#39;Northbridge Components Ltd&#39;. Company size still reads 1-10.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> Company size is still set to 1-10, which is wrong for a 60-person company. I need that corrected before I continue.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Name&#39;s in. Now the size dropdown. We&#39;re 60 people, so 51-200. I&#39;ll set it explicitly rather than trust the default.</i></div>
+      <div><b>Action:</b> <code>select #1 “51-200”</code></div>
+      <div><b>Expectation:</b> The company size dropdown shows 51-200 so I can verify it before clicking Continue.</div>
+      <div><b>Result:</b> Company size now reads 51-200 and the company name is filled in. Both fields are verified.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Name and size both check out. 51-200 is right for 60 people. Before I hit Continue I want to be sure nothing else on this step is hiding a setting I&#39;d need to know about, so I&#39;ll confirm the Continue button is the only way forward.</i></div>
+      <div><b>Action:</b> <code>click #2</code></div>
+      <div><b>Expectation:</b> Step 2 of onboarding loads, and I should see the workspace setup or approval options I need.</div>
+      <div><b>Result:</b> Onboarding step 1 saved and advanced to &#39;Connect your accounting system&#39;. The page offers QuickBooks, Xero, NetSuite, or &#39;remind me later&#39;.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I&#39;m being asked to connect an accounting system before I&#39;ve seen any approval settings. We haven&#39;t decided which GL we&#39;re syncing to, and connecting a ledger is not something I do on a whim. The only other option is a tiny &#39;remind me later&#39; link, which doesn&#39;t say what skipping does to the sync or whether I can connect later.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>I&#39;m not connecting a general ledger feed before I know what it writes to. &#39;Remind me later&#39; is tiny and vague. I want to know what skipping does before I click it. I&#39;ll take the skip path, but I&#39;ll verify what it actually does.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> The skip link should take me into the workspace with approval settings available, and tell me clearly that I can connect the ledger later.</div>
+      <div><b>Result:</b> Skipped the accounting connection and landed on the dashboard. It shows Northbridge Components Ltd, $1,101.50 spend across 2 expenses (AWS $412.50, Delta $689.00), 0 cards, 1 member.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The dashboard has no visible approval settings and I don&#39;t yet know whether skipping the ledger connection left anything half-configured. Only 1 member on a 60-person company is a red flag. I need to find where approval rules live before I trust anything here.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/dashboard</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Right, nothing about approvals on the dashboard. Settings is the logical place for a policy like this. I&#39;ll check there before touching anything else, and I want to see what the skipped connection left behind.</i></div>
+      <div><b>Action:</b> <code>click #4</code></div>
+      <div><b>Expectation:</b> The Settings page should list approval or spending policy options, and show whether the accounting connection is pending or disabled.</div>
+      <div><b>Result:</b> Opened Settings. It has Profile, Notifications, Workspace Administration, and Billing tabs. Profile shows my name as &#39;You&#39; and email you@company.com, with timezone set to UTC. No approval or spending policy item yet.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> Profile still reads &#39;You&#39; as my name, and the timezone defaults to UTC. Approval policy isn&#39;t under Profile. The likely home is Workspace Administration, but I can&#39;t assume that without checking it.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/settings</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Nothing approval-related on Profile. Workspace Administration is the sensible place for a company-wide spend threshold, so that&#39;s where I&#39;ll look. I&#39;ll fix my name and timezone later.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> Workspace Administration should list approval policies, approval thresholds, or roles where I can set a rule for expenses over a set amount.</div>
+      <div><b>Result:</b> Workspace Administration has four sub-sections: General, Seats &amp; Provisioning, Ledger Mapping, Identity Federation. None is labelled as approvals or policy.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> No approval or spending policy item here either. I expected something like Approval Policies or Spend Controls. &#39;Seats &amp; Provisioning&#39; might hold roles, but I can&#39;t tell without opening it, and I&#39;m starting to lose patience with hunting through menus.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · http://127.0.0.1:8100/settings/workspace</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Still no approval policy. General is probably company info, Seats likely holds roles and permissions, which matter for who approves. I&#39;ll check Seats since approver roles have to be defined somewhere.</i></div>
+      <div><b>Action:</b> <code>click #10</code></div>
+      <div><b>Expectation:</b> Seats &amp; Provisioning should show members and roles, including an approver or manager role I can assign to the approval rule.</div>
+      <div><b>Result:</b> Seats &amp; Provisioning lists one principal, you@company.com with Owner entitlement. The form adds a principal identifier and an entitlement of Submitter, Approver or Admin. No threshold, policy or approval chain appears anywhere.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The seats page gives me roles, but roles aren&#39;t the rule. I need a dollar threshold that routes expenses to an approver, and I can&#39;t find where that&#39;s defined. &#39;Approver&#39; is an entitlement, not a policy. Also, the principal identifier field doesn&#39;t say whether it&#39;s an email or a user ID. I&#39;ve now checked Settings, Workspace Administration and Seats, which is about four dead ends.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · http://127.0.0.1:8100/settings/workspace/seats</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Approver is a seat type, so it isn&#39;t the threshold I need. I won&#39;t provision anyone yet because I don&#39;t know what an Approver can actually approve. Expense policy is more likely to live under Expenses, so I&#39;ll check there before I write off the approval rule entirely.</i></div>
+      <div><b>Action:</b> <code>click #1</code></div>
+      <div><b>Expectation:</b> The Expenses page should show submitted expenses and possibly a Policies or Approval Rules link where a threshold rule can be created.</div>
+      <div><b>Result:</b> Expenses lists AWS ($412.50, Software) and Delta ($689.00, Travel). Both show &#39;Submitted by: You&#39; and status &#39;Approved&#39;. There&#39;s no policy or approval-rules link on the page.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Both expenses are already Approved and were submitted by me, the owner. Nothing here shows who approved them or whether any threshold applied. If the system auto-approves owner submissions, that&#39;s a segregation-of-duties problem. I can&#39;t justify this to the CFO without an approval trail.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-8">
+  <div class="small muted">Step 8 · http://127.0.0.1:8100/expenses</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>This is my fourth dead end on the approval rule, and the status is worrying. I need to see the approval trail on one expense before deciding anything. If there&#39;s no approver recorded, that&#39;s a bigger issue than the missing rule.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> The expense detail should show submitter, approver, timestamps and an audit trail explaining why it was approved.</div>
+      <div><b>Result:</b> The AWS expense detail shows only $412.50, Software, 02/10/2026, and &#39;Status: Approved (auto)&#39;. No approver name, no timestamp of approval, no note, no audit trail, no way to reject or comment.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (5/5):</b> &#39;Approved (auto)&#39; means the system approved this without any human sign-off, and the page gives me no rule or reason behind it. I expected an approver, an approval timestamp and an audit log. Instead I get nothing I could show a CFO, and it means expenses over my threshold could be auto-approved too. Risk tolerance is 1/5 and this is a control failure.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-08.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-08.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 8"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-9">
+  <div class="small muted">Step 9 · http://127.0.0.1:8100/expenses/0</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Auto-approval with no visible rule or trail is exactly what I can&#39;t accept. Before I give up on the approval rule, I&#39;ll check whether the Ledger Mapping or the Reports section explains what triggers auto-approval. I&#39;ve already burned four attempts on this goal, so this is my last try before I call it.</i></div>
+      <div><b>Action:</b> <code>navigate /settings/workspace/ledger</code></div>
+      <div><b>Expectation:</b> Ledger Mapping should show accounting connection status and possibly approval or auto-approval settings tied to GL codes or thresholds.</div>
+      <div><b>Result:</b> Ledger Mapping says &#39;No accounting system connected&#39; and offers a &#39;Connect QuickBooks&#39; link. Nothing here defines approval thresholds or auto-approval rules.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> This is my sixth stop without finding an approval threshold. Ledger Mapping is about accounting connections, not spend controls. The only action offered is connecting QuickBooks, which I won&#39;t do while I still can&#39;t see what auto-approves. The AWS expense is still &#39;Approved (auto)&#39; with no rule behind it.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-09.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-09.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 9"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-10">
+  <div class="small muted">Step 10 · http://127.0.0.1:8100/settings/workspace/ledger</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>I&#39;ve hit my limit on this goal: Settings, Workspace Administration, Seats, Expenses, the expense detail, and now Ledger Mapping, with no approval policy anywhere. I&#39;m not connecting QuickBooks to find a rule that may not exist. The auto-approval issue is a control problem I need to raise with the vendor, and I&#39;ll move on to the reporting goal, which I can still check.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Ledgerly moves to my next goal, or I&#39;m told there&#39;s no approval policy I can configure and I should contact support.</div>
+      <div><b>Result:</b> The give-up was registered, but the screen is unchanged. I&#39;m still on Ledger Mapping with the same &#39;No accounting system connected&#39; message and no confirmation that the approval goal was closed or that anything was logged.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Giving up on the approval rule produced no acknowledgement, no &#39;no approval policy available&#39; message, and no support pointer. I expected at least a notice that I can&#39;t configure thresholds here. Without that, I can&#39;t tell whether the gap is a missing feature or a setting I failed to find. I still have an unexplained &#39;Approved (auto)&#39; expense on record, which I need to raise with the vendor.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-10.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-10.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 10"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-11">
+  <div class="small muted">Step 11 · http://127.0.0.1:8100/settings/workspace/ledger</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find where I can see spending broken down by category and by team</div>
+      <div><b>Thought:</b> <i>I&#39;m moving on to the reporting goal. The approval issue goes in my notes for the vendor and CFO. Reports should show spend by category and team, and I expect it to reconcile to the underlying expenses.</i></div>
+      <div><b>Action:</b> <code>navigate /reports</code></div>
+      <div><b>Expectation:</b> Reports should show spend broken down by category and by team, with filters or a team dimension, and totals that tie back to the expense list.</div>
+      <div><b>Result:</b> Reports shows &#39;Spending by category&#39; with Travel $689.00 and Software $412.50. That&#39;s the category view I wanted. There&#39;s no team breakdown, no date range, no filter, and no export on this page.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The category totals do tie to the two expenses in the list ($689.00 + $412.50 = $1,101.50), which is good. But there&#39;s no team dimension, so I can&#39;t see spend by team. There&#39;s also no date range, so I can&#39;t tell whether this is month-to-date, all-time, or only what&#39;s been approved. I also can&#39;t export it to reconcile against the GL.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-11.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-11.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 11"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-12">
+  <div class="small muted">Step 12 · http://127.0.0.1:8100/reports</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find where I can see spending broken down by category and by team</div>
+      <div><b>Thought:</b> <i>Category works, but the team cut is missing and I can&#39;t tell what period these totals cover. For a close, I need a report I can export and tie to the transactions, and this doesn&#39;t give me that yet. I&#39;ll record what I found and stop chasing the team view here.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Nothing further on this page would give me a team breakdown, so I expect Ledgerly to confirm it has no team-level reporting or show me where to set it up.</div>
+      <div><b>Result:</b> The Reports page is unchanged: &#39;Spending by category&#39; shows Travel $689.00 and Software $412.50, with no team view, date range, filter or export. Giving up on the report goal didn&#39;t change the screen.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I still haven&#39;t been able to review, approve or reject an expense with a note. The only expenses I can see are auto-approved, and there&#39;s no review queue, approver field or comment box. Nothing on the Reports page confirms whether team-level reporting exists anywhere in Ledgerly.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-12.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-12.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 12"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-13">
+  <div class="small muted">Step 13 · http://127.0.0.1:8100/reports</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Review a submitted expense and approve or reject it with a note</div>
+      <div><b>Thought:</b> <i>I&#39;ve used up my attempts. Approval thresholds aren&#39;t configurable where I can find them, the expenses are auto-approved with no trail, and reporting has no team cut or export. Before I stop I&#39;m writing up the gaps: the auto-approval control, the missing audit trail, and no team or export reporting. I can&#39;t put this in front of the CFO as a replacement for our close process.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> Nothing further. I&#39;m stopping here and sending the vendor a list of findings and questions about approval controls, audit trail and team-level reporting.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-13.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-13.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 13"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

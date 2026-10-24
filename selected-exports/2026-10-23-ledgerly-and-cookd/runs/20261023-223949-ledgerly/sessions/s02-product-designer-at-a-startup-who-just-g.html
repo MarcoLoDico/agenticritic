@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s02-product-designer-at-a-startup-who-just-g · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-223949-ledgerly/index.html">← 20261023-223949-ledgerly</a></p>
+<h1>Priya the Reluctant Expense Submitter — Product designer at a startup who just got told to use Ledgerly for expenses</h1>
+<p class="muted">You bought a conference ticket and a few lunches for a client and need to get reimbursed. You find expense tools tedious and just want to do the minimum correctly so you can stop thinking about it.</p>
+<p><span class="chip">abandoned</span><span class="chip">literal</span>
+<span class="chip">patience 2/5</span><span class="chip">19 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 2/10 — I spent about a dozen steps and couldn&#39;t submit a single $240 expense. There was no receipt upload, a required field I didn&#39;t understand, and a vague error that wiped my form twice. I&#39;ll ask a teammate to do it for me, and I won&#39;t come back unless it gets much simpler.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Get paid back for the $240 I spent on a conference ticket</td><td class="no">failed</td><td class="small">I never got the expense submitted. I went through company setup and the accounting screen, then filled in the New expense form. My first Submit click did nothing visible. After I typed a cost center (&#39;General&#39;) and clicked Submit again, the page said &#39;Invalid input. Please try again.&#39; and wiped everything. I retyped part of it and gave up. I&#39;ll ask a teammate to do it.</td></tr><tr><td>Attach my receipt photo to an expense I already paid for</td><td class="no">abandoned</td><td class="small">I couldn&#39;t find anywhere to attach a receipt. The New expense form has no upload field. The Expenses list and the AWS detail page (step 15) have no attach button either. I gave up at step 16.</td></tr><tr><td>Check whether my last expense was approved yet</td><td class="no">failed</td><td class="small">The Expenses list only showed AWS $412.50 and Delta $689.00, both marked &#39;Approved&#39;. My conference ticket wasn&#39;t there, not even as a draft or pending. I can&#39;t tell whether it saved or failed, so I couldn&#39;t check its status.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>As a first-time user I landed on a company setup wizard asking for a company name.</b>
+    <div class="small muted">Expected: A way to submit my expense right away, since my company already set up the account. · Happened: A &#39;Welcome&#39; setup page asked for company details. · Why it matters: I&#39;m an employee who was told to use this tool. Admin setup makes me feel I&#39;m in the wrong place, and I&#39;ll bounce.</div></li><li><a href="#step-1">step 1</a>: <b>Setup step 2 asked me to connect QuickBooks, Xero or NetSuite and mentioned a general ledger.</b>
+    <div class="small muted">Expected: Nothing finance-related for someone who just wants to be paid back. · Happened: A &#39;Connect accounting&#39; screen full of terms I don&#39;t know. · Why it matters: I don&#39;t know these words and have no access to these tools, so I assume the product isn&#39;t meant for me. The Skip option was the only thing that saved me.</div></li><li><a href="#step-2">step 2</a>: <b>The dashboard showed AWS $412.50 and Delta Air Lines $689.00 and an &#39;Issue a card&#39; option.</b>
+    <div class="small muted">Expected: To see my own stuff, or an empty state telling me to submit my first expense. · Happened: Other people&#39;s or company entries I don&#39;t recognise. · Why it matters: I can&#39;t tell whether I&#39;m in the right account, and it clutters what should be a simple start.</div></li><li><a href="#step-3">step 3</a>: <b>The New expense form has no receipt photo or upload field.</b>
+    <div class="small muted">Expected: A &#39;Add receipt&#39; or camera button near the top, since a receipt is the main thing I have. · Happened: Only Merchant, Amount, Transaction date, Category and Cost center code. · Why it matters: My whole mental model is to snap the receipt and type the amount. Without upload, I don&#39;t know how I&#39;ll prove the spend or get paid.</div></li><li><a href="#step-3">step 3</a>: <b>The form has a required &#39;Cost center code&#39; field with no explanation or example.</b>
+    <div class="small muted">Expected: A hint such as &#39;Ask your manager, or leave blank&#39; or a dropdown of choices. · Happened: A bare required text box. · Why it matters: I don&#39;t know what to put, so I&#39;m stuck guessing, and a wrong guess probably gets my claim rejected.</div></li><li><a href="#step-6">step 6</a>: <b>The date field gave no format hint, and Category defaulted to &#39;Software&#39; for a conference ticket with no guidance on which to choose.</b>
+    <div class="small muted">Expected: A date picker, and a plain-language category list with examples like &#39;Travel&#39;, &#39;Meals&#39; and &#39;Events/Training&#39;. · Happened: A free-text date field and a Category list that starts on &#39;Software&#39;. I typed 14/02/2026 and guessed &#39;Other&#39;. · Why it matters: I&#39;m guessing at both, and I can&#39;t tell whether my guesses are why the form rejected me.</div></li><li><a href="#step-8">step 8</a>: <b>Clicking Submit the first time did nothing visible, with no error or message.</b>
+    <div class="small muted">Expected: A message saying what&#39;s missing, like &#39;Cost center code is required&#39;. · Happened: No feedback at all. · Why it matters: I didn&#39;t know whether it worked, failed or was still loading. I only guessed the cost center was the problem.</div></li><li><a href="#step-10">step 10</a>: <b>The second Submit reloaded the page with &#39;Invalid input. Please try again.&#39; and cleared every field, including Category.</b>
+    <div class="small muted">Expected: My answers kept, and the specific bad field highlighted with a reason. · Happened: A vague error, an empty form and Category reset to Software. · Why it matters: I have to retype everything on my phone with no clue what to change. This is the point where I decided to give up.</div></li><li><a href="#step-12">step 12</a>: <b>After retyping, the form still showed the same vague error and cleared fields, with nothing to say which value (&#39;General&#39; for cost center, the date format or the category) was wrong.</b>
+    <div class="small muted">Expected: Some hint at what to fix so the next attempt would be different. · Happened: The same generic message on every attempt. · Why it matters: I can&#39;t improve my next attempt, so retrying is pointless and I walk away.</div></li><li><a href="#step-14">step 14</a>: <b>The Expenses list showed only AWS and Delta, both labelled &#39;You&#39; and &#39;Approved&#39;, with no way to add a receipt.</b>
+    <div class="small muted">Expected: My own expenses, with a clear &#39;add receipt&#39; action on any that need one. · Happened: Two expenses I didn&#39;t make, with only View links. · Why it matters: I can&#39;t tell which are mine, and there&#39;s nothing here to act on.</div></li><li><a href="#step-15">step 15</a>: <b>The expense detail page showed &#39;Status: Approved (auto)&#39; and no way to attach a receipt.</b>
+    <div class="small muted">Expected: An upload or attach button, and a plain explanation of what &#39;auto&#39; approval means. · Happened: Read-only details and a Back link. · Why it matters: Goal 2 is impossible here, and &#39;auto&#39; leaves me wondering whether anyone actually reviewed it.</div></li><li><a href="#step-17">step 17</a>: <b>My conference ticket doesn&#39;t appear anywhere in the list.</b>
+    <div class="small muted">Expected: A pending or draft entry, or at least a message that my submission failed. · Happened: Only the two approved items. · Why it matters: I can&#39;t tell whether my $240 claim exists, so I can&#39;t tell whether I&#39;ll get paid and I have to ask a person.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Receipt photo upload (camera or file) on the New expense form and on existing expenses</b> — <span class="small">Snapping a receipt is the first thing I expect to do, and I couldn&#39;t find it anywhere.</span></li><li><b>Inline, field-specific validation that keeps what I typed</b> — <span class="small">I need to see exactly which field is wrong and not lose my input, especially on a phone.</span></li><li><b>Plain-language help for Category and Cost center (examples, defaults, or an &#39;I don&#39;t know&#39; option)</b> — <span class="small">I don&#39;t know finance terms, and a wrong guess shouldn&#39;t block me.</span></li><li><b>Confirmation after submit saying what happens next, who approves it, and when I get paid back</b> — <span class="small">I want to be told what happens next and whether it went through.</span></li><li><b>An employee-friendly start that skips admin setup, and a &#39;my expenses&#39; view with clear pending/approved/rejected status</b> — <span class="small">I&#39;m not the admin, and I need to find my own claims and see whether they&#39;re approved.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>The &#39;Submit an expense&#39; button on the dashboard was clear plain English and easy to find.</li><li>The accounting connection step had a Skip option, so I could get past it.</li><li>The Expenses list showed a clear &#39;Approved&#39; status.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Ugh, setup first? Fine. It wants a company name. I&#39;ll just type it in and get to the actual thing.</i></div>
+      <div><b>Action:</b> <code>type #0 “Brightwave Labs”</code></div>
+      <div><b>Expectation:</b> The company name gets filled in, and then I can hit Continue to move on to submitting my expense.</div>
+      <div><b>Result:</b> Typed &#39;Brightwave Labs&#39; into the company name box. The page stayed on the same setup screen.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I was dropped onto a &#39;Welcome&#39; setup page asking for company details before I&#39;ve even seen where to put my receipt. I just want to get paid back, not set up a whole workspace.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Company name is in. Company size already says 1-10, which is probably fine since I don&#39;t know how big we are. Hit Continue and get on with it.</i></div>
+      <div><b>Action:</b> <code>click #2</code></div>
+      <div><b>Expectation:</b> The page moves on to step 2 of setup, hopefully where I can submit an expense.</div>
+      <div><b>Result:</b> Clicked Continue. The page changed to &#39;Connect accounting&#39; step 2 of 2, asking me to connect QuickBooks, Xero or NetSuite.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I have no idea what a general ledger is, and I don&#39;t have QuickBooks, Xero or NetSuite access. I just want to submit a receipt. This is a lot of finance stuff for a $240 conference ticket.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Connect accounting? I don&#39;t know any of these. There&#39;s a &#39;remind me later&#39; link which is at least plain English. I&#39;ll take that and hope I can get to the actual expense page.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> It skips the accounting connection and takes me to the expense screen where I can add my receipt.</div>
+      <div><b>Result:</b> Skipped the accounting connection. Landed on the Dashboard, which shows &#39;Submit an expense&#39; and two recent entries: AWS $412.50 and Delta Air Lines $689.00.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The dashboard numbers are not mine. I see AWS and Delta Air Lines, and &#39;Issue a card&#39; is confusing. I also don&#39;t know if these belong to my team. Still, &#39;Submit an expense&#39; is the plain-English thing I want.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/dashboard</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Okay, there&#39;s a &#39;Submit an expense&#39; button. That&#39;s the one. The Delta flight thing is someone else&#39;s I guess. Clicking it.</i></div>
+      <div><b>Action:</b> <code>click #5</code></div>
+      <div><b>Expectation:</b> A form where I can snap or upload my receipt, type $240 and submit for payment.</div>
+      <div><b>Result:</b> Landed on the &#39;New expense&#39; form with Merchant, Amount, Transaction date, Category and a required &#39;Cost center code&#39; field.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> There&#39;s no photo or receipt upload anywhere on this form, which is the first thing I expected. It also wants a &#39;Cost center code&#39; that I have no idea about, and the Category defaults to &#39;Software&#39; for a conference ticket.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Where&#39;s the receipt thing? I&#39;m supposed to snap a photo. And what&#39;s a cost center code? I don&#39;t know that. I&#39;ll fill in what I can.</i></div>
+      <div><b>Action:</b> <code>type #5 “Conference ticket”</code></div>
+      <div><b>Expectation:</b> The merchant field takes the name, and then I can add the amount and find a place to attach my receipt.</div>
+      <div><b>Result:</b> Typed &#39;Conference ticket&#39; into the Merchant field. The page stayed the same.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Still no receipt upload anywhere on the form. The Cost center code is required and I have no clue what to put there.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Okay, merchant&#39;s in. Amount next. Two-forty. Then I need to find where the photo goes.</i></div>
+      <div><b>Action:</b> <code>type #6 “240”</code></div>
+      <div><b>Expectation:</b> The amount box takes 240, and then I should see a way to add my receipt photo.</div>
+      <div><b>Result:</b> Amount box now shows 240. The page stayed the same, and there&#39;s still no sign of a receipt upload.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> No receipt upload on the form yet, and the Cost center code is still a required field I can&#39;t make sense of. The date field doesn&#39;t say what format it wants.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Merchant and amount are in. Now the date. I don&#39;t have a clue what format they want, so I&#39;ll just type the date the way I&#39;d write it.</i></div>
+      <div><b>Action:</b> <code>type #7 “14/02/2026”</code></div>
+      <div><b>Expectation:</b> The date gets filled in. After that I&#39;m hoping the receipt photo option shows up somewhere.</div>
+      <div><b>Result:</b> Typed 14/02/2026 into the date field. The page stayed the same and there&#39;s still no receipt upload.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Category is still set to &#39;Software&#39; for a conference ticket, which is clearly wrong. I don&#39;t know which category fits, and there&#39;s still no place to attach the receipt photo.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Software? It&#39;s a conference ticket, not software. &#39;Travel&#39; or &#39;Other&#39; is closer, I guess. I&#39;ll pick Other so I don&#39;t get it wrong.</i></div>
+      <div><b>Action:</b> <code>select #8 “Other”</code></div>
+      <div><b>Expectation:</b> The category changes to Other, and then I&#39;ll see the receipt upload or the cost center thing gets sorted out.</div>
+      <div><b>Result:</b> Category now shows &#39;Other&#39;. The page stayed the same, and there&#39;s still no receipt upload anywhere on the form.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I still can&#39;t find where to attach the receipt photo, and the required Cost center code is a blocker I don&#39;t understand. I expected the form to tell me what&#39;s missing before I hit submit.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-8">
+  <div class="small muted">Step 8 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Still no photo thing. And this &#39;cost center code&#39; is required, so I can&#39;t submit without it. I have no idea what goes there. Maybe the Submit button will tell me what&#39;s wrong. I&#39;m just going to try it.</i></div>
+      <div><b>Action:</b> <code>click #10</code></div>
+      <div><b>Expectation:</b> Either it goes through, or it tells me what&#39;s missing so I can fix it right away.</div>
+      <div><b>Result:</b> Clicked Submit. Nothing visibly happened: no error message, no confirmation, and the form is still full.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Submit did nothing I could see. No message saying what&#39;s missing, even though Cost center code is marked required. I expected the form to tell me what to fix.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-08.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-08.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 8"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-9">
+  <div class="small muted">Step 9 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Nothing happened. Did it send? Did it break? There&#39;s no error and nothing says what&#39;s wrong. It must be that cost center thing. I&#39;ll just put something in there, like &#39;General&#39;, because that sounds like a normal default.</i></div>
+      <div><b>Action:</b> <code>type #9 “General”</code></div>
+      <div><b>Expectation:</b> The cost center box takes it, and then Submit either goes through or tells me what else is missing.</div>
+      <div><b>Result:</b> Typed &#39;General&#39; into the Cost center code field. The page stayed the same, and the field now shows General.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Still no receipt upload on this form, and I still don&#39;t know what a cost center code is. I&#39;m also not sure whether Submit did anything last time.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-09.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-09.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 9"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-10">
+  <div class="small muted">Step 10 · http://127.0.0.1:8100/expenses/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Okay, every required box has something in it now. I&#39;ll press Submit again and see if it goes through this time. If it doesn&#39;t, I&#39;m going to be annoyed.</i></div>
+      <div><b>Action:</b> <code>click #10</code></div>
+      <div><b>Expectation:</b> It either saves the expense and tells me it&#39;s sent, or it shows me exactly what&#39;s still missing.</div>
+      <div><b>Result:</b> Clicked Submit and the page reloaded with &#39;Invalid input. Please try again.&#39; All my fields are now empty again, and Category is back to Software.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (5/5):</b> The form wiped everything I typed and gave me a vague &#39;Invalid input&#39; message without saying which field is wrong. I expected it to keep my answers and point at the problem. Now I have to type it all again, and I still don&#39;t know what a cost center code is.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-10.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-10.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 10"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-11">
+  <div class="small muted">Step 11 · http://127.0.0.1:8100/expenses/new?error=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Ugh. It deleted everything and says &#39;invalid input&#39; with no clue which bit. I&#39;ve spent five minutes on this for a $240 lunch-and-ticket refund. I&#39;m going to try once more, and if it fails I&#39;m done.</i></div>
+      <div><b>Action:</b> <code>type #5 “Conference ticket”</code></div>
+      <div><b>Expectation:</b> The merchant box fills in again. If the form still rejects it I&#39;ll give up and ask someone on my team to do it for me.</div>
+      <div><b>Result:</b> Typed &#39;Conference ticket&#39; into Merchant. Amount, date and cost center are empty again, so I have to re-enter everything.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The form wiped my entries after the &#39;Invalid input&#39; error and still doesn&#39;t say which field is wrong. I expected it to keep my answers and point at the problem. I also still don&#39;t know what a cost center code is.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-11.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-11.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 11"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-12">
+  <div class="small muted">Step 12 · http://127.0.0.1:8100/expenses/new?error=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>Fine, I&#39;ll type the amount again. That&#39;s my last try. If it still bounces me back with &#39;Invalid input&#39; and wipes everything, I&#39;m done and I&#39;ll ask someone on my team to file this for me.</i></div>
+      <div><b>Action:</b> <code>type #6 “240”</code></div>
+      <div><b>Expectation:</b> The amount shows 240. Then I&#39;ll fill in the date and submit, and hope it goes through or at least tells me which box is wrong.</div>
+      <div><b>Result:</b> Typed 240 into Amount. The page still says &#39;Invalid input. Please try again.&#39;, the Transaction date is empty again, and Cost center code is still blank.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (5/5):</b> Every submit wipes the form and gives the same vague &#39;Invalid input&#39; message without saying which field is wrong. I expected the form to keep my answers and point at the bad field. Now I&#39;ve typed the same things three times, and I still don&#39;t know what a cost center code is or where the receipt goes.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-12.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-12.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 12"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-13">
+  <div class="small muted">Step 13 · http://127.0.0.1:8100/expenses/new?error=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Get paid back for the $240 I spent on a conference ticket</div>
+      <div><b>Thought:</b> <i>This is ridiculous. It&#39;s a $240 refund and I&#39;ve been on this form for ages. Nothing I type tells me what&#39;s wrong, and it keeps clearing everything. I&#39;m done with this form. I&#39;ll ask someone on my team to file it for me and find out what a cost center code is.</i></div>
+      <div><b>Action:</b> <code>give_up_goal #</code></div>
+      <div><b>Expectation:</b> Nothing from this page. I&#39;m leaving it and will ask a teammate to submit the conference ticket for me.</div>
+      <div><b>Result:</b> I gave up on the conference ticket form. The page still shows the same &#39;Invalid input&#39; error with the fields mostly empty.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The new expense form wiped my entries on every failed submit and never said which field was wrong. I expected a clear pointer to the problem, not a vague error.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-13.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-13.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 13"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-14">
+  <div class="small muted">Step 14 · http://127.0.0.1:8100/expenses/new?error=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Attach my receipt photo to an expense I already paid for</div>
+      <div><b>Thought:</b> <i>Forget this form for now. Maybe I can attach the receipt to something I already entered, or at least see if my last expense went through. I&#39;ll go to the expenses list.</i></div>
+      <div><b>Action:</b> <code>navigate # /expenses</code></div>
+      <div><b>Expectation:</b> A list of my expenses, hopefully with the lunches or anything already saved, and a way to add a photo of a receipt to one of them.</div>
+      <div><b>Result:</b> Navigated to the Expenses list. It shows two approved expenses from me (AWS $412.50 and Delta Air Lines $689.00), and there are View links for each.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> The list is full of things that aren&#39;t mine to deal with, and I don&#39;t see anything about attaching a receipt here. I also can&#39;t tell which of these, if any, is the lunch or the conference ticket.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-14.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-14.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 14"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-15">
+  <div class="small muted">Step 15 · http://127.0.0.1:8100/expenses</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Attach my receipt photo to an expense I already paid for</div>
+      <div><b>Thought:</b> <i>Okay, there&#39;s a View link on each row. Maybe the receipt upload lives inside one of these. I&#39;ll open the first one and look for a photo option.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> A detail page for the AWS expense, with some way to add or attach a receipt photo.</div>
+      <div><b>Result:</b> Opened the AWS expense. It shows the amount, date, category and &#39;Status: Approved (auto)&#39;, but there&#39;s no button or field to attach a receipt photo.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The detail page has no way to add a receipt. I expected an attach or upload option on an expense I already paid for. I also don&#39;t know what &#39;auto&#39; approval means or whether it applies to my ticket.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-15.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-15.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 15"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-16">
+  <div class="small muted">Step 16 · http://127.0.0.1:8100/expenses/0</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Attach my receipt photo to an expense I already paid for</div>
+      <div><b>Thought:</b> <i>No photo option anywhere. This AWS thing isn&#39;t even mine to fix, and I&#39;m not sure what &#39;auto&#39; means. I&#39;ve tried three ways now and I&#39;m out. I&#39;m going back to the list and giving up on attaching the receipt.</i></div>
+      <div><b>Action:</b> <code>give_up_goal #</code></div>
+      <div><b>Expectation:</b> Nothing changes on this page. I&#39;ll go back to the list and look at whether anything there tells me the status of my last expense.</div>
+      <div><b>Result:</b> I&#39;m still on the AWS expense detail page. It shows &#39;Status: Approved (auto)&#39; and a Back link, and nothing else changed.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I already gave up on attaching the receipt, and this page doesn&#39;t show anything about my conference ticket or lunches. I expected to see my own last expense here, not someone else&#39;s AWS bill.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-16.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-16.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 16"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-17">
+  <div class="small muted">Step 17 · http://127.0.0.1:8100/expenses/0</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Check whether my last expense was approved yet</div>
+      <div><b>Thought:</b> <i>This AWS thing isn&#39;t my expense, so I still don&#39;t know if my last one was approved. I&#39;ll go back to the list and check whether anything there is mine.</i></div>
+      <div><b>Action:</b> <code>click #5</code></div>
+      <div><b>Expectation:</b> The expenses list, where I can look for my own submission and its status.</div>
+      <div><b>Result:</b> Back on the Expenses list. It still shows only AWS ($412.50) and Delta Air Lines ($689.00), both marked &#39;You&#39; and &#39;Approved&#39;. Neither matches my conference ticket or lunches.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> My conference ticket doesn&#39;t appear in the list at all, which suggests my failed submission never saved. I expected to see it here as pending or at least as a draft, but there&#39;s no sign of it.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-17.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-17.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 17"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-18">
+  <div class="small muted">Step 18 · http://127.0.0.1:8100/expenses</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Check whether my last expense was approved yet</div>
+      <div><b>Thought:</b> <i>Neither of these is mine, and nothing says pending or submitted. The ticket isn&#39;t here, so I guess it never went through. I&#39;ve tried this three ways now and I&#39;m done. I&#39;ll stop using Ledgerly for this and ask someone on my team to handle it.</i></div>
+      <div><b>Action:</b> <code>finish #</code></div>
+      <div><b>Expectation:</b> Nothing further on this site. I&#39;ll message my teammate about the $240 ticket and the receipt.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-18.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s02-product-designer-at-a-startup-who-just-g-18.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 18"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

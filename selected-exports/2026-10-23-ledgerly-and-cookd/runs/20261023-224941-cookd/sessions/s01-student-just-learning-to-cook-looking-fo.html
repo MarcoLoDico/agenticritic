@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s01-student-just-learning-to-cook-looking-fo · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-224941-cookd/index.html">← 20261023-224941-cookd</a></p>
+<h1>Dev — Student just learning to cook, looking for easy meal ideas</h1>
+<p class="muted">You moved into a student flat and mostly eat pasta and takeaway; you want cheap, easy dinners and some motivation to cook more. You&#39;re curious and will poke around the whole site.</p>
+<p><span class="chip">abandoned</span><span class="chip">careful</span>
+<span class="chip">patience 4/5</span><span class="chip">13 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 3/10 — None of my goals worked without an account, and the recipe I opened had no ingredients or steps. The Skill Map was hidden with no sign it was free, and the popup trapped me. I&#39;d go back to YouTube or Google for dinner ideas. I might try again if the Skill Map were previewable and the recipes were complete.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Search for easy dinner ideas using chicken and rice or other cheap ingredients</td><td class="no">failed</td><td class="small">Explore search for &#39;chicken and rice&#39; returned 261 results, but most were unrelated (tiramisu, yogurt parfait, crepes). The one &#39;Rice and Chicken&#39; recipe I opened had a title and rating but no ingredients or method. I gave up after about five dead ends.</td></tr><tr><td>Find out what the &#39;Skill Map&#39; is and whether it would help me get better at cooking</td><td class="no">failed</td><td class="small">The Skill Map link in the menu didn&#39;t work while the login popup was stuck on screen. When I went to /skill-map directly, the page only said &#39;Sign in to choose a goal and save what you make.&#39; It showed no preview of a learning path and no mention of price, so I still don&#39;t know what it is.</td></tr><tr><td>Try to save a recipe or add ingredients to a shopping list, and see what happens when I&#39;m not signed in</td><td class="no">partial</td><td class="small">Clicking Save opened a &#39;Log in or sign up to continue&#39; box, so I did see the signed-out behaviour. The popup then wouldn&#39;t close and blocked navigation. I never found a shopping list. I didn&#39;t try signing up because I didn&#39;t trust the site enough.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>The Recipes page is empty for a new visitor and its search only covers my own saved recipes.</b>
+    <div class="small muted">Expected: A recipe search or browse page with ideas I can look through straight away. · Happened: I got &#39;No recipes in All recipes yet&#39; and a prompt to import a link or video. The search box says &#39;Search All recipes&#39; and only looks through my own empty library. · Why it matters: I&#39;m a beginner with no recipes saved and no links to import. The first menu item I clicked gave me nothing to do, so my first impression was a dead end.</div></li><li><a href="#step-1">step 1</a>: <b>Explore opens with no recipes shown, only a search box.</b>
+    <div class="small muted">Expected: Some featured or popular easy recipes on the page, so I can browse without knowing what to type. · Happened: A blank page with a search field and a &#39;Searching... available&#39; line. I couldn&#39;t tell whether it was loading or waiting for me. · Why it matters: I don&#39;t yet know what I want to cook, so I need suggestions. A blank page makes the site look broken or empty.</div></li><li><a href="#step-2">step 2</a>: <b>Search results for &#39;chicken and rice&#39; were mostly irrelevant.</b>
+    <div class="small muted">Expected: Recipes containing chicken and rice, or at least chicken or rice. · Happened: 261 &#39;cooks&#39; came back, including Tiramisu, Yogurt Parfait and Crepes. Only a couple of results (chicken pot pie, Japanese curry with chicken) were close. · Why it matters: Searching by what&#39;s in my fridge is the main reason I&#39;d use this. If the results are random, I can&#39;t trust the search and I&#39;ll go back to Google or TikTok.</div></li><li><a href="#step-3">step 3</a>: <b>Result cards show only a title, a short description and a like count.</b>
+    <div class="small muted">Expected: Ingredients, time or an easy/cheap indicator on each card. · Happened: I had to open each recipe to find out anything useful. My click on #71 also failed because that element wasn&#39;t on the page. · Why it matters: On a tight budget I want to scan ingredients quickly. Opening every card to check costs me time and patience.</div></li><li><a href="#step-4">step 4</a>: <b>The recipe page stayed on &#39;Loading...&#39; with the buttons disabled.</b>
+    <div class="small muted">Expected: The recipe to open quickly with its title, ingredients and steps. · Happened: Everything showed &#39;Loading...&#39; and the Save button was greyed out. · Why it matters: Slow or stuck pages make me think the site is broken, and I&#39;d normally leave at that point.</div></li><li><a href="#step-5">step 5</a>: <b>The recipe page had no ingredient list and no method.</b>
+    <div class="small muted">Expected: A full recipe I could cook from. · Happened: Only the title &#39;Rice and Chicken By Geoffrey&#39;, a 10/10 rating, a comment box, a Save button and a &#39;Cooked it&#39; note with 2 likes. · Why it matters: A recipe with nothing to cook from defeats the whole site. A 10/10 rating from two likes tells me nothing.</div></li><li><a href="#step-6">step 6</a>: <b>Save went straight to a login wall, and I still couldn&#39;t see the recipe&#39;s contents.</b>
+    <div class="small muted">Expected: To see the full recipe first, then be asked to sign in to save it. · Happened: A &#39;Log in or sign up to continue&#39; popup appeared over an empty recipe. · Why it matters: Asking me to make an account before I&#39;ve seen anything worth saving feels pushy. I&#39;m already wary of subscriptions, and this adds to it.</div></li><li><a href="#step-9">step 9</a>: <b>The login popup wouldn&#39;t close, and the Skill Map link did nothing while it was open.</b>
+    <div class="small muted">Expected: The Close button to dismiss the popup, and the menu link to open the Skill Map. · Happened: The popup stayed on top and blocked navigation. I had to type /skill-map into the address bar to get anywhere. · Why it matters: A modal I can&#39;t dismiss traps me on the page. Most people wouldn&#39;t know to type a URL and would just leave.</div></li><li><a href="#step-10">step 10</a>: <b>The Skill Map page is entirely behind sign-in, with no preview and no pricing information.</b>
+    <div class="small muted">Expected: A visible &#39;learn the basics&#39; path or sample levels, plus a clear note that it&#39;s free. · Happened: Only the text &#39;Sign in to choose a goal and save what you make.&#39; · Why it matters: The Skill Map is the feature that would make me cook more, and I couldn&#39;t tell what it is. Hiding it behind a login with no price info looks like a paywall to someone wary of subscriptions.</div></li><li><a href="#step-11">step 11</a>: <b>The Recipes page shows &#39;0 recipes&#39; for signed-out users, with no pointer to Explore.</b>
+    <div class="small muted">Expected: A signed-out page that sends me to community recipes or example content. · Happened: &#39;No recipes in All recipes yet&#39; and a prompt to import my own recipe or sign in. · Why it matters: I ended up where I started and the site gave me no reason to stay or sign up.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Browsable beginner recipes on Explore, such as &#39;easy&#39;, &#39;cheap&#39; and &#39;under 5 ingredients&#39; collections shown without searching</b> — <span class="small">Students don&#39;t know what to search for. Curated starting points would give them something to cook that night.</span></li><li><b>Ingredient-based search that matches ingredients properly, with ingredients shown on result cards</b> — <span class="small">I want to cook with what I already have and avoid buying extras, so results must match my ingredients and show them.</span></li><li><b>Filters for budget, time, and equipment (one pot, no oven)</b> — <span class="small">I have limited equipment, a tight budget and only evenings to cook.</span></li><li><b>Full recipes with ingredients and steps, or a clear warning when a recipe is incomplete</b> — <span class="small">Without them there&#39;s nothing to cook from.</span></li><li><b>A signed-out preview of the Skill Map showing the levels and a &#39;free&#39; label</b> — <span class="small">I need to see the learning path and know the cost before I&#39;ll make an account.</span></li><li><b>A shopping list feature that is visible and easy to find</b> — <span class="small">I wanted to add ingredients to a list but never found one.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>Explore shows real home cooks&#39; recipes with likes, ratings and &#39;Cooked it&#39; notes, which feels more honest than chef content.</li><li>Search worked for the Japanese curry with chicken and the chicken pot pie, so a better match could be there.</li><li>The &#39;Cooked it&#39; idea and the Skill Map name suggest some progress tracking, which appeals to me because I like streaks.</li><li>The login popup clearly said what signing in was for (&#39;Sign in to save cooks&#39;).</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · https://cookd.ca/</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Okay, I&#39;m on the feed. Lots of posts about tiramisu and passionfruit curd, which is not really my budget. Everything&#39;s labelled &#39;Cooked&#39; with streaks, so it feels a bit like a social feed. I need something cheap, so I&#39;ll look for a recipes section where I can search by ingredient. Trying Recipes first.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> A recipes page with a search bar or filters, ideally where I can type in ingredients like chicken and rice.</div>
+      <div><b>Result:</b> Landed on the Recipes page. It says &#39;Saved recipes from links, videos, and your own notes&#39; and &#39;No recipes in All recipes yet&#39;. There&#39;s a search box, but it says &#39;Search All recipes&#39;, which looks like it only searches recipes I&#39;ve already saved.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I expected a way to search recipes by ingredient across the site, not an empty list. The only search box seems to be for my own saved stuff, and the page wants me to import a link from a website or video first. As a student with no saved recipes, that&#39;s a dead end for finding dinner ideas.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · https://cookd.ca/recipes</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Hmm, so this is more like a personal recipe box where I paste links. I don&#39;t want to hunt down random YouTube videos. Let me try the Explore tab, it probably has the real recipes.</i></div>
+      <div><b>Action:</b> <code>click #2</code></div>
+      <div><b>Expectation:</b> Explore shows public recipes from home cooks that I can search by ingredient, like chicken or rice.</div>
+      <div><b>Result:</b> Explore page loaded with a search box that says &#39;Search community cooks by title, description, or ingredients.&#39; The page itself shows no recipe cards yet, just the search field and a &#39;Searching... available&#39; line.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I expected to see some featured or cheap dinner recipes right away, or at least a list. Instead there&#39;s only an empty search box, and I&#39;m not sure if it&#39;s loading or waiting for me to type. Seems like I have to type something to see anything.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · https://cookd.ca/explore</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Right, the box says ingredients, so I&#39;ll type chicken and rice and see what the community has.</i></div>
+      <div><b>Action:</b> <code>type #13 “chicken and rice”</code></div>
+      <div><b>Expectation:</b> A list of home-cook recipes that mention chicken and rice, ideally with visible ingredient lists and cheap-looking dinners.</div>
+      <div><b>Result:</b> The search says &#39;261 cooks for &#34;chicken and rice&#34;&#39;, but the results are mostly unrelated: Turkey Soup Base, Yogurt Parfait, Tiramisu, Crepes, Khao Soi. Only a couple, like &#39;chicken pot pie&#39; and &#39;Japanese curry w/ chicken&#39;, seem even close.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I expected results that actually match chicken and rice. Instead the list looks random, with a yogurt parfait and tiramisu showing up for a chicken-and-rice search. I can&#39;t tell if the search is matching the ingredients or just ignoring my words. It also doesn&#39;t show prices or how cheap anything is, which is what I care about.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · https://cookd.ca/explore?query=chicken+and+rice</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>This is annoying. 261 results and most of them have nothing to do with chicken or rice. The Japanese curry one says &#39;over rice&#39; and has chicken, so I&#39;ll open that and see if the ingredient list is actually there and if it&#39;s cheap.</i></div>
+      <div><b>Action:</b> <code>click #71</code></div>
+      <div><b>Expectation:</b> A recipe page for Japanese curry with chicken, showing a visible ingredient list and simple steps.</div>
+      <div><b>Result:</b> <span class="no">there is no element [71] on this page</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The cards only show a title, a short description and a like count. I can&#39;t see the ingredients or the cost from the list, so I have to open each recipe to find out if it&#39;s cheap. Also, several results are pasta or grilled cheese, not rice. I&#39;ll open the top &#39;Rice and Chicken&#39; one to see whether the ingredients are listed.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · https://cookd.ca/explore?query=chicken+and+rice</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Okay, the list is more sensible now. &#39;Rice and Chicken&#39; is the most obvious match for what I want, so I&#39;ll check it out. If the ingredients aren&#39;t visible and the price isn&#39;t obvious, I&#39;m going to be annoyed.</i></div>
+      <div><b>Action:</b> <code>click #15</code></div>
+      <div><b>Expectation:</b> A recipe page with a visible ingredient list, simple steps, and a rough sense of how cheap it is.</div>
+      <div><b>Result:</b> The recipe page is still loading. It just shows &#39;Loading...&#39; everywhere, with the like, save and comment buttons greyed out. No title, no ingredients, nothing I can read yet.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I expected the recipe to open with its title, ingredient list and steps. Instead it&#39;s stuck on &#39;Loading...&#39;, and the Save button is disabled, so I can&#39;t even save it. I need to see the ingredients before I know if it&#39;s cheap, so this is blocking me.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Come on, it&#39;s just loading. I&#39;ll give it a moment, and if it still says loading I&#39;ll try going back to the results.</i></div>
+      <div><b>Action:</b> <code>scroll</code></div>
+      <div><b>Expectation:</b> The page finishes loading and shows the recipe title, ingredients and method.</div>
+      <div><b>Result:</b> The recipe finished loading, but the page is just the title &#39;Rice and Chicken By Geoffrey&#39; with a 10.0/10 rating, a comment box and a Save button. There&#39;s no ingredient list and no method anywhere on the page. Only a &#39;Cooked it&#39; note from electricochy with 2 likes.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I expected the ingredients and steps to be on the recipe page, that&#39;s the whole reason I opened it. Instead there&#39;s nothing to cook from. I can&#39;t tell what&#39;s in it or whether it costs anything, and the 10/10 with two likes doesn&#39;t tell me much. This is the third time I&#39;ve hit a dead end in ten minutes, and I&#39;m not convinced this site has what I need.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>No ingredients, no steps, just a rating and a comment box. Maybe Save works without logging in? I&#39;ll try it, but if this is all there is I&#39;m going back to just Googling.</i></div>
+      <div><b>Action:</b> <code>click #17</code></div>
+      <div><b>Expectation:</b> The recipe gets saved to my list, or it asks me to log in so I can save it.</div>
+      <div><b>Result:</b> Clicking Save didn&#39;t save anything. It opened a &#39;Log in or sign up to continue&#39; box with &#39;Sign in to save cooks&#39;. The recipe still has no ingredient list or method, just a title, a 10/10 rating and 2 likes.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I expected Save to work or at least show me the ingredients. Instead I got a login wall, and the recipe itself is still empty. That&#39;s my fifth failed attempt at this, and I can&#39;t tell whether it&#39;s the site or the recipe that&#39;s broken. I still don&#39;t know what&#39;s in it or what it costs.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Search for easy dinner ideas using chicken and rice or other cheap ingredients</div>
+      <div><b>Thought:</b> <i>Right, that&#39;s enough. Five tries and I still can&#39;t see a single ingredient. I&#39;m not making an account just to get a recipe that might be blank. Giving up on this and checking the Skill Map.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> I move on to the Skill Map or another goal, and I don&#39;t get anything useful from this search.</div>
+      <div><b>Result:</b> I gave up on the chicken and rice search. The page is still showing the &#39;Log in or sign up to continue&#39; box over the recipe, which is still just a title, a rating and two likes with no ingredients.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I expected the login box to go away once I&#39;d given up on saving. It&#39;s still blocking the page, so I can&#39;t even read what&#39;s behind it. It&#39;s a minor annoyance, but it&#39;s one more thing standing between me and the actual site.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-8">
+  <div class="small muted">Step 8 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out what the Skill Map is and whether it would help me get better at cooking</div>
+      <div><b>Thought:</b> <i>Fine, I&#39;ll close this popup and go look at the Skill Map. If it&#39;s just more empty pages, I&#39;m done with this site.</i></div>
+      <div><b>Action:</b> <code>click #29</code></div>
+      <div><b>Expectation:</b> The login box closes and I can see the recipe page again, so I can navigate to the Skill Map from the top menu.</div>
+      <div><b>Result:</b> The login box has closed. The recipe page is still just the title, a 10.0/10 rating, two likes and a comment box, with no ingredients or method. The top menu now shows a Skill Map link.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I expected the recipe to finally show its ingredients now the popup is gone, but it doesn&#39;t. I can see Skill Map in the menu, though, which is what I wanted to check. Nothing is broken there, just the recipe is still empty.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-08.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-08.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 8"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-9">
+  <div class="small muted">Step 9 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out what the Skill Map is and whether it would help me get better at cooking</div>
+      <div><b>Thought:</b> <i>Right, Skill Map. If the recipe is empty, maybe this is where the actual learning stuff is. Going there now.</i></div>
+      <div><b>Action:</b> <code>click #4</code></div>
+      <div><b>Expectation:</b> A page explaining the Skill Map, ideally a path like &#39;learn the basics&#39; that&#39;s free to use without a subscription.</div>
+      <div><b>Result:</b> Clicking Skill Map didn&#39;t take me anywhere. The &#39;Log in or sign up to continue&#39; box is still on top, and the page is still the empty recipe with no ingredients or method. Closing the box didn&#39;t work either, so I&#39;m stuck behind it.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I expected the Skill Map link in the menu to open the Skill Map. Instead the login popup is still there and blocks everything behind it. The Close button didn&#39;t clear it, so I can&#39;t get anywhere on the site. That&#39;s the second time something on this site has failed to do what it says, and I&#39;m close to done.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-09.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-09.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 9"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-10">
+  <div class="small muted">Step 10 · https://cookd.ca/recipe/4fdc841c-81b6-4786-8bcb-cd347f7fed03</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out what the Skill Map is and whether it would help me get better at cooking</div>
+      <div><b>Thought:</b> <i>The menu link says Skill Map but the popup is in the way. I&#39;ll try going straight to the Skill Map address from the menu link, since the popup seems to be stuck on screen.</i></div>
+      <div><b>Action:</b> <code>navigate /skill-map</code></div>
+      <div><b>Expectation:</b> The Skill Map page loads with a learning path I can read without logging in.</div>
+      <div><b>Result:</b> The navigate worked and I landed on the Skill Map page, but it just says &#39;Sign in to choose a goal and save what you make.&#39; There&#39;s no learning path or goal list visible without signing in.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I expected to see the learning path, like &#39;learn the basics&#39;, before being asked to sign in. Instead the whole page is locked behind a sign-in prompt, so I still can&#39;t tell what the Skill Map actually offers or whether it&#39;s free. I&#39;m wary of anything that feels like a paid subscription, and a sign-in wall with no preview makes me suspicious.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-10.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-10.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 10"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-11">
+  <div class="small muted">Step 11 · https://cookd.ca/skill-map</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out what the Skill Map is and whether it would help me get better at cooking</div>
+      <div><b>Thought:</b> <i>Right, so it&#39;s a sign-in gate again. I&#39;ve now failed on the recipe, the save button, the popup and the menu. I&#39;ll give the Skill Map one more look at the Recipes and Explore pages, but if nothing shows without an account I&#39;m leaving.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> The Recipes page shows a list of real home-cooked dinners with ingredients I can see without logging in.</div>
+      <div><b>Result:</b> The Recipes page loaded, but it&#39;s empty: &#39;0 recipes in All recipes&#39; and &#39;No recipes in All recipes yet&#39;. It says recipes come from links, videos or my own notes, and that I need to sign in to save. There&#39;s a search box, but nothing to search through.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I expected a list of real home-cooked dinners I could browse without logging in, like I&#39;d see on Explore. Instead the library is empty and the only option is to import my own recipe or sign in. I also still can&#39;t see what the Skill Map offers, so the site has given me nothing I can actually use yet.</div>
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-11.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-11.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 11"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-12">
+  <div class="small muted">Step 12 · https://cookd.ca/recipes</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out what the Skill Map is and whether it would help me get better at cooking</div>
+      <div><b>Thought:</b> <i>Empty recipes, empty Skill Map behind a login, and a recipe page with no ingredients. That&#39;s five or more failed attempts now. I&#39;m done with this site for tonight.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> I stop using the product, since none of my goals can be met without making an account and I don&#39;t trust what&#39;s here yet.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-12.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-224941-cookd/shots/s01-student-just-learning-to-cook-looking-fo-12.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 12"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

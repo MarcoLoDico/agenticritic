@@ -1,5 +1,5 @@
 .venv/
 .env
-runs/
+/runs/
 __pycache__/
-export/
+/export/

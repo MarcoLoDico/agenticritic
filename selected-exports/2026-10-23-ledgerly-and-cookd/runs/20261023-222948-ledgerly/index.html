@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261023-222948-ledgerly · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../index.html">← Runs</a></p>
+<h1>Ledgerly</h1>
+<p class="muted">20261023-222948-ledgerly · http://127.0.0.1:8100/ · agent anthropic/claude-haiku-5.5 · analysis anthropic/claude-sonnet-5.5</p>
+
+
+
+
+<div class="grid">
+  <div class="panel stat"><div class="v">6</div><div class="l">sessions · 6 personas</div></div>
+  <div class="panel stat"><div class="v">0/6</div><div class="l">finished all goals without abandoning</div></div>
+  <div class="panel stat"><div class="v">0/3</div><div class="l">would keep using it</div></div>
+  <div class="panel stat"><div class="v">11</div><div class="l">findings</div></div>
+  
+  <div class="panel stat"><div class="v">40%</div><div class="l">recall vs known issues</div></div>
+  <div class="panel stat"><div class="v">44%</div><div class="l">precision (lower bound)</div></div>
+  
+</div>
+
+<h2>Findings</h2>
+
+<div class="panel cat-usability" id="F1">
+  <div><span class="muted small">F1 · usability · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/6 personas — Onboarding is a hard gate with no skip, preview or fallback, blocking evaluation of the whole product</div>
+  <div>Onboarding (company name and size) is the only path forward. The finance manager could not reach approval rules, review or reports. The operations lead was redirected from /dashboard to the setup form when he only wanted a read-only sample, and he refused to enter company details before seeing pricing and the product. Neither had a &#39;skip&#39;, &#39;view sample&#39; or help link, and the form gives no reason it needs the information. Evaluators who are cautious or time-poor leave knowing nothing about the product.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Let users skip or defer onboarding and reach Settings, Approvals and a read-only sample dashboard clearly labeled as demo data. Say why company name and size are needed. Add a help or support link on the onboarding page.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider</span><span class="chip">Operations lead comparing three expense tools for a 25-person company</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s01-finance-manager-at-a-60-person-company-m.html#step-4">s01-finance-manager-at-a-60-person-company-m · step 4</a>
+        — <i>“A single blocking gate with no fallback made all three of my evaluation goals impossible.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-5">s03-operations-lead-comparing-three-expense- · step 5</a>
+        — <i>“I wanted to see a sample dashboard without committing anything, and instead the app forced me into workspace setup.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-6">s03-operations-lead-comparing-three-expense- · step 6</a>
+        — <i>“The only visible way forward was the form I&#39;d already declined.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F2">
+  <div><span class="muted small">F2 · usability · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/6 personas — Expense list and detail pages are unclear about ownership, status and demo data (AWS/Delta rows, &#39;Approved (auto)&#39;)</div>
+  <div>Both the designer and the operations lead found pre-filled AWS ($412.50) and Delta ($689.00) expenses with no explanation. The designer could not tell whose they were, and the operations lead could not tell whether they were demo data or a live account. The detail page shows only amount, date, category and &#39;Approved (auto)&#39;, with no submitter, approver, receipt or next step. There is no &#39;My expenses&#39; view, and nothing confirms or denies that a submitted expense was saved. Users cannot check their own reimbursement status, and evaluators doubt what the trial shows.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Add a &#39;My expenses&#39; view that defaults to the user&#39;s own submissions. Label seeded data as sample data. Show submitter, approver, receipt, status and next step on the detail page, and explain what &#39;Approved (auto)&#39; means.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span><span class="chip">Operations lead comparing three expense tools for a 25-person company</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-18">s02-product-designer-at-a-startup-who-just-g · step 18</a>
+        — <i>“It says &#39;Approved (auto)&#39; with nothing else, so I still can&#39;t tell whose expense this is”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-17">s02-product-designer-at-a-startup-who-just-g · step 17</a>
+        — <i>“The only entries are AWS and a Delta flight, and I didn&#39;t submit either of those”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-1">s03-operations-lead-comparing-three-expense- · step 1</a>
+        — <i>“these rows show up without any setup, which makes me wonder whether this is demo data or a live account.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-bug" id="F3">
+  <div><span class="muted small">F3 · bug · severity <span class="sev">5</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Onboarding form is silently unresponsive: text and dropdown inputs time out with no error, loading or disabled state</div>
+  <div>On /onboarding the company name field timed out twice, the size dropdown timed out, and a reload changed nothing. The page showed no error text, validation message, loading indicator or status page. The finance manager could not tell whether the field was disabled, the page was stuck or the app was down. It blocked her entire evaluation and eroded her trust in how the product handles money data.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Investigate why the onboarding inputs don&#39;t accept input. Show a visible loading, disabled or error state when the form is not interactive. Add an error banner and a retry or support path, and consider a system status indicator.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s01-finance-manager-at-a-60-person-company-m.html#step-0">s01-finance-manager-at-a-60-person-company-m · step 0</a>
+        — <i>“Locator.fill timed out after 5000ms. There was no error text and no visible change on the page.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s01-finance-manager-at-a-60-person-company-m.html#step-3">s01-finance-manager-at-a-60-person-company-m · step 3</a>
+        — <i>“the page is silently unresponsive, so I can&#39;t tell whether the form is disabled, the app is stuck, or the environment is down.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-bug" id="F4">
+  <div><span class="muted small">F4 · bug · severity <span class="sev">5</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Expense submission fails with a generic &#39;Invalid input&#39; banner and wipes every field</div>
+  <div>The designer filled in all five fields, and submission returned &#39;Invalid input. Please try again.&#39; It did not name a field, cleared the form and reset Category to Software. This happened about four times, including after she changed the date format. She could not tell whether the date, cost center, category or missing receipt was the cause, and the $240 was never submitted. The failure was the direct reason she abandoned the main task.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Show field-level validation messages next to the offending input, such as the expected date format. Preserve all entered values on error. Show a clear success confirmation after submitting, with the approver and the expected payout timing.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-9">s02-product-designer-at-a-startup-who-just-g · step 9</a>
+        — <i>“it still says &#39;Invalid input&#39; without saying which part is wrong. My details are gone and I have to type it all again.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-15">s02-product-designer-at-a-startup-who-just-g · step 15</a>
+        — <i>“I got the same vague banner for the fourth time and had to retype everything.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-missing_feature" id="F5">
+  <div><span class="muted small">F5 · missing feature · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — No receipt or photo upload on the new expense form or on existing expenses</div>
+  <div>The New expense form has only Merchant, Amount, Date, Category and Cost center code. The designer&#39;s main need was attaching a receipt photo to get reimbursed, and she could not find an upload on the form or on the expense detail page. She assumed the expense would be rejected later without proof.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Add a receipt upload (camera and file, mobile-friendly) to the new expense form, and allow attaching a receipt to an existing expense from its detail page.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-3">s02-product-designer-at-a-startup-who-just-g · step 3</a>
+        — <i>“There&#39;s no photo or receipt upload on this form, which is the first thing I expected.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-7">s02-product-designer-at-a-startup-who-just-g · step 7</a>
+        — <i>“I expected the form to have a receipt or photo field somewhere, and it doesn&#39;t.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-pricing_trust" id="F6">
+  <div><span class="muted small">F6 · pricing trust · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Pricing is incomplete: no monthly-billing rate, tax figure or 25-seat total, and Scale is &#39;Contact sales&#39;</div>
+  <div>The Plans page shows Growth at $12/user/mo billed annually with a 10-seat minimum and &#39;Taxes not included&#39;. The operations lead had to calculate 25 x $12 = $300/mo (or $3,600 upfront) himself. The page does not say whether monthly billing exists or what tax adds. Scale has no number and nothing clickable, and no page expands the tier comparison or states trial limits or usage caps. He read these gaps as hidden catches and could not give his boss a firm number.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Add a seat-count calculator with a monthly/annual toggle and a tax note. Publish a starting price or range for Scale, and add a full feature comparison table that states trial limits and usage caps.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Operations lead comparing three expense tools for a 25-person company</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-0">s03-operations-lead-comparing-three-expense- · step 0</a>
+        — <i>“the page doesn&#39;t say whether that&#39;s before or after tax, whether &#39;billed annually&#39; means I pay $3,600 upfront, or what the price is for monthly billing.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-0">s03-operations-lead-comparing-three-expense- · step 0</a>
+        — <i>“Scale is a black box behind &#39;Contact sales&#39;, which I already distrust.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-pricing_trust" id="F7">
+  <div><span class="muted small">F7 · pricing trust · severity <span class="sev">3</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Legal page is an empty placeholder with no billing, tax, refund or cancellation terms</div>
+  <div>The /legal page contains only the line &#39;Terms of service and privacy policy.&#39; The operations lead went there for billing terms, tax handling and monthly pricing rules and found nothing. For a product handling company spend, he read it as unfinished or evasive.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Publish real terms of service, privacy policy, and billing, tax, refund and cancellation terms, and link them from the Plans page.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Operations lead comparing three expense tools for a 25-person company</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (1) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html#step-3">s03-operations-lead-comparing-three-expense- · step 3</a>
+        — <i>“The Legal page is an empty placeholder with no actual terms in it.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F8">
+  <div><span class="muted small">F8 · usability · severity <span class="sev">3</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Employees are pushed into finance admin setup (accounting integration) and a company-level dashboard before they can submit an expense</div>
+  <div>After entering a company name, the designer was asked to connect QuickBooks, Xero or NetSuite, with only a small &#39;Remind me later&#39; link to skip. The dashboard then showed spend totals, an &#39;Issue a card&#39; button and other people&#39;s AWS and Delta activity. She could not tell whether she was in her own account. An employee who just wants reimbursement has no simple path.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Make onboarding role-aware: employees skip admin steps such as accounting sync and land on a simple home screen with &#39;Submit an expense&#39; and their own expenses. Make &#39;Remind me later&#39; prominent for everyone else.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-1">s02-product-designer-at-a-startup-who-just-g · step 1</a>
+        — <i>“I&#39;m asked to connect QuickBooks, Xero or NetSuite, and I have no idea what any of those are or whether my company uses one.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-2">s02-product-designer-at-a-startup-who-just-g · step 2</a>
+        — <i>“the &#39;Issue a card&#39; button and the spend totals are noise.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F9">
+  <div><span class="muted small">F9 · usability · severity <span class="sev">3</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — &#39;Cost center code&#39; is required with no hint, and Category defaults to Software</div>
+  <div>The required Cost center code field has no label help, example or dropdown. The designer guessed &#39;general&#39; and was unsure whether the guess caused the errors. Category defaults to Software for a conference ticket, and she did not know whether Travel was correct. Guessing risks later rejection of the expense.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Replace the free-text cost center with a dropdown of the company&#39;s valid codes, or make it optional with a default. Add help text or examples. Leave Category unselected or default it sensibly, with short descriptions of each option.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-3">s02-product-designer-at-a-startup-who-just-g · step 3</a>
+        — <i>“There&#39;s also a required &#39;Cost center code&#39; I have no idea about, and Category defaults to Software for a conference ticket.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html#step-14">s02-product-designer-at-a-startup-who-just-g · step 14</a>
+        — <i>“I still don&#39;t know if &#39;general&#39; is a valid cost center”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-positive" id="F10">
+  <div><span class="muted small">F10 · positive · severity <span class="sev">2</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/6 personas — Plans page is visible without login and easy to scan, with a clear free tier and an up-front seat minimum</div>
+  <div>The operations lead appreciated that Starter and Growth pricing was visible without an account or a sales call. The Starter tier is free with a clear 3-user limit, the Growth 10-seat minimum is stated up front, and the tier split is easy to scan. This is a good base for the pricing-trust fixes.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Keep pricing public and the minimums explicit, and extend the same transparency to monthly rates, tax and Scale.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Operations lead comparing three expense tools for a 25-person company</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html">s03-operations-lead-comparing-three-expense-</a>
+        — <i>“Pricing was visible without logging in or talking to sales, at least for Starter and Growth.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html">s03-operations-lead-comparing-three-expense-</a>
+        — <i>“The 10-seat minimum on Growth is stated up front rather than buried.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-positive" id="F11">
+  <div><span class="muted small">F11 · positive · severity <span class="sev">1</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/6 personas — Submit-expense entry point and short forms are easy to find and understand</div>
+  <div>The designer found the dashboard&#39;s &#39;Submit an expense&#39; button quickly and liked that the expense form has only five fields. The finance manager found the onboarding form short, plain and clearly labeled. &#39;Remind me later&#39; allowed skipping accounting setup, though it was easy to miss.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Keep forms short and the primary action prominent while fixing validation, receipt upload and field help.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Product designer at a startup who just got told to use Ledgerly for expenses</span><span class="chip">Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html">s02-product-designer-at-a-startup-who-just-g</a>
+        — <i>“The dashboard did have a clear &#39;Submit an expense&#39; button that I found quickly.”</i></li>
+    
+      <li><a href="../../runs/20261023-222948-ledgerly/sessions/s01-finance-manager-at-a-60-person-company-m.html">s01-finance-manager-at-a-60-person-company-m</a>
+        — <i>“The onboarding form is short and plain, with clearly labeled company name and size fields.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+
+
+<h2>Validation against known issues</h2>
+<div class="panel">
+<table>
+<tr><th></th><th>Known issue</th><th>Matched findings</th><th class="hide-sm">Judge reasoning</th></tr>
+
+<tr><td class="no">✗</td><td><b>GT1</b> Team invitations hard to find</td>
+<td></td><td class="small muted hide-sm">No finding mentions difficulty finding or inviting teammates or the jargon in Seats &amp; Provisioning.</td></tr>
+
+<tr><td class="ok">✓</td><td><b>GT2</b> Onboarding blocks on accounting integration</td>
+<td><a href="#F8">F8</a> </td><td class="small muted hide-sm">F8 describes onboarding asking to connect QuickBooks/Xero/NetSuite with only a small &#39;Remind me later&#39; link to skip, which is the same flow and failure. F1 and F3 concern the company name/size form, a different problem.</td></tr>
+
+<tr><td class="ok">✓</td><td><b>GT3</b> Expense form: unexplained date format and unhelpful errors</td>
+<td><a href="#F4">F4</a> </td><td class="small muted hide-sm">F4 describes the generic &#39;Invalid input. Please try again.&#39; error that wipes all fields, including the date format attempt. This is the same root problem.</td></tr>
+
+<tr><td class="ok">✓</td><td><b>GT4</b> Unexplained required cost center code</td>
+<td><a href="#F9">F9</a> </td><td class="small muted hide-sm">F9 describes the required Cost center code with no hint, example or lookup. This is the same problem.</td></tr>
+
+<tr><td class="no">✗</td><td><b>GT5</b> Pricing not discoverable inside the app</td>
+<td></td><td class="small muted hide-sm">F6 and F7 are about pricing content on the Plans and Legal pages. Neither covers pricing missing from in-app navigation or the Billing page showing only &#39;Trial&#39;.</td></tr>
+
+<tr><td class="ok">✓</td><td><b>GT6</b> Hidden pricing conditions</td>
+<td><a href="#F6">F6</a> </td><td class="small muted hide-sm">F6 covers Growth at $12/user billed annually with a 10-seat minimum, Scale as &#39;Contact sales&#39;, and users unable to work out the real cost. This is the same problem.</td></tr>
+
+<tr><td class="no">✗</td><td><b>GT7</b> No approval workflow or approval rules</td>
+<td></td><td class="small muted hide-sm">F1 mentions the finance manager being unable to reach approval rules only because of the onboarding gate. F2 notes &#39;Approved (auto)&#39; only as unclear status. Neither reports the absence of an approval workflow.</td></tr>
+
+<tr><td class="no">✗</td><td><b>GT8</b> No bulk actions on expenses</td>
+<td></td><td class="small muted hide-sm">No finding mentions bulk actions or multi-select on the expense list.</td></tr>
+
+<tr><td class="no">✗</td><td><b>GT9</b> CSV export doesn&#39;t work</td>
+<td></td><td class="small muted hide-sm">No finding mentions CSV export or a &#39;coming soon&#39; page.</td></tr>
+
+<tr><td class="no">✗</td><td><b>GT10</b> No audit log</td>
+<td></td><td class="small muted hide-sm">No finding mentions an audit log or activity trail.</td></tr>
+
+</table>
+<p class="small muted">Findings not matching any known issue (new discoveries or false positives):
+<a href="#F1">F1</a> <a href="#F2">F2</a> <a href="#F3">F3</a> <a href="#F5">F5</a> <a href="#F7">F7</a> </p>
+</div>
+
+
+<h2>Sessions</h2>
+<div class="panel">
+<table>
+<tr><th>Session</th><th>Persona</th><th>Status</th><th>Steps</th><th>Frictions</th><th>Continue?</th><th>Score</th></tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s00-startup-founder-8-person-company-doing-f.html">s00-startup-founder-8-person-company-doing-f</a></td>
+  <td>Startup founder, 8-person company, doing finance herself until she hires someone<div class="small muted">skimmer · patience 1</div></td>
+  <td>error</td>
+  <td>19</td>
+  <td>8</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s01-finance-manager-at-a-60-person-company-m.html">s01-finance-manager-at-a-60-person-company-m</a></td>
+  <td>Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider<div class="small muted">careful · patience 4</div></td>
+  <td>abandoned</td>
+  <td>6</td>
+  <td>5</td>
+  <td><span class="no">no</span></td>
+  <td>1</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s02-product-designer-at-a-startup-who-just-g.html">s02-product-designer-at-a-startup-who-just-g</a></td>
+  <td>Product designer at a startup who just got told to use Ledgerly for expenses<div class="small muted">literal · patience 2</div></td>
+  <td>abandoned</td>
+  <td>21</td>
+  <td>19</td>
+  <td><span class="no">no</span></td>
+  <td>2</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s03-operations-lead-comparing-three-expense-.html">s03-operations-lead-comparing-three-expense-</a></td>
+  <td>Operations lead comparing three expense tools for a 25-person company<div class="small muted">advanced_seeker · patience 3</div></td>
+  <td>abandoned</td>
+  <td>8</td>
+  <td>7</td>
+  <td><span class="no">no</span></td>
+  <td>3</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s04-technical-cofounder-and-cto-who-loves-tr.html">s04-technical-cofounder-and-cto-who-loves-tr</a></td>
+  <td>Technical cofounder and CTO who loves trying new tools and wants to automate things<div class="small muted">advanced_seeker · patience 5</div></td>
+  <td>error</td>
+  <td>2</td>
+  <td>0</td>
+  <td></td>
+  <td></td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-222948-ledgerly/sessions/s05-office-and-operations-manager-at-a-15-pe.html">s05-office-and-operations-manager-at-a-15-pe</a></td>
+  <td>Office and operations manager at a 15-person company, asked to handle expenses on top of her usual duties<div class="small muted">careful · patience 4</div></td>
+  <td>error</td>
+  <td>9</td>
+  <td>6</td>
+  <td></td>
+  <td></td>
+</tr>
+
+</table>
+</div>
+
+<h2>Personas</h2>
+
+<details class="panel"><summary><b>Dana the Time-Starved Founder</b> — Startup founder, 8-person company, doing finance herself until she hires someone <span class="muted small">(skimmer, patience 1/5)</span></summary>
+<p>You are a founder who just signed up for the trial between investor calls and want your team spending on cards by the end of the week. You skim everything, click the most obvious button, and give up fast if setup feels like homework.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Get my company set up so I can start using this today</li><li>Get my cofounder and our two engineers into the app</li><li>Give my cofounder a card to pay for software subscriptions</li></ul>
+<p class="small"><b>Knowledge:</b> You know what a corporate card is and have used Brex-style products as a cardholder at a previous job, but you have never administered one. You do not know accounting terms like GL codes or chart of accounts.<br><b>Constraints:</b> You have maybe five minutes at a time, usually on a laptop between meetings. You do not have your bank details handy and don&#39;t want to hunt for documents.<br>
+<b>Preferences:</b> Short, plain-language steps, sensible defaults, and the ability to skip optional setup and come back later. You dislike long forms and walls of text.<br><b>Expectations:</b> You expect to be able to invite people and issue a card within a few clicks, and for the product to tell you plainly what is still needed before cards work.</p>
+</details>
+
+<details class="panel"><summary><b>Marcus the Meticulous Finance Manager</b> — Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider <span class="muted small">(careful, patience 4/5)</span></summary>
+<p>You own month-end close and are evaluating whether Ledgerly can replace your current process. You read every label, check each setting before saving, and worry about permissions and audit trails.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Set up an approval rule so expenses over a certain amount need my sign-off</li><li>Review a submitted expense and approve or reject it with a note</li><li>Find where I can see spending broken down by category and by team</li></ul>
+<p class="small"><b>Knowledge:</b> You are fluent in accounting concepts: GL codes, cost centers, accruals, reconciliation, receipt policy. You know your company&#39;s approval policy by heart but not Ledgerly&#39;s vocabulary.<br><b>Constraints:</b> Changes to money controls need to be reversible and traceable. You can&#39;t trust anything you can&#39;t verify, and you need to justify the tool to your CFO.<br>
+<b>Preferences:</b> Explicit labels, confirmations, previews of what a rule will do, and exportable data. You prefer to read help text before acting.<br><b>Expectations:</b> You expect standard finance terminology, granular roles and permissions, an audit log, and reports that reconcile to the transactions behind them.</p>
+</details>
+
+<details class="panel"><summary><b>Priya the Reluctant Expense Submitter</b> — Product designer at a startup who just got told to use Ledgerly for expenses <span class="muted small">(literal, patience 2/5)</span></summary>
+<p>You bought a conference ticket and a few lunches for a client and need to get reimbursed. You find expense tools tedious and just want to do the minimum correctly so you can stop thinking about it.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Get paid back for the $240 I spent on a conference ticket</li><li>Attach my receipt photo to an expense I already paid for</li><li>Check whether my last expense was approved yet</li></ul>
+<p class="small"><b>Knowledge:</b> You know nothing about the finance side. You know what a receipt is and what you spent, but not categories, policies, or what &#39;reimbursement&#39; versus &#39;card transaction&#39; means in the product.<br><b>Constraints:</b> You are probably on your phone or a quick browser tab. You don&#39;t know who your approver is or what category to pick.<br>
+<b>Preferences:</b> Few fields, clear examples, and being told what happens next. You use your own words, like &#39;get paid back&#39;, rather than &#39;reimbursement request&#39;.<br><b>Expectations:</b> You expect to snap a receipt, type an amount, and submit. You expect to be told if something is missing instead of having it rejected later.</p>
+</details>
+
+<details class="panel"><summary><b>Tomás the Skeptical Buyer</b> — Operations lead comparing three expense tools for a 25-person company <span class="muted small">(advanced_seeker, patience 3/5)</span></summary>
+<p>You are on a trial to decide whether Ledgerly is worth recommending, and you assume pricing will have hidden catches. You want straight answers on cost and limits before you invest effort setting anything up.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Figure out what this will cost me per month for 25 people</li><li>Find out which features are limited on the trial or on a cheaper plan</li><li>See what a sample of the spending dashboard looks like before I add real data</li></ul>
+<p class="small"><b>Knowledge:</b> You have used two competitors and know typical pricing models: per-user fees, card fees, interchange rebates, and paid add-ons like international or accounting integrations. You know the market but not Ledgerly.<br><b>Constraints:</b> You can&#39;t commit budget without a clear number. You do not want to enter company bank info or add teammates just to see pricing.<br>
+<b>Preferences:</b> Transparent tables, explicit limits, and comparisons you can screenshot for your boss. You distrust vague phrases like &#39;contact sales&#39;.<br><b>Expectations:</b> You expect pricing to be findable without a sales call, and you expect the trial to show real functionality, not a locked-down demo.</p>
+</details>
+
+<details class="panel"><summary><b>Jo the Enthusiastic Early Adopter</b> — Technical cofounder and CTO who loves trying new tools and wants to automate things <span class="muted small">(advanced_seeker, patience 5/5)</span></summary>
+<p>You enjoy clicking through every menu of a new tool and trying to break it. You want to set up virtual cards for team tools and see how far the controls and integrations go.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Create a virtual card with a $500 monthly limit just for our cloud bills</li><li>Find out whether I can connect Ledgerly to our accounting software or use an API</li><li>Invite a teammate with limited permissions and see what they can and can&#39;t do</li></ul>
+<p class="small"><b>Knowledge:</b> You are strongly technical and comfortable with APIs, webhooks, and SSO. You have some finance knowledge but you use loose, informal terms, and you sometimes guess at product vocabulary.<br><b>Constraints:</b> You work at night and on weekends, so you can&#39;t ask support questions in real time. You will happily go down rabbit holes and forget the original task.<br>
+<b>Preferences:</b> Settings pages, keyboard shortcuts, power features, and docs. You like seeing what&#39;s possible and are tolerant of rough edges.<br><b>Expectations:</b> You expect granular spend controls, a settings area for integrations, and modern UX conventions like search and command menus.</p>
+</details>
+
+<details class="panel"><summary><b>Helen the Cautious Office Manager</b> — Office and operations manager at a 15-person company, asked to handle expenses on top of her usual duties <span class="muted small">(careful, patience 4/5)</span></summary>
+<p>You have been asked to take over company cards and expense approvals, but you have never done it and are worried about making a costly mistake. You follow instructions exactly and want to be sure before clicking anything that spends or shares money.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Add our staff so they can each submit their own expenses</li><li>Approve the expense my coworker just submitted for office supplies</li><li>Order a card for our office manager account and make sure it has a spending limit</li></ul>
+<p class="small"><b>Knowledge:</b> You know the office&#39;s purchases and who needs what, and you are comfortable with everyday software like spreadsheets and email. You do not know fintech concepts like KYC, spend limits, or virtual versus physical cards.<br><b>Constraints:</b> You can&#39;t make decisions about money without confirmation from your boss, and you worry about permanent actions. You get nervous when asked for sensitive information.<br>
+<b>Preferences:</b> Step-by-step guidance, clear explanations of consequences, and plain labels. You will look for a help link or tooltip when unsure.<br><b>Expectations:</b> You expect warnings before irreversible actions, clear role names, and obvious ways to undo or edit mistakes.</p>
+</details>
+
+</main>
+</body>
+</html>

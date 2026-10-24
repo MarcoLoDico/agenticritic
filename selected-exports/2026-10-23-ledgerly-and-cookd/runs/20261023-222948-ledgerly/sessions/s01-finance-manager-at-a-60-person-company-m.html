@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s01-finance-manager-at-a-60-person-company-m · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-222948-ledgerly/index.html">← 20261023-222948-ledgerly</a></p>
+<h1>Marcus the Meticulous Finance Manager — Finance manager at a 60-person company migrating from spreadsheets and a legacy card provider</h1>
+<p class="muted">You own month-end close and are evaluating whether Ledgerly can replace your current process. You read every label, check each setting before saving, and worry about permissions and audit trails.</p>
+<p><span class="chip">abandoned</span><span class="chip">careful</span>
+<span class="chip">patience 4/5</span><span class="chip">6 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 1/10 — I couldn&#39;t get past the first setup screen. Nothing responded and there was no explanation, so I saw none of the controls I care about: approval thresholds with previews, audit trail, roles and reconciling reports. I would come back only if onboarding works and shows clear errors when something fails. Right now I can&#39;t recommend Ledgerly to my CFO, because I have no evidence it can replace our month-end process.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Set up an approval rule so expenses over a certain amount need my sign-off</td><td class="no">abandoned</td><td class="small">I never got past the onboarding form. The company name field and the size dropdown both timed out, and a reload changed nothing. I gave up after about 5 failed attempts, so I never reached the approval rules.</td></tr><tr><td>Review a submitted expense and approve or reject it with a note</td><td class="no">abandoned</td><td class="small">I never started this goal. Onboarding blocked access to the rest of the product, so I couldn&#39;t see whether an expense review queue exists or whether approve/reject accepts a note.</td></tr><tr><td>Find where I can see spending broken down by category and by team</td><td class="no">abandoned</td><td class="small">I never started this goal either. I couldn&#39;t reach any navigation, reports or dashboards, so I can&#39;t say whether the breakdown reconciles to the underlying transactions.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>The company name field on onboarding did not accept input and gave a timeout with no explanation.</b>
+    <div class="small muted">Expected: Typing the company name fills the field, or I see a visible reason such as a disabled state or a loading indicator. · Happened: Locator.fill timed out after 5000ms. There was no error text and no visible change on the page. · Why it matters: I won&#39;t enter company details I&#39;d have to defend to my CFO into a form that may be half-loaded. A silent failure at the very first screen makes me doubt how the product handles money data.</div></li><li><a href="#step-1">step 1</a>: <b>A second attempt at the company name field timed out in the same way.</b>
+    <div class="small muted">Expected: A retry would work, or the page would show some state explaining why it doesn&#39;t. · Happened: The same timeout, and still no message on the page. · Why it matters: I can&#39;t tell whether the field is disabled, the page is stuck or the app is down. Without that I can&#39;t decide whether to keep trying or escalate.</div></li><li><a href="#step-2">step 2</a>: <b>Reloading /onboarding changed nothing, and the system reported that it stayed on the same page.</b>
+    <div class="small muted">Expected: A fresh form that accepts input, or a clear error or status page if the app is unhealthy. · Happened: The form looked identical, with the company name empty and the size at 1-10. I couldn&#39;t confirm the page had actually reloaded. · Why it matters: I need to be able to verify the state of any system I rely on for month-end close. A reload that gives no feedback gives me nothing to verify.</div></li><li><a href="#step-3">step 3</a>: <b>The company size dropdown also timed out when I tried to select 51-200.</b>
+    <div class="small muted">Expected: At least one control on the form responds, which would tell me the problem is limited to the name field. · Happened: select_option timed out after 5000ms. Nothing on the form responded. · Why it matters: A fully unresponsive form means every control is affected, not one field. I can&#39;t reach approval rules, review or reports until onboarding is complete.</div></li><li><a href="#step-4">step 4</a>: <b>Onboarding had Continue as the only path forward, with no skip option and no help or status link.</b>
+    <div class="small muted">Expected: A way to skip setup, contact support, or get to Settings or Approvals another way, plus a validation message or error banner explaining the failure. · Happened: The form stayed unresponsive. I was left with a blank form and nothing to read or act on. · Why it matters: A single blocking gate with no fallback made all three of my evaluation goals impossible. I can&#39;t give the CFO any evidence for or against Ledgerly.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Visible error, loading or disabled state on onboarding controls</b> — <span class="small">When inputs don&#39;t respond I need to see why, such as &#39;still loading&#39;, &#39;service unavailable&#39; or &#39;field disabled&#39;, instead of silent timeouts.</span></li><li><b>Ability to skip or defer onboarding and reach the rest of the app</b> — <span class="small">I want to inspect approval rules, roles and reports even if the company profile isn&#39;t finished. Hard gating blocked my whole evaluation.</span></li><li><b>Help text or a support contact on the onboarding page</b> — <span class="small">I prefer to read help text before acting. When something fails I need a documented next step.</span></li><li><b>System status or health indicator</b> — <span class="small">I couldn&#39;t distinguish a broken form from an outage. A status indicator would answer that.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>The onboarding form is short and plain, with clearly labeled company name and size fields. In principle it asks for sensible information.</li><li>The size field has a default value of 1-10, so it&#39;s clear what the form expects. Though I had no way to confirm it would change.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Before I touch anything, I&#39;m entering the company name first. Then I&#39;ll fix the size dropdown, since 1-10 is wrong for 60 people. I&#39;m going to check what that setting controls before I continue.</i></div>
+      <div><b>Action:</b> <code>type #[0] “Harlow Components Ltd”</code></div>
+      <div><b>Expectation:</b> The company name field fills in, and I can move on to correcting the company size.</div>
+      <div><b>Result:</b> <span class="no">Locator.fill: Timeout 5000ms exceeded.</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The company name field didn&#39;t accept input and the system gave a timeout with no explanation. I need to know whether the field is broken or whether the page hasn&#39;t finished loading before I enter anything I&#39;d have to answer for later.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>A timeout on a plain text field is not reassuring. I&#39;ll retry once, checking that the field is actually there and empty before I type into it.</i></div>
+      <div><b>Action:</b> <code>type #[0] “Harlow Components Ltd”</code></div>
+      <div><b>Expectation:</b> The company name fills in this time. If it times out again, I&#39;ll reload the page and check the form before going further.</div>
+      <div><b>Result:</b> <span class="no">Locator.fill: Timeout 5000ms exceeded.</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Two timeouts in a row on the company name field with no error message. I can&#39;t tell if the page is stuck, the field is disabled, or the app is down. I don&#39;t want to continue with a half-loaded setup that I&#39;d have to explain to the CFO.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>I said I&#39;d reload if this happened again, so I&#39;m reloading the onboarding page to get a clean form before I try anything else.</i></div>
+      <div><b>Action:</b> <code>navigate # /onboarding</code></div>
+      <div><b>Expectation:</b> The page reloads with a fresh form, and the company name field accepts input.</div>
+      <div><b>Result:</b> The reload left the form unchanged. The company name is still empty and size is still 1-10. The system reported &#39;stayed on same page&#39;, so I can&#39;t tell whether it actually reloaded.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Both text entries timed out and the reload changed nothing visible. I expected a clean form that accepts input, and I got the same blank form. I still don&#39;t know if the field is disabled, the page is stuck, or the app is down.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Three attempts and nothing has changed. I&#39;ll test whether the form responds at all by setting company size to 51-200, which is the correct band for 60 people. If the dropdown works and the text field doesn&#39;t, the problem is with that one field.</i></div>
+      <div><b>Action:</b> <code>select #[1] “51-200”</code></div>
+      <div><b>Expectation:</b> The company size dropdown changes to 51-200, which tells me the form is responsive and only the name field is the problem.</div>
+      <div><b>Result:</b> <span class="no">Locator.select_option: Timeout 5000ms exceeded.</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Nothing on this form responds. The name field timed out twice, a reload changed nothing, and now the dropdown has timed out too. I expected at least one field to accept input or show a validation message. Instead the page is silently unresponsive, so I can&#39;t tell whether the form is disabled, the app is stuck, or the environment is down. I&#39;m not going to submit a workspace setup I can&#39;t complete or verify, and I can&#39;t reach the approval rules without finishing it.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Set up an approval rule so expenses over a certain amount need my sign-off</div>
+      <div><b>Thought:</b> <i>Four failed actions and no feedback. I&#39;m not clicking Continue on an incomplete company profile, since I&#39;d have to explain a half-configured workspace to the CFO. I can&#39;t configure approval thresholds until onboarding works, so I&#39;m giving up on this goal for now and will report the blocker.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> The session stops at onboarding. I&#39;d need the form to respond, or a clear error message, before I could try the approval rule again.</div>
+      <div><b>Result:</b> The onboarding form is still unresponsive. The company name is empty, size is still 1-10, and Continue is the only path forward. Nothing I&#39;ve tried has changed the page.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The whole workspace setup is blocked before I can reach any money controls. Every attempt gave a timeout or &#39;stayed on same page&#39; with no error text. I expected at least a validation message if the form was broken. Without a working workspace I can&#39;t check approval rules, expense review, or category reporting, and I can&#39;t verify any of them for the CFO.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Review a submitted expense and approve or reject it with a note</div>
+      <div><b>Thought:</b> <i>I&#39;ve now given up on the approval rule. Expense review and reporting both need a working workspace, and I have no way to verify this tool before trusting it with approvals. I&#39;m stopping here and writing up the blocker for the vendor and our IT team.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> The session ends. I&#39;d come back only after onboarding accepts input and the approval threshold setting shows a preview and an audit trail.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s01-finance-manager-at-a-60-person-company-m-05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s03-operations-lead-comparing-three-expense- · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-222948-ledgerly/index.html">← 20261023-222948-ledgerly</a></p>
+<h1>Tomás the Skeptical Buyer — Operations lead comparing three expense tools for a 25-person company</h1>
+<p class="muted">You are on a trial to decide whether Ledgerly is worth recommending, and you assume pricing will have hidden catches. You want straight answers on cost and limits before you invest effort setting anything up.</p>
+<p><span class="chip">abandoned</span><span class="chip">advanced_seeker</span>
+<span class="chip">patience 3/5</span><span class="chip">8 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 3/10 — I couldn&#39;t get a firm monthly total for 25 people, the Scale tier is &#39;contact sales&#39;, the legal page is empty, and the dashboard preview sits behind a setup form. I won&#39;t enter company info or invite teammates on trust, and I can&#39;t justify the budget without clear numbers. As it stands I wouldn&#39;t recommend Ledgerly over the tools I already know.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Figure out what this will cost me per month for 25 people</td><td class="no">partial</td><td class="small">The Plans page shows Growth at $12/user/mo billed annually with a 10-seat minimum, so I can estimate 25 x $12 = $300/mo, or $3,600 upfront. That is my own math. The page never says whether tax is added on top, what monthly billing costs, or what Scale costs. I looked at the legal page for billing terms and it was empty. I gave up without a number I could put in front of my boss.</td></tr><tr><td>Find out which features are limited on the trial or on a cheaper plan</td><td class="no">partial</td><td class="small">The Plans page gives a rough tier split. Starter is up to 3 users with expense submission only. Growth adds cards, reports and accounting sync. Scale adds SSO and advanced controls. It says nothing about what the trial itself limits, or about caps such as card counts, receipt volume or integration limits. I never tried this goal directly, because the cost goal ate my attempts.</td></tr><tr><td>See what a sample of the spending dashboard looks like before I add real data</td><td class="no">failed</td><td class="small">Going to /dashboard redirected me to the onboarding form, which asks for company name and size. I would not fill it in before seeing pricing, so I never saw a dashboard or a labeled sample. The two expense rows on /expenses (AWS $412.50, Delta $689.00) appeared with no explanation of whether they were demo data.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-0">step 0</a>: <b>The Growth tier says $12/user/mo billed annually with a 10-seat minimum, and nothing else about cost.</b>
+    <div class="small muted">Expected: A clear total for 25 seats, the monthly-billing price, and whether tax is added. · Happened: I got a per-user number and a &#39;taxes not included&#39; note with no figure. I had to work out $300/mo, or $3,600 upfront, myself, and I don&#39;t know if monthly billing exists. · Why it matters: I can&#39;t commit budget or screenshot a comparison for my boss without an exact total. Competitors usually publish both monthly and annual rates, so the gap looks like a hidden catch.</div></li><li><a href="#step-0">step 0</a>: <b>The Scale tier shows only &#39;Contact sales&#39;.</b>
+    <div class="small muted">Expected: A starting price, a seat range, or at least what drives the price. · Happened: There is no number, and the card has nothing clickable. · Why it matters: I distrust &#39;contact sales&#39;. If 25 people need SSO or advanced controls, I can&#39;t tell whether I&#39;m in a $12 plan or a custom-quote plan.</div></li><li><a href="#step-1">step 1</a>: <b>The Plans page has no interactive tier cards or detail views, so my click landed on the Expenses nav link.</b>
+    <div class="small muted">Expected: A tier card that expands into a full feature comparison or pricing breakdown. · Happened: My click went to the Expenses page, which showed two pre-filled expense rows submitted by &#39;You&#39;, with no indication of whether this was demo data or a live account. · Why it matters: I lost an attempt on a dead end. The unexplained rows also make me unsure whether this is a real workspace or a canned demo, and I&#39;m evaluating whether the trial shows real functionality.</div></li><li><a href="#step-2">step 2</a>: <b>Going back to the Plans page showed the same static content: no monthly price, no tax figure, nothing expandable.</b>
+    <div class="small muted">Expected: More detail somewhere on the page, such as an FAQ, a full comparison table or a billing note. · Happened: The headline numbers were all there was. · Why it matters: This was my second failed attempt on cost, and I give up after about four.</div></li><li><a href="#step-3">step 3</a>: <b>The Legal page contains only &#39;Terms of service and privacy policy.&#39; with no actual terms.</b>
+    <div class="small muted">Expected: Billing terms, tax handling, refund and cancellation policy, possibly the monthly-vs-annual rules. · Happened: A one-line placeholder. · Why it matters: A product asking me to evaluate it for company spend with no published terms looks unfinished or evasive. It was also my third failed attempt at the cost question.</div></li><li><a href="#step-5">step 5</a>: <b>/dashboard redirected to the onboarding setup form asking for company name and size.</b>
+    <div class="small muted">Expected: A read-only sample dashboard with spend totals and categories, labeled as demo data. · Happened: A setup gate on a page I expected to preview freely. · Why it matters: I said I wouldn&#39;t enter company details before seeing pricing, and I couldn&#39;t judge the product&#39;s main screen without committing. The form gives no reason why the info is needed, so a skeptic like me bounces.</div></li><li><a href="#step-6">step 6</a>: <b>After giving up on the dashboard I had no path left except the onboarding form.</b>
+    <div class="small muted">Expected: A &#39;view sample&#39; or &#39;skip for now&#39; option. · Happened: The only visible way forward was the form I&#39;d already declined. · Why it matters: With no preview route, I end the session knowing nothing useful about the product and I won&#39;t recommend it.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Pricing calculator or full cost breakdown for a given seat count, with monthly vs. annual toggle and tax estimate</b> — <span class="small">I need a screenshot-ready number for 25 users, and the page only gives a per-user rate with caveats.</span></li><li><b>Feature comparison table across Starter, Growth and Scale, including trial limits and usage caps</b> — <span class="small">I want explicit limits (cards, integrations, receipts, approvals) to compare against my two previous tools.</span></li><li><b>Published billing and legal terms</b> — <span class="small">The Legal page was empty, so I can&#39;t find cancellation, tax or refund rules.</span></li><li><b>Sample or demo dashboard view that needs no setup</b> — <span class="small">I want to judge the main screen before entering company data.</span></li><li><b>Clear labeling of demo vs. real data</b> — <span class="small">The unexplained AWS and Delta rows left me unsure what I was looking at.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>Pricing was visible without logging in or talking to sales, at least for Starter and Growth.</li><li>The Starter tier is free, with a clear 3-user limit.</li><li>The 10-seat minimum on Growth is stated up front rather than buried.</li><li>The tier split between Starter, Growth and Scale is easy to scan.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>I&#39;m not giving you a company name or going further than I have to. Pricing should be visible without setup. I&#39;ll go straight to the Plans page.</i></div>
+      <div><b>Action:</b> <code>navigate /plans</code></div>
+      <div><b>Expectation:</b> A plans or pricing page with per-seat or per-month numbers I can read without an account, ideally with a note on what 25 users would cost.</div>
+      <div><b>Result:</b> Navigated to /plans. It shows three tiers: Starter $0 (up to 3 users, expense submission only), Growth $12/user/mo billed annually with a 10-seat minimum, cards, reports and accounting sync, and Scale &#39;Contact sales&#39; with SSO and advanced controls.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Growth is the tier that has cards, reports and accounting sync, so that&#39;s the one I&#39;d need for 25 people. The math is 25 x $12 = $300/mo, but the page doesn&#39;t say whether that&#39;s before or after tax, whether &#39;billed annually&#39; means I pay $3,600 upfront, or what the price is for monthly billing. Scale is a black box behind &#39;Contact sales&#39;, which I already distrust. The page also doesn&#39;t say what &#39;Taxes not included&#39; adds up to.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/plans</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>So 25 seats on Growth is roughly $300/mo if I commit annually, minimum 10 seats is fine. But I still don&#39;t know the monthly-billing price, the tax rate, or what Scale costs. And I need to know whether SSO is a deal-breaker for my boss. Let me check whether the Scale tier or the features page gives a number before I decide.</i></div>
+      <div><b>Action:</b> <code>click #1</code></div>
+      <div><b>Expectation:</b> The Scale card or a Growth detail view expands with a price or a feature list, or at least a clearer breakdown of what&#39;s included in Growth versus Starter.</div>
+      <div><b>Result:</b> I clicked [1] thinking it was the Scale card, but it was the Expenses nav link. I landed on /expenses, which shows two sample rows (AWS $412.50 and Delta $689.00, both &#39;Approved&#39;, submitted by &#39;You&#39;) with no company data entered.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I misclicked because the Plans page doesn&#39;t give the Scale card a clickable element with a clear ID, and the nav is the first thing the list shows. Now I&#39;m on a list of expenses I didn&#39;t create, and I still don&#39;t have the monthly-billing price, the tax amount, or anything about Scale. Also, these rows show up without any setup, which makes me wonder whether this is demo data or a live account.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/expenses</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Wasted a step. Still no monthly price and no Scale number. Going back to Plans to try again. If the Scale card doesn&#39;t expand, I&#39;ll note that as a transparency problem for my boss.</i></div>
+      <div><b>Action:</b> <code>back</code></div>
+      <div><b>Expectation:</b> Return to the Plans page so I can look for a monthly price or a Scale detail.</div>
+      <div><b>Result:</b> Went back to /plans. Same page: Starter $0, Growth $12/user/mo billed annually with a 10-seat minimum, Scale &#39;Contact sales&#39;. No expandable cards, no monthly-billing price, no tax figure, and no interactive element on the tiers themselves.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The Plans page has no clickable Scale card or Growth detail, so I can&#39;t get past the headline numbers. I still don&#39;t know the monthly-billing rate, the tax amount, or whether 25 seats is really $300/mo or $3,600 paid upfront. That&#39;s attempt two at the cost question and it&#39;s still a dead end.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/plans</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Two tries, no answer. The Growth line is the only number I have and it&#39;s annual-only. I&#39;m not going to set up a workspace to find out what it costs. I&#39;ll give this goal one more shot through the Legal page, which may have billing terms, before I write it off.</i></div>
+      <div><b>Action:</b> <code>click #5</code></div>
+      <div><b>Expectation:</b> A legal or terms page that might spell out billing terms, tax handling, or monthly pricing.</div>
+      <div><b>Result:</b> Opened /legal. It&#39;s a one-line page: &#39;Terms of service and privacy policy.&#39; No text of the terms, no billing or tax section, nothing about pricing.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> The Legal page is an empty placeholder with no actual terms in it. I went there hoping for billing terms, tax handling or monthly pricing and got nothing. That&#39;s three attempts at the cost question with no monthly number, which is past my limit.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/legal</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Figure out what this will cost me per month for 25 people</div>
+      <div><b>Thought:</b> <i>Three dead ends on pricing. Growth is $12/user/mo but only billed annually, Scale is &#39;Contact sales&#39;, and the terms page is empty. I&#39;m done trying to get a number out of this product. I&#39;ll give up on the cost goal and note it for my boss.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Move on to checking whether the spending dashboard sample shows anything useful, or wrap up if there&#39;s nothing else to see.</div>
+      <div><b>Result:</b> The cost goal is marked as given up. The page is still /legal with the same one-line placeholder, so nothing changed.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Giving up on the cost question leaves me with no monthly number for 25 people, which is the main thing my boss needs. I&#39;m still on an empty Legal page.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/legal</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>No price, no terms. I&#39;ll look at the dashboard sample since I&#39;m here anyway, but I&#39;m not entering company info or adding teammates to get it.</i></div>
+      <div><b>Action:</b> <code>navigate /dashboard</code></div>
+      <div><b>Expectation:</b> A dashboard with spend totals, category breakdowns, or at least the sample expense data, ideally with a note saying whether it&#39;s demo data.</div>
+      <div><b>Result:</b> Navigating to /dashboard redirected me to /onboarding, a &#39;Welcome to Ledgerly&#39; setup form asking for company name and company size, with a Continue button.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I wanted to see a sample dashboard without committing anything, and instead the app forced me into workspace setup. It wants a company name and size before I can see anything. That&#39;s the setup I said I wouldn&#39;t do before seeing pricing, and it&#39;s a gate on a page I expected to be read-only.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>They&#39;re asking for company info just to look at a dashboard. I won&#39;t type our company name into a vendor I&#39;m still evaluating. That&#39;s a hard no on this goal, and frankly my patience is gone after four dead ends.</i></div>
+      <div><b>Action:</b> <code>give_up_goal</code></div>
+      <div><b>Expectation:</b> Nothing useful, since I&#39;m not going to fill in the form. I&#39;ll wrap up and report back.</div>
+      <div><b>Result:</b> Both goals are now marked as given up. The page is still the &#39;Welcome to Ledgerly&#39; onboarding form asking for company name and size, with nothing else to reach.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I have no path left to see anything: pricing is a dead end, the terms page is empty, and the dashboard is gated behind workspace setup I won&#39;t fill in. I&#39;m stuck on the same form I&#39;ve already declined.</div>
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> See what a sample of the spending dashboard looks like before I add real data</div>
+      <div><b>Thought:</b> <i>Nothing here is worth more of my time. Three of my four attempts went nowhere and the fourth was locked behind a company-info form. I&#39;m done, and I&#39;ll tell my boss Ledgerly doesn&#39;t show pricing or a demo without an account.</i></div>
+      <div><b>Action:</b> <code>finish</code></div>
+      <div><b>Expectation:</b> Session ends. I won&#39;t recommend Ledgerly on the basis of what I could see.</div>
+      <div><b>Result:</b> </div>
+      
+    </div>
+    <a href="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-222948-ledgerly/shots/s03-operations-lead-comparing-three-expense--07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

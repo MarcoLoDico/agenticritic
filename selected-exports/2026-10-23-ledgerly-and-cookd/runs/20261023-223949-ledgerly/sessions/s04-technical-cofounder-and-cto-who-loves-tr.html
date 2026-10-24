@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>s04-technical-cofounder-and-cto-who-loves-tr · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../../runs/20261023-223949-ledgerly/index.html">← 20261023-223949-ledgerly</a></p>
+<h1>Jo the Enthusiastic Early Adopter — Technical cofounder and CTO who loves trying new tools and wants to automate things</h1>
+<p class="muted">You enjoy clicking through every menu of a new tool and trying to break it. You want to set up virtual cards for team tools and see how far the controls and integrations go.</p>
+<p><span class="chip">out_of_steps</span><span class="chip">advanced_seeker</span>
+<span class="chip">patience 5/5</span><span class="chip">25 steps</span></p>
+
+
+
+
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>Would not keep using it</b> · score 4/10 — The core card issuance works, but the controls are too thin for the granular spend limits I want. Both accounting connectors 502, and I couldn&#39;t find any API or webhook story, which is a dealbreaker for a CTO who wants to automate. I&#39;d check back if they fix OAuth, add merchant locks and publish API docs, but right now it feels early-stage.</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  <tr><td>Create a virtual card with a $500 monthly limit just for our cloud bills</td><td class="no">partial</td><td class="small">I issued &#39;Cloud Bills (AWS/GCP)&#39; ending 8955 with a $500/mo limit (steps 8-11), so the headline ask worked. But &#39;just for cloud bills&#39; wasn&#39;t enforceable. The issue form has no merchant or category lock, and the card row has no detail view, freeze toggle or per-transaction cap (step 12). It&#39;s a $500 card with a cloud-themed label, not a cloud-only card.</td></tr><tr><td>Find out whether I can connect Ledgerly to our accounting software or use an API</td><td class="no">failed</td><td class="small">QuickBooks and Xero OAuth both died with the same 502 / LDG-OAUTH-17 during onboarding (steps 2, 4). Ledger Mapping offers only &#39;Connect QuickBooks&#39;, which loops back into that flow (step 19). I found no API keys, webhooks or developer docs in Settings (steps 21, 22), and the Plans page says nothing about API access (step 23). I gave up without a real answer on whether an API exists.</td></tr><tr><td>Invite a teammate with limited permissions and see what they can and can&#39;t do</td><td class="no">partial</td><td class="small">I provisioned dev-contractor@company.com as Submitter under Workspace Administration &gt; Seats &amp; Provisioning (steps 15-17). I never found out what Submitter can and can&#39;t do, because no permission description exists on that page. I also never saw the invited user&#39;s view. I left this goal unfinished when I went off chasing the API question.</td></tr>
+  </table>
+  <h3 style="font-size:14px">Frictions</h3>
+  <ul><li><a href="#step-2">step 2</a>: <b>QuickBooks connect fails with &#39;Error 502: Upstream OAuth handshake failed (LDG-OAUTH-17). Please contact your administrator.&#39;</b>
+    <div class="small muted">Expected: An OAuth consent screen listing scopes, or at least a retry button and a status link. · Happened: A dead-end error page with only a Back link. It tells me to contact an administrator, but I am the administrator. · Why it matters: I work nights and weekends and can&#39;t reach support in real time. A dead end with no diagnostic detail means I can&#39;t tell whether the fault is mine or theirs, and it blocks the accounting integration entirely.</div></li><li><a href="#step-4">step 4</a>: <b>Xero fails with the identical 502 and LDG-OAUTH-17 code.</b>
+    <div class="small muted">Expected: At least one provider to work, or an error that differs by provider. · Happened: Same error text and code for both providers. · Why it matters: Identical failures across two vendors point at Ledgerly&#39;s own OAuth layer, so I lose trust in the integration story. With no status page I can&#39;t tell if it&#39;s an outage or a permanent state.</div></li><li><a href="#step-6">step 6</a>: <b>The error page offers only Back. The onboarding gate shows &#39;remind me later&#39; only on the main step, and it is not obvious as an escape from the failure.</b>
+    <div class="small muted">Expected: A skip or retry option on the error page itself. · Happened: I had to go Back to the gate and then find &#39;remind me later&#39; (step 7). · Why it matters: A failed required-looking step should offer a way forward. Otherwise people may think they&#39;re stuck in onboarding.</div></li><li><a href="#step-8">step 8</a>: <b>The Issue a card form has only Cardholder name and Monthly limit (pre-filled 1000). There are no merchant or category restrictions, no per-transaction cap, and no help text on the name field.</b>
+    <div class="small muted">Expected: Merchant/MCC locks, a per-transaction limit, and an expiry or single-use option, because that&#39;s why you&#39;d use virtual cards. · Happened: A minimal two-field form. · Why it matters: I wanted a card that can only be used for AWS/GCP. Without a merchant lock, a $500 limit is just a label and doesn&#39;t contain misuse. It also isn&#39;t clear whether the name field is a person or a label.</div></li><li><a href="#step-12">step 12</a>: <b>Cards list rows aren&#39;t clickable and there is no card detail page.</b>
+    <div class="small muted">Expected: A detail view with the card number, controls, a freeze toggle, a transaction list and the ability to edit the limit. · Happened: A static list showing the name, last four digits and $500/mo. · Why it matters: I can&#39;t edit or freeze a card after issuing it, so any mistake or leak can&#39;t be fixed from the UI. That undermines the granular control I came for.</div></li><li><a href="#step-13">step 13</a>: <b>Settings has no Team or Members tab. Invites are buried under Workspace Administration &gt; Seats &amp; Provisioning.</b>
+    <div class="small muted">Expected: A top-level Team/Members area, or at least an invite entry point that is easy to find. · Happened: I hunted through Profile, Notifications, Workspace Administration and its sub-tabs before finding it (steps 13-15). · Why it matters: &#39;Seats &amp; Provisioning&#39; and &#39;Entitlement&#39; are unusual terms, and inviting a teammate is a core task. Non-technical admins would likely miss it.</div></li><li><a href="#step-17">step 17</a>: <b>After provisioning, there&#39;s no explanation of what Submitter, Approver or Admin can do. There&#39;s also no way to preview or impersonate the role.</b>
+    <div class="small muted">Expected: A permissions matrix or tooltip describing each entitlement, and ideally a &#39;view as&#39; option. · Happened: Only a table row labelled Submitter and a banner saying an activation email was sent. · Why it matters: My goal was to see what a limited user can and can&#39;t do. I&#39;m granting access to a contractor without knowing what I&#39;m granting, which is a security risk.</div></li><li><a href="#step-18">step 18</a>: <b>Clicking Provision seat with an empty identifier does nothing and shows no inline error. The success banner also stays after the action.</b>
+    <div class="small muted">Expected: A validation message such as &#39;Enter an email&#39;. · Happened: Silent no-op with the old success banner still showing. · Why it matters: A stale success banner is misleading. I couldn&#39;t tell whether I&#39;d just added a second seat.</div></li><li><a href="#step-19">step 19</a>: <b>Ledger Mapping says &#39;No accounting system connected&#39; with a single &#39;Connect QuickBooks&#39; link. It has no provider list, no description of what syncs, no API key and no webhook config.</b>
+    <div class="small muted">Expected: A full integrations page with providers, sync rules, field mapping, and API/webhook settings. · Happened: One link that leads back into the broken OAuth flow. · Why it matters: This is the page where I&#39;d verify whether the product can integrate with our stack. It has nothing concrete and the only path is the one that 502s.</div></li><li><a href="#step-22">step 22</a>: <b>Identity Federation shows only &#39;SAML SSO is available on the Scale plan.&#39;</b>
+    <div class="small muted">Expected: Details on supported protocols (SAML/OIDC/SCIM) and what the plan includes, or at least a preview. · Happened: A one-line plan gate. · Why it matters: SSO is part of my evaluation criteria. Without detail I can&#39;t tell whether it&#39;s worth contacting sales.</div></li><li><a href="#step-23">step 23</a>: <b>The Plans page doesn&#39;t mention API or webhook access on any tier. It also says &#39;Minimum 10 seats&#39; while Starter lists &#39;up to 3 users&#39;.</b>
+    <div class="small muted">Expected: A feature comparison covering API/webhooks and consistent seat rules. · Happened: Short tier descriptions that don&#39;t answer the API question and contradict each other on seats. · Why it matters: I can&#39;t tell whether an API exists at all, or what tier I&#39;d need. The seat contradiction makes pricing unclear.</div></li></ul>
+  <h3 style="font-size:14px">Missing features</h3>
+  <ul><li><b>Public API, API keys and webhooks, with docs</b> — <span class="small">I want to automate card issuance and expense sync. Nothing in Settings, Plans or the nav mentions an API or developer docs.</span></li><li><b>Merchant/category restrictions and per-transaction limits on virtual cards</b> — <span class="small">I want a card locked to cloud vendors with granular spend controls.</span></li><li><b>Card detail page with freeze, edit limit and transactions</b> — <span class="small">I need lifecycle control after issuing a card.</span></li><li><b>Permissions matrix / role preview for entitlements</b> — <span class="small">I need to know what a Submitter can do before granting access.</span></li><li><b>Working accounting integrations with a visible list of providers and sync settings</b> — <span class="small">Both OAuth connects failed and the Ledger Mapping page shows only QuickBooks.</span></li><li><b>Command menu / search and keyboard shortcuts</b> — <span class="small">I&#39;d expect modern navigation conventions. I never found any, so I had to click through nested tabs and guess URLs.</span></li><li><b>Bulk actions (bulk invite, bulk card issue)</b> — <span class="small">As a power user I&#39;d want to issue many team tool cards at once. I saw only single-item forms.</span></li></ul>
+  <h3 style="font-size:14px">Liked</h3><ul><li>Onboarding was short, and &#39;remind me later&#39; let me skip the broken connector step to reach the dashboard (step 7).</li><li>Issuing the $500 virtual card was fast: three fields and done (steps 9-11).</li><li>The Seats &amp; Provisioning flow worked first try and showed the new seat in a table right away (step 17).</li><li>The dashboard gives a clear overview: spend, active cards and members (step 7).</li><li>The Entitlement dropdown (Submitter/Approver/Admin) hints at a sensible role model.</li></ul>
+</div>
+
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+
+<div class="panel" id="step-0">
+  <div class="small muted">Step 0 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Fresh signup, let&#39;s get through onboarding fast so I can get to the cards. Company name first, the size dropdown already says 1-10 which is us for now.</i></div>
+      <div><b>Action:</b> <code>type #0 “Stackhaus Labs”</code></div>
+      <div><b>Expectation:</b> Company name gets filled in and I can hit Continue to step 2 of onboarding.</div>
+      <div><b>Result:</b> Company name field now shows &#39;Stackhaus Labs&#39;. Page is otherwise unchanged, still on onboarding step 1 of 2.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-00.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-00.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 0"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-1">
+  <div class="small muted">Step 1 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Name is in. Size already says 1-10, which is right for us. Hit Continue and get on with it.</i></div>
+      <div><b>Action:</b> <code>click #2</code></div>
+      <div><b>Expectation:</b> Moves me to step 2 of onboarding, probably a payment or bank setup screen, then into the dashboard where cards live.</div>
+      <div><b>Result:</b> Clicking Continue moved me to step 2, &#39;Connect your accounting system&#39;. The system note said I stayed on the same page, but the title and content did change.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-01.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-01.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 1"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-2">
+  <div class="small muted">Step 2 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Oh nice, this is basically the integration I wanted to poke at anyway. Skip the &#39;remind me later&#39; link for now. I&#39;ll try the QuickBooks connector first and see what scopes it asks for and whether there&#39;s a webhook or API key option.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> Opens a QuickBooks OAuth connect flow or a provider page where I can see requested scopes. Ideally a settings area for syncing rules and maybe an API key.</div>
+      <div><b>Result:</b> Clicking Connect QuickBooks took me to a &#39;Connecting to QuickBooks…&#39; page that shows &#39;Error 502: Upstream OAuth handshake failed (code LDG-OAUTH-17). Please contact your administrator.&#39; There&#39;s only a Back link.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> I expected an OAuth consent screen listing scopes, or at least a retry. Instead I got a 502 with a code, and the error tells me to contact an administrator, which is me, since I&#39;m the only one who&#39;s set up this workspace and it&#39;s 11pm on a Saturday. No logs, no retry button, no status page link. Annoying, and it blocks the accounting integration question entirely.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-02.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-02.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 2"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-3">
+  <div class="small muted">Step 3 · http://127.0.0.1:8100/onboarding/connect?provider=QuickBooks</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Ugh, of course the OAuth handshake dies on the first try. &#39;Contact your administrator&#39; is hilarious when I am the administrator. I&#39;ll hit Back and try Xero to see if it&#39;s just QuickBooks being broken, then poke around for an API key or webhook settings page.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> Goes back to the onboarding step 2 screen so I can try Connect Xero.</div>
+      <div><b>Result:</b> Hitting Back returned me to the &#39;Connect your accounting system&#39; page with the same three providers listed.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Expected to be able to retry or skip past the broken QuickBooks handshake. Instead I&#39;m back on the same gate with no way forward except one of the three connectors or &#39;remind me later&#39;, and nothing here tells me whether the 502 was on my side or theirs.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-03.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-03.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 3"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-4">
+  <div class="small muted">Step 4 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Fine, QuickBooks is busted on their end, so try Xero. If that also 502s I&#39;m going to assume the whole OAuth layer is down and go look for an API key page instead.</i></div>
+      <div><b>Action:</b> <code>click #1</code></div>
+      <div><b>Expectation:</b> Opens the Xero connect flow, hopefully with a consent screen that lists scopes.</div>
+      <div><b>Result:</b> Clicking Connect Xero landed on the same &#39;Connecting to Xero…&#39; page with Error 502: Upstream OAuth handshake failed (code LDG-OAUTH-17) and a Back link only.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (4/5):</b> Xero fails with the exact same 502 and error code as QuickBooks. Two different providers dying identically points at Ledgerly&#39;s OAuth layer, not the accounting vendors. Still no retry, no status link, and &#39;contact your administrator&#39; again when I&#39;m the admin. This blocks the accounting integration question completely for now.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-04.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-04.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 4"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-5">
+  <div class="small muted">Step 5 · http://127.0.0.1:8100/onboarding/connect?provider=Xero</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Same error code for both, so it&#39;s on their side, not Xero&#39;s. Going back to try NetSuite is pointless if it&#39;s the shared OAuth layer. I&#39;ll give the connectors one more shot later, but right now I want to find an API key or settings page, so I&#39;m skipping this step and seeing if the dashboard has an integrations area.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> Skips past the connect gate into the main dashboard, where I can look for a Settings, Integrations or API keys section.</div>
+      <div><b>Result:</b> <span class="no">there is no element [3] on this page</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> I assumed the skip link would be on every onboarding screen, but this error page only offers Back. That&#39;s on me for guessing, but it also means the only way out of a broken OAuth step is going back to the gate.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-05.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-05.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 5"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-6">
+  <div class="small muted">Step 6 · http://127.0.0.1:8100/onboarding/connect?provider=Xero</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Oops, wrong element. Fine, Back to the gate, then &#39;remind me later&#39; to get past the connector screen and into the dashboard. QuickBooks and Xero both 502&#39;d with the same code, so I&#39;m done with connectors for tonight.</i></div>
+      <div><b>Action:</b> <code>click #0</code></div>
+      <div><b>Expectation:</b> Returns me to the &#39;Connect your accounting system&#39; screen, where I can click &#39;remind me later&#39; to skip into the dashboard.</div>
+      <div><b>Result:</b> Back took me to the &#39;Connect your accounting system&#39; gate again, with &#39;remind me later&#39; visible at element [3] this time.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> Expected &#39;remind me later&#39; to get me past the connector gate into the dashboard. Instead I&#39;m still on the gate, and I&#39;ve now hit the same wall with both QuickBooks and Xero. This is about my 3rd failed attempt at the accounting question, and I&#39;m not spending the whole night on it.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-06.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-06.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 6"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-7">
+  <div class="small muted">Step 7 · http://127.0.0.1:8100/onboarding</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Right, &#39;remind me later&#39; is element [3] here. Skipping the connector gate so I can actually look for the settings, integrations, and API key stuff.</i></div>
+      <div><b>Action:</b> <code>click #3</code></div>
+      <div><b>Expectation:</b> Skips the accounting connect step and drops me into the main dashboard, where I can look for Settings, Integrations or API keys.</div>
+      <div><b>Result:</b> Clicking &#39;remind me later&#39; got me past the connector gate into the dashboard. It shows Stackhaus Labs, $1,101.50 spend this month across 2 expenses, 0 active cards, 1 member, and an &#39;Issue a card&#39; button.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-07.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-07.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 7"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-8">
+  <div class="small muted">Step 8 · http://127.0.0.1:8100/dashboard</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Finally in. The integrations question is parked since both connectors 502&#39;d, but I can come back to it. Right now the cloud-bill card is the actual thing I came for, and there&#39;s an &#39;Issue a card&#39; button right here. Let&#39;s go.</i></div>
+      <div><b>Action:</b> <code>click #6</code></div>
+      <div><b>Expectation:</b> Opens a new card form where I can set a $500 monthly limit, ideally with a merchant or category restriction for AWS and cloud vendors.</div>
+      <div><b>Result:</b> Clicking &#39;Issue a card&#39; opened the Issue a virtual card form with a Cardholder name field and a Monthly limit field pre-filled with 1000.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The limit defaults to 1000 and there&#39;s no merchant or category restriction on the form, so I can&#39;t scope it to cloud vendors yet. Not a blocker, but I want that control.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-08.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-08.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 8"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-9">
+  <div class="small muted">Step 9 · http://127.0.0.1:8100/cards/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Okay, a real form. Name it something obvious so I know which card is for cloud bills, then drop the limit from 1000 to 500. I&#39;ll hunt for a merchant lock after I issue it if there&#39;s one in the settings.</i></div>
+      <div><b>Action:</b> <code>type #5 “Cloud Bills (AWS/GCP)”</code></div>
+      <div><b>Expectation:</b> Cardholder name field fills in with the label, and I can then edit the monthly limit.</div>
+      <div><b>Result:</b> Typed &#39;Cloud Bills (AWS/GCP)&#39; into the Cardholder name field. It&#39;s filled in now, and the Monthly limit still reads 1000.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The field took my text fine, but the limit is still 1000 and I need it at 500. The cardholder name field also has no help text saying whether it&#39;s the person or a label, which is a bit odd for a company card.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-09.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-09.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 9"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-10">
+  <div class="small muted">Step 10 · http://127.0.0.1:8100/cards/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Name&#39;s in. Now I&#39;ll replace the 1000 in the limit box with 500. Triple-click would be nicer, but a type action should overwrite it.</i></div>
+      <div><b>Action:</b> <code>type #6 “500”</code></div>
+      <div><b>Expectation:</b> The Monthly limit field changes to 500 so I can issue the card with the right cap.</div>
+      <div><b>Result:</b> Typing 500 into the Monthly limit field worked. It now reads 500, and the cardholder name still shows &#39;Cloud Bills (AWS/GCP)&#39;.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-10.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-10.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 10"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-11">
+  <div class="small muted">Step 11 · http://127.0.0.1:8100/cards/new</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Limit&#39;s at 500 and the name&#39;s set. Before I hit Issue, I want to know if there&#39;s a merchant lock or category restriction. The form doesn&#39;t show one, so I&#39;ll issue it and dig through card settings afterward.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> The virtual card gets issued with a $500 monthly cap, and I land on the card detail page where I can look for merchant restrictions, a per-transaction limit, or a freeze toggle.</div>
+      <div><b>Result:</b> Issuing the card worked. The Cards page now lists &#39;Cloud Bills (AWS/GCP)&#39; ending in 8955 with a $500/mo monthly limit.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-11.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-11.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 11"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-12">
+  <div class="small muted">Step 12 · http://127.0.0.1:8100/cards</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Create a virtual card with a $500 monthly limit just for our cloud bills</div>
+      <div><b>Thought:</b> <i>Card&#39;s live at $500/mo, so goal one is done. The card row isn&#39;t a link though, so I can&#39;t open it to look for a merchant lock or freeze toggle yet. I&#39;ll check it out and then move on to the teammate invite.</i></div>
+      <div><b>Action:</b> <code>goal_done #</code></div>
+      <div><b>Expectation:</b> Goal one is marked complete. Next I&#39;ll look for card detail or merchant restrictions, then the team invite under Settings.</div>
+      <div><b>Result:</b> Nothing changed. The Cards page is the same, still showing &#39;Cloud Bills (AWS/GCP)&#39; at $500/mo. I marked the card goal done, and I&#39;m still on this page.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> The card row isn&#39;t clickable and there&#39;s no detail view, so I can&#39;t find a merchant lock, per-transaction cap, or freeze toggle. The only way to set controls is at issue time, and that form doesn&#39;t have them. Mildly annoying for someone who wants granular spend controls.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-12.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-12.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 12"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-13">
+  <div class="small muted">Step 13 · http://127.0.0.1:8100/cards</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Card&#39;s issued, but I can&#39;t open it to see any restrictions, so I&#39;ll note that for later. Moving on to the teammate invite. Settings should have a team or members section. Let&#39;s look there.</i></div>
+      <div><b>Action:</b> <code>click #4</code></div>
+      <div><b>Expectation:</b> The Settings page opens, ideally with a Team or Members tab where I can invite someone and pick a role or permission level.</div>
+      <div><b>Result:</b> Opened Settings. It has Profile, Notifications, Workspace Administration, and Billing &amp; Subscription tabs. Profile only shows my name, email, and timezone.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> No Team or Members tab here. The invite probably lives under Workspace Administration, but I&#39;d expect Team to be a top-level item in Settings.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-13.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-13.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 13"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-14">
+  <div class="small muted">Step 14 · http://127.0.0.1:8100/settings</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>No team tab on the profile page, which is normal. Workspace Administration is the next most likely spot for invites and roles, so I&#39;ll check it.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> Workspace Administration opens with member invites and role or permission options.</div>
+      <div><b>Result:</b> Workspace Administration opened with four sub-tabs: General, Seats &amp; Provisioning, Ledger Mapping, and Identity Federation. No invite form on this landing page.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (1/5):</b> Nothing is blocked yet, but &#39;Seats &amp; Provisioning&#39; sounds like where invites live and I&#39;d like to confirm before clicking around. The sidebar has no Team item, so I&#39;m hunting through sub-tabs.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-14.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-14.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 14"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-15">
+  <div class="small muted">Step 15 · http://127.0.0.1:8100/settings/workspace</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Seats &amp; Provisioning is the most likely place for invites and roles. Ledger Mapping might be the accounting integration I want for goal two, so I&#39;ll check that after. Going to Seats first.</i></div>
+      <div><b>Action:</b> <code>click #10</code></div>
+      <div><b>Expectation:</b> Seats &amp; Provisioning shows an invite button, a member list, and role or permission options like admin, member, or read-only.</div>
+      <div><b>Result:</b> Seats &amp; Provisioning is the right place. It shows me as Owner, has a &#39;Principal identifier&#39; field, an Entitlement dropdown with Submitter, Approver, and Admin, and a &#39;Provision seat&#39; button.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-15.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-15.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 15"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-16">
+  <div class="small muted">Step 16 · http://127.0.0.1:8100/settings/workspace/seats</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Here&#39;s the invite flow. &#39;Principal identifier&#39; is an odd label, and I&#39;m guessing it means email. There&#39;s no role called &#39;read-only&#39; or &#39;viewer&#39; in the dropdown, so Submitter is the most limited option. I&#39;ll enter a teammate&#39;s email and provision a Submitter seat.</i></div>
+      <div><b>Action:</b> <code>type #9 “dev-contractor@company.com”</code></div>
+      <div><b>Expectation:</b> The identifier field fills with the email, and then I can pick Submitter and provision the seat.</div>
+      <div><b>Result:</b> The identifier field now shows dev-contractor@company.com. Entitlement still reads Submitter and the page hasn&#39;t changed otherwise.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-16.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-16.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 16"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-17">
+  <div class="small muted">Step 17 · http://127.0.0.1:8100/settings/workspace/seats</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Email&#39;s in. Submitter is already selected, and it&#39;s the most limited role on the list, so I&#39;ll leave it and hit Provision seat.</i></div>
+      <div><b>Action:</b> <code>click #11</code></div>
+      <div><b>Expectation:</b> A confirmation appears, and the new seat shows up in the table as Submitter.</div>
+      <div><b>Result:</b> Seat provisioned. The table now lists dev-contractor@company.com as Submitter, and it says an activation email was sent.</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-17.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-17.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 17"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-18">
+  <div class="small muted">Step 18 · http://127.0.0.1:8100/settings/workspace/seats?added=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Invite worked. Submitter is the least powerful role here, but I still don&#39;t know what it can actually do. Before I test that, I want to know whether there&#39;s a read-only or viewer option. The dropdown only has Submitter, Approver, and Admin, so I&#39;ll check the Ledger Mapping tab next for the accounting integration, since that&#39;s goal two.</i></div>
+      <div><b>Action:</b> <code>click #11</code></div>
+      <div><b>Expectation:</b> Ledger Mapping opens with accounting integration options or an API key.</div>
+      <div><b>Result:</b> I meant to open Ledger Mapping, but my click hit Provision seat again. The identifier field was already empty, so nothing happened. The page stayed on Seats &amp; Provisioning with the same success banner.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (1/5):</b> I clicked the wrong thing. The Ledger Mapping tab isn&#39;t in the list on this page, so I wanted to navigate there directly. Nothing in the form explained that an empty submit does nothing, and there&#39;s no inline error. I also still have no idea what Submitter can and can&#39;t do, and nothing on this page says.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-18.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-18.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 18"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-19">
+  <div class="small muted">Step 19 · http://127.0.0.1:8100/settings/workspace/seats?added=1</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Invite a teammate with limited permissions and see what they can and can&#39;t do</div>
+      <div><b>Thought:</b> <i>Oops, wrong target, I was thinking of the sub-tab that was on the previous page. The seat is provisioned anyway, so no harm. I&#39;ll jump straight to /settings/workspace/ledger to check for the accounting integration or API key for goal two. I&#39;ll test what Submitter can do once the contractor actually activates.</i></div>
+      <div><b>Action:</b> <code>navigate # /settings/workspace/ledger</code></div>
+      <div><b>Expectation:</b> Ledger Mapping opens with accounting software connections, an API key section, or webhook settings.</div>
+      <div><b>Result:</b> Ledger Mapping loaded: &#39;No accounting system connected&#39; with a single &#39;Connect QuickBooks&#39; link. No API key section, no webhooks, no other providers listed.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I wanted to see the full list of accounting integrations and whether there&#39;s an API key or webhook config. Only QuickBooks is offered, and the link jumps straight into onboarding without showing me what it syncs or whether there&#39;s a public API. I also haven&#39;t found any API or developer docs anywhere in Settings.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-19.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-19.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 19"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-20">
+  <div class="small muted">Step 20 · http://127.0.0.1:8100/settings/workspace/ledger</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Only QuickBooks, no list, no API key. Before I commit to an OAuth flow that might take over our books, I want to know what it reads and writes. I&#39;ll check Identity Federation quickly, then look for API docs in the footer.</i></div>
+      <div><b>Action:</b> <code>click #12</code></div>
+      <div><b>Expectation:</b> Identity Federation shows SSO setup options like SAML or OIDC, which tells me whether they have a real integration layer.</div>
+      <div><b>Result:</b> <span class="no">there is no element [12] on this page</span></div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> That one was my mistake. I guessed an element ID from the previous page. Still, the Ledger Mapping page has no list of supported integrations, no API key section, and no description of what the QuickBooks sync reads or writes.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-20.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-20.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 20"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-21">
+  <div class="small muted">Step 21 · http://127.0.0.1:8100/settings/workspace/ledger</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>My bad, I grabbed a stale ID. Identity Federation isn&#39;t on this page, so I&#39;ll go back up to Workspace Administration and look for SSO and API options from there. I want to see what the integration layer looks like before I authorize QuickBooks against our books.</i></div>
+      <div><b>Action:</b> <code>click #7</code></div>
+      <div><b>Expectation:</b> Workspace Administration opens with sub-sections for identity or SSO, API keys, and webhooks.</div>
+      <div><b>Result:</b> Workspace Administration opened with four sub-sections: General, Seats &amp; Provisioning, Ledger Mapping, and Identity Federation. No API keys or webhooks section yet.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (2/5):</b> No API keys or webhooks entry in the sub-sections. I expected a developer or API area here, and right now the only route to an integration is QuickBooks OAuth.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-21.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-21.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 21"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-22">
+  <div class="small muted">Step 22 · http://127.0.0.1:8100/settings/workspace</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>Four tabs, no API keys, no webhooks. Identity Federation is the one I was after anyway, since SSO and API config usually sit next to each other. Checking that before I touch QuickBooks.</i></div>
+      <div><b>Action:</b> <code>click #12</code></div>
+      <div><b>Expectation:</b> Identity Federation shows SAML or OIDC setup, and maybe a link to API or developer settings.</div>
+      <div><b>Result:</b> Identity Federation opened, and it only says &#39;SAML SSO is available on the Scale plan.&#39; There&#39;s no SAML or OIDC setup form and no API link.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> I wanted to see the SSO config layer and check for API or developer settings. Instead I got a plan gate with no detail about what&#39;s included, and no path to API keys or webhooks anywhere I&#39;ve looked.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-22.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-22.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 22"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-23">
+  <div class="small muted">Step 23 · http://127.0.0.1:8100/settings/workspace/sso</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>SSO is paywalled, so there&#39;s nothing to inspect here. I&#39;ve now checked every Settings tab and there&#39;s still no API or webhook config. That&#39;s a dead end for the API half of goal two. Before I give up on it, I&#39;ll check the Plans page to see if API access is on a tier, since that&#39;s the last place it could be. If it&#39;s not there, I&#39;m done with this goal.</i></div>
+      <div><b>Action:</b> <code>click #10</code></div>
+      <div><b>Expectation:</b> The Plans page lists tiers with feature comparisons, including whether API or webhook access is included.</div>
+      <div><b>Result:</b> Plans page loaded with three tiers: Starter $0 (up to 3 users, expense submission), Growth $12/user/mo (cards, reports, accounting sync), Scale contact sales (SSO, advanced controls). No mention of API access or webhooks on any tier.</div>
+      <div style="margin-top:6px" class="no"><b>Friction (3/5):</b> No API or webhook line on any tier. The accounting sync is listed under Growth, but nothing says what it syncs or whether there&#39;s a public API behind it. Also, &#39;Minimum 10 seats&#39; conflicts with Starter&#39;s &#39;up to 3 users&#39;, and I haven&#39;t got a clear answer on whether we&#39;d even need Growth for the cloud-bill card.</div>
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-23.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-23.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 23"></a>
+  </div>
+</div>
+
+<div class="panel" id="step-24">
+  <div class="small muted">Step 24 · http://127.0.0.1:8100/plans</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> Find out whether I can connect Ledgerly to our accounting software or use an API</div>
+      <div><b>Thought:</b> <i>So API access is either not a thing here or hidden behind sales. Accounting sync is Growth tier, which is what the QuickBooks link is for. I&#39;m calling goal two as far as I can take it: QuickBooks only, no public API I can find. Next I&#39;ll go back to Seats and see what the Submitter seat can actually do, since the contractor seat is already provisioned.</i></div>
+      <div><b>Action:</b> <code>give_up_goal #</code></div>
+      <div><b>Expectation:</b> I move on to goal three and check the Submitter permissions, or I get an answer about the API from docs.</div>
+      <div><b>Result:</b> gave up on goal</div>
+      
+    </div>
+    <a href="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-24.png" target="_blank"><img loading="lazy" src="../../../runs/20261023-223949-ledgerly/shots/s04-technical-cofounder-and-cto-who-loves-tr-24.png" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step 24"></a>
+  </div>
+</div>
+
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+</main>
+</body>
+</html>

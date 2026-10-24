@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20261023-224941-cookd · agenticritic</title>
+<style>
+:root{--bg:#f7f7f5;--panel:#fff;--ink:#1c1c1a;--muted:#6b6b66;--line:#e6e5e0;--accent:#3b5bdb;
+  --bad:#c92a2a;--warn:#e67700;--good:#2b8a3e;--chip:#f1f0ec}
+@media (prefers-color-scheme: dark){:root{--bg:#161615;--panel:#1f1f1d;--ink:#ecebe6;--muted:#9a9993;--line:#33332f;
+  --accent:#7c94ff;--bad:#ff6b6b;--warn:#ffa94d;--good:#69db7c;--chip:#2a2a27}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Inter",Segoe UI,sans-serif}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+header{padding:14px 24px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+header .logo{font-weight:700;letter-spacing:-.02em;color:var(--ink)} header .tag{color:var(--muted);font-size:13px}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:22px;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:16px;margin:32px 0 12px}
+.muted{color:var(--muted)} .small{font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.stat .v{font-size:26px;font-weight:650;letter-spacing:-.02em} .stat .l{color:var(--muted);font-size:12px}
+.chip{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;color:var(--ink)}
+.cat-usability{border-left:3px solid var(--warn)} .cat-missing_feature{border-left:3px solid var(--accent)}
+.cat-bug{border-left:3px solid var(--bad)} .cat-pricing_trust{border-left:3px solid #ae3ec9} .cat-positive{border-left:3px solid var(--good)}
+.sev{font-variant-numeric:tabular-nums;font-weight:600}
+table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:500}
+.ok{color:var(--good)} .no{color:var(--bad)}
+details summary{cursor:pointer}
+.panel:target{outline:2px solid var(--accent)}
+.bar{height:6px;background:var(--chip);border-radius:3px;overflow:hidden;margin-top:6px}.bar>i{display:block;height:100%;background:var(--accent)}
+@media (max-width:640px){header{flex-wrap:wrap}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<header><a class="logo" href="../../index.html">agenticritic</a><span class="tag">synthetic customer panel</span></header>
+<main>
+<p class="small"><a href="../../index.html">← Runs</a></p>
+<h1>Cookd</h1>
+<p class="muted">20261023-224941-cookd · https://cookd.ca/ · agent anthropic/claude-haiku-5.5 · analysis anthropic/claude-sonnet-5.5</p>
+
+
+
+
+<div class="grid">
+  <div class="panel stat"><div class="v">4</div><div class="l">sessions · 4 personas</div></div>
+  <div class="panel stat"><div class="v">1/4</div><div class="l">finished all goals without abandoning</div></div>
+  <div class="panel stat"><div class="v">0/4</div><div class="l">would keep using it</div></div>
+  <div class="panel stat"><div class="v">13</div><div class="l">findings</div></div>
+  
+</div>
+
+<h2>Findings</h2>
+
+<div class="panel cat-usability" id="F1">
+  <div><span class="muted small">F1 · usability · severity <span class="sev">5</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    3/4 personas — Landing page and nav never say what Cookd is; jargon labels (Skill Map, Leaderboard, New Cook, Recipes) are unexplained</div>
+  <div>Skeptical and low-tech visitors could not get a one-line explanation of the product from the home page, What&#39;s new, Explore or a recipe page. The parent took &#39;Recipes&#39; literally and expected a library to cook from. The skeptic could not tell what a &#39;cook&#39; is. Without this, visitors bail within a minute and have no reason to sign up.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Add a one-sentence value proposition, a sample cook with photo and a clear sign-up CTA at the top of the home page. Add short plain-language descriptions or tooltips for Skill Map, Leaderboard, New Cook and Recipes. Rename or reframe &#39;What&#39;s new&#39; so it is not mistaken for an intro.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Literal-minded, low-tech parent looking for a recipe to make tonight</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-0">s00-skeptical-first-time-visitor-who-was-sen · step 0</a>
+        — <i>“I expected &#39;What&#39;s new&#39; to explain the product, but it&#39;s just release notes.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-5">s00-skeptical-first-time-visitor-who-was-sen · step 5</a>
+        — <i>“I still don&#39;t know what Cookd is for, what a &#39;cook&#39; means, or why I&#39;d want an account.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s03-literal-minded-low-tech-parent-looking-f.html#step-0">s03-literal-minded-low-tech-parent-looking-f · step 0</a>
+        — <i>“I don&#39;t understand &#39;import&#39; and &#39;All recipes&#39; in this context”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F2">
+  <div><span class="muted small">F2 · usability · severity <span class="sev">5</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/4 personas — Recipes page is empty for signed-out and new users, and &#39;Search All recipes&#39; only searches the user&#39;s own library</div>
+  <div>Three personas opened Recipes and saw &#39;0 recipes in All recipes&#39; with a prompt to import or sign in. The search placeholder implies site-wide search but covers only the user&#39;s empty saved list. The page does not point to Explore, so visitors who wanted recipes to cook tonight hit a dead end.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Rename the page to &#39;My saved recipes&#39; or similar. Replace the empty state with an explanation that recipes are imported from the web, plus a link to browse community cooks on Explore. Show example recipes to signed-out users and change the search placeholder to say what it covers.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Literal-minded, low-tech parent looking for a recipe to make tonight</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s03-literal-minded-low-tech-parent-looking-f.html#step-1">s03-literal-minded-low-tech-parent-looking-f · step 1</a>
+        — <i>“The search box says &#39;Search All recipes&#39;, but there&#39;s nothing in All recipes to search”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-0">s01-student-just-learning-to-cook-looking-fo · step 0</a>
+        — <i>“The only search box seems to be for my own saved stuff”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-11">s01-student-just-learning-to-cook-looking-fo · step 11</a>
+        — <i>“the library is empty and the only option is to import my own recipe or sign in”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-missing_feature" id="F3">
+  <div><span class="muted small">F3 · missing feature · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/4 personas — Explore opens as a blank search box with no default feed</div>
+  <div>Visitors who didn&#39;t know what to type saw only a search field and an unclear &#39;Searching... available&#39; line. They could not tell whether the page was loading, and no real content was visible without effort. This hurts discovery for exactly the users who most need inspiration.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Default Explore to a browsable feed of recent or popular cooks with photos, plus beginner-friendly collections such as easy, cheap and quick. Replace the &#39;Searching...&#39; status text with a clear placeholder like &#39;Search cooks by title or ingredient&#39;.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-1">s00-skeptical-first-time-visitor-who-was-sen · step 1</a>
+        — <i>“I got an empty search box and nothing to look at.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-1">s01-student-just-learning-to-cook-looking-fo · step 1</a>
+        — <i>“there&#39;s only an empty search box, and I&#39;m not sure if it&#39;s loading or waiting for me to type”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F4">
+  <div><span class="muted small">F4 · usability · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/4 personas — Explore search relevance is poor and result cards lack useful detail</div>
+  <div>Searches for &#39;pasta&#39; and &#39;chicken and rice&#39; returned about 261 results including unrelated items (soup, parfait, tiramisu, crepes). Cards show only title, short text and a like count, with no ingredients, photo or time. The results later became relevant for &#39;pasta&#39;, which suggests inconsistent behaviour. Users cannot trust the search or scan results quickly.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Rank results by relevance to title and ingredients, with exact ingredient matches first. Show a photo, key ingredients and a count of matches on each card. Add filters (time, budget, equipment) and paginate or limit the result count.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-2">s00-skeptical-first-time-visitor-who-was-sen · step 2</a>
+        — <i>“Searching &#39;pasta&#39; should give me pasta. Instead I got soup, sandwiches and parfaits”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-2">s01-student-just-learning-to-cook-looking-fo · step 2</a>
+        — <i>“a yogurt parfait and tiramisu showing up for a chicken-and-rice search”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-3">s01-student-just-learning-to-cook-looking-fo · step 3</a>
+        — <i>“The cards only show a title, a short description and a like count.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-bug" id="F5">
+  <div><span class="muted small">F5 · bug · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/4 personas — Recipe/cook detail pages hang on &#39;Loading...&#39; with disabled buttons</div>
+  <div>Opening a result from Explore showed only &#39;Loading...&#39;, a Log in button and greyed-out Like and Save for a long time. When content appeared it was sparse. Slow, blank pages make users assume the site is broken.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Investigate and fix slow detail-page loading for signed-out users. Use skeleton placeholders and server-render core content (title, photo, ingredients). Explain why Like and Save are disabled instead of greying them out silently.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-4">s00-skeptical-first-time-visitor-who-was-sen · step 4</a>
+        — <i>“I clicked a recipe and it&#39;s just &#39;Loading...&#39; with nothing on it.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-4">s01-student-just-learning-to-cook-looking-fo · step 4</a>
+        — <i>“it&#39;s stuck on &#39;Loading...&#39;, and the Save button is disabled”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-missing_feature" id="F6">
+  <div><span class="muted small">F6 · missing feature · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    2/4 personas — Cook/recipe pages lack photos and complete content (ingredients, method)</div>
+  <div>Users on a food site expected photos and cookable recipes. Search results and detail pages showed text and numbers only. The &#39;Rice and Chicken&#39; page had a rating and likes but no ingredients or steps, so there was nothing to cook from. The pasta page had ingredients but no visible photo.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Show photos on result cards and detail pages. Ensure imported or logged cooks display ingredients and steps, or flag incomplete cooks clearly. Check whether photos are failing to render for signed-out visitors.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-3">s00-skeptical-first-time-visitor-who-was-sen · step 3</a>
+        — <i>“the page is still just text and numbers, no pictures, even though I&#39;d expect a food site to have them”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-5">s01-student-just-learning-to-cook-looking-fo · step 5</a>
+        — <i>“Instead there&#39;s nothing to cook from.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-usability" id="F7">
+  <div><span class="muted small">F7 · usability · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/4 personas — Leaderboard is an empty, undefined table with no rules, empty state or login message</div>
+  <div>A competitive user found Rank/Cook/Cooks headers with no rows on repeat visits. &#39;Cooks&#39; was not defined as count, points or streak, and no time period was given. There was no way to tell auth gating from a bug or an empty community, so the app looked dead and the ranking looked gameable.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Show a populated leaderboard, or sample data, to signed-out visitors. Define the &#39;Cooks&#39; column and the time period (weekly, all-time). Add explicit empty and login-required states. Offer a friends-only view.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Competitive home cook who loves streaks and leaderboards</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-0">s02-competitive-home-cook-who-loves-streaks- · step 0</a>
+        — <i>“the table is blank with column headers only, and the &#39;Cooks&#39; column doesn&#39;t say what it measures”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-2">s02-competitive-home-cook-who-loves-streaks- · step 2</a>
+        — <i>“It&#39;s still an empty table”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-missing_feature" id="F8">
+  <div><span class="muted small">F8 · missing feature · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/4 personas — No explanation of how streaks, ratings out of 10 and ranking work</div>
+  <div>A rules-focused user found no help page or tooltip covering streak rules, whether ratings are self-given or peer-given, or anti-gaming measures. The only documentation-like page was the What&#39;s new changelog. They abandoned the streak and rating goals and would not invite friends.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Publish a short &#39;How Cookd works&#39; page linked from the nav and from the Leaderboard. Cover weekly streak rules, what breaks a streak, how the rating is set and how points or ranks are calculated. Add contextual tooltips.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Competitive home cook who loves streaks and leaderboards</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-1">s02-competitive-home-cook-who-loves-streaks- · step 1</a>
+        — <i>“What&#39;s new is just a release note with one vague post.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html">s02-competitive-home-cook-who-loves-streaks-</a>
+        — <i>“I can&#39;t tell whether ratings are self-rated or come from other people”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-bug" id="F9">
+  <div><span class="muted small">F9 · bug · severity <span class="sev">4</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/4 personas — Login modal cannot be dismissed and Skill Map is fully gated with no preview or pricing info</div>
+  <div>Clicking Save opened a &#39;Log in or sign up&#39; popup. The Close button did not clear it and it blocked the menu, so the user had to type a URL. The Skill Map page then showed only &#39;Sign in to choose a goal&#39;, with no preview and no mention of cost. This looked like a paywall to a subscription-wary user and hid the feature that motivates beginners.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Fix the modal close behaviour (button, Esc, backdrop click). Show a signed-out preview of the Skill Map with example goals and levels, and state clearly that it is free.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (2) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-9">s01-student-just-learning-to-cook-looking-fo · step 9</a>
+        — <i>“The Close button didn&#39;t clear it, so I can&#39;t get anywhere on the site.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-10">s01-student-just-learning-to-cook-looking-fo · step 10</a>
+        — <i>“the whole page is locked behind a sign-in prompt, so I still can&#39;t tell what the Skill Map actually offers”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-bug" id="F10">
+  <div><span class="muted small">F10 · bug · severity <span class="sev">3</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/4 personas — Friends search returns junk and inconsistent results with no stats; profile hangs on &#39;Loading profile...&#39;</div>
+  <div>Searching &#39;Clara&#39; returned 81 mostly unrelated users including &#39;test&#39; and &#39;xxx&#39;, then 2 on the same query. Results showed only names and Follow buttons. The public profile stayed on &#39;Loading profile...&#39;. The &#39;Searching...&#39; text next to the box looked like a loading state. This undermines trust in the community and its numbers.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Fix the search so it is deterministic and relevant. Remove or hide test accounts. Show cook count and streak in results. Make public profiles load or show a clear sign-in message.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Competitive home cook who loves streaks and leaderboards</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-4">s02-competitive-home-cook-who-loves-streaks- · step 4</a>
+        — <i>“81 mostly random users with no numbers at all”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-5">s02-competitive-home-cook-who-loves-streaks- · step 5</a>
+        — <i>“81 unrelated users before, 2 now”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html#step-6">s02-competitive-home-cook-who-loves-streaks- · step 6</a>
+        — <i>“Clara&#39;s profile is stuck on &#39;Loading profile...&#39;”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-pricing_trust" id="F11">
+  <div><span class="muted small">F11 · pricing trust · severity <span class="sev">3</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    3/4 personas — Sign-in is demanded before any value is shown, which erodes trust</div>
+  <div>Users were pushed to log in or import before seeing anything worth saving. Disabled Like and Save buttons and Skill Map gating read as pressure, and wary users (subscription-averse, low-tech) distrusted a site that asked for details first.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Let signed-out users see full cooks and a Skill Map preview first. Ask for sign-in only on an action, with a short benefit statement and a &#39;free&#39; label.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Student just learning to cook, looking for easy meal ideas</span><span class="chip">Literal-minded, low-tech parent looking for a recipe to make tonight</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s03-literal-minded-low-tech-parent-looking-f.html#step-0">s03-literal-minded-low-tech-parent-looking-f · step 0</a>
+        — <i>“I don&#39;t hand over details to a site that hasn&#39;t shown me anything yet.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html#step-6">s01-student-just-learning-to-cook-looking-fo · step 6</a>
+        — <i>“Asking me to make an account before I&#39;ve seen anything worth saving feels pushy.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html#step-4">s00-skeptical-first-time-visitor-who-was-sen · step 4</a>
+        — <i>“The Like and Save buttons are greyed out”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-missing_feature" id="F12">
+  <div><span class="muted small">F12 · missing feature · severity <span class="sev">2</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    1/4 personas — Shopping List and ingredient-based discovery are hard to find</div>
+  <div>The student wanted to add ingredients to a shopping list but never found one, though it is in the nav. Signed-out users get no cue about what it does or how to reach it from a recipe. This matters for budget-conscious beginners.</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Add an &#39;Add ingredients to shopping list&#39; action on recipe pages, with a login prompt that explains its purpose, and give the nav item a short description.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Student just learning to cook, looking for easy meal ideas</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (1) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html">s01-student-just-learning-to-cook-looking-fo</a>
+        — <i>“I never found a shopping list.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+<div class="panel cat-positive" id="F13">
+  <div><span class="muted small">F13 · positive · severity <span class="sev">1</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    4/4 personas — Real home-cook content and simple navigation are appreciated</div>
+  <div>Users liked the authentic community feel, ratings and &#39;Cooked it&#39; notes, being able to browse without an account, the clear login prompt wording, and the simple nav (Leaderboard, Friends, Invite friends).</div>
+  <div class="small" style="margin-top:6px"><b>Suggested:</b> Keep open browsing and the honest home-cook tone, and surface them on the landing page as selling points.</div>
+  <div style="margin-top:8px">
+    <span class="chip">Student just learning to cook, looking for easy meal ideas</span><span class="chip">Skeptical first-time visitor who was sent a link by a friend</span><span class="chip">Competitive home cook who loves streaks and leaderboards</span><span class="chip">Literal-minded, low-tech parent looking for a recipe to make tonight</span>
+  </div>
+  
+  <details style="margin-top:8px"><summary class="small">Evidence (3) — replay sessions</summary>
+    <ul class="small">
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html">s01-student-just-learning-to-cook-looking-fo</a>
+        — <i>“Explore shows real home cooks&#39; recipes with likes, ratings and &#39;Cooked it&#39; notes, which feels more honest than chef content.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html">s00-skeptical-first-time-visitor-who-was-sen</a>
+        — <i>“I could look at recipes without being forced to log in or hand over my email.”</i></li>
+    
+      <li><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html">s02-competitive-home-cook-who-loves-streaks-</a>
+        — <i>“The nav is simple and the Leaderboard and Friends are easy to find.”</i></li>
+    
+    </ul>
+  </details>
+  
+</div>
+
+
+
+
+<h2>Sessions</h2>
+<div class="panel">
+<table>
+<tr><th>Session</th><th>Persona</th><th>Status</th><th>Steps</th><th>Frictions</th><th>Continue?</th><th>Score</th></tr>
+
+<tr>
+  <td><a href="../../runs/20261023-224941-cookd/sessions/s00-skeptical-first-time-visitor-who-was-sen.html">s00-skeptical-first-time-visitor-who-was-sen</a></td>
+  <td>Skeptical first-time visitor who was sent a link by a friend<div class="small muted">skimmer · patience 2</div></td>
+  <td>abandoned</td>
+  <td>7</td>
+  <td>6</td>
+  <td><span class="no">no</span></td>
+  <td>2</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-224941-cookd/sessions/s01-student-just-learning-to-cook-looking-fo.html">s01-student-just-learning-to-cook-looking-fo</a></td>
+  <td>Student just learning to cook, looking for easy meal ideas<div class="small muted">careful · patience 4</div></td>
+  <td>abandoned</td>
+  <td>13</td>
+  <td>12</td>
+  <td><span class="no">no</span></td>
+  <td>3</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-224941-cookd/sessions/s02-competitive-home-cook-who-loves-streaks-.html">s02-competitive-home-cook-who-loves-streaks-</a></td>
+  <td>Competitive home cook who loves streaks and leaderboards<div class="small muted">advanced_seeker · patience 4</div></td>
+  <td>abandoned</td>
+  <td>8</td>
+  <td>7</td>
+  <td><span class="no">no</span></td>
+  <td>3</td>
+</tr>
+
+<tr>
+  <td><a href="../../runs/20261023-224941-cookd/sessions/s03-literal-minded-low-tech-parent-looking-f.html">s03-literal-minded-low-tech-parent-looking-f</a></td>
+  <td>Literal-minded, low-tech parent looking for a recipe to make tonight<div class="small muted">literal · patience 1</div></td>
+  <td>completed</td>
+  <td>3</td>
+  <td>2</td>
+  <td><span class="no">no</span></td>
+  <td>2</td>
+</tr>
+
+</table>
+</div>
+
+<h2>Personas</h2>
+
+<details class="panel"><summary><b>Maya</b> — Skeptical first-time visitor who was sent a link by a friend <span class="muted small">(skimmer, patience 2/5)</span></summary>
+<p>You got a link from a friend who said &#39;join Cookd, it&#39;s fun&#39; and you have no idea what it is. You&#39;ll give it about a minute to explain itself before you bail.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Figure out in plain terms what this site is and whether it&#39;s something I&#39;d actually use</li><li>Look at a couple of other people&#39;s cooks to see if they&#39;re interesting or just show-offy</li><li>Decide if I&#39;d make an account just because my friend asked</li></ul>
+<p class="small"><b>Knowledge:</b> You cook a few simple meals a week and use Instagram casually. You&#39;ve never used a cooking log or recipe-tracking app. You have no idea what &#39;Skill Map&#39; or &#39;streak&#39; means in a cooking context.<br><b>Constraints:</b> Browsing on your phone between other things. You won&#39;t read long text. You will not hand over an email just to look around.<br>
+<b>Preferences:</b> Clear one-line explanation, big photos, minimal jargon. You dislike being pushed to sign up before seeing anything.<br><b>Expectations:</b> A landing page that tells you what it is right away, and a way to see real content without logging in. If it demands signup early you&#39;ll assume it&#39;s not worth it.</p>
+</details>
+
+<details class="panel"><summary><b>Dev</b> — Student just learning to cook, looking for easy meal ideas <span class="muted small">(careful, patience 4/5)</span></summary>
+<p>You moved into a student flat and mostly eat pasta and takeaway; you want cheap, easy dinners and some motivation to cook more. You&#39;re curious and will poke around the whole site.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Search for easy dinner ideas using chicken and rice, or whatever cheap ingredients I&#39;d have</li><li>Find out what the &#39;Skill Map&#39; is and whether it would help me get better at cooking</li><li>Try to save a recipe or add ingredients to a shopping list, and see what happens when I&#39;m not signed in</li></ul>
+<p class="small"><b>Knowledge:</b> Beginner cook. Comfortable with apps and social media. Doesn&#39;t know cooking jargon beyond basics. Has heard of streaks from language and fitness apps.<br><b>Constraints:</b> Tight budget, limited kitchen equipment, evenings only. Wary of anything that looks like a paid subscription.<br>
+<b>Preferences:</b> Simple recipes, honest-looking home cooks rather than chefs, visible ingredient lists, features that gamify learning.<br><b>Expectations:</b> Searching by ingredient should return realistic home-cooked results. You expect the Skill Map to give you a path like &#39;learn the basics&#39; and the app to be free.</p>
+</details>
+
+<details class="panel"><summary><b>Priya</b> — Competitive home cook who loves streaks and leaderboards <span class="muted small">(advanced_seeker, patience 4/5)</span></summary>
+<p>You&#39;re the type who keeps a Duolingo streak for years and wants to know how you&#39;d stack up against friends. You want to dig into exactly how points, ratings and rankings work before you commit.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Find the Leaderboard and work out how people are ranked and what counts toward it</li><li>Work out how weekly cooking streaks are counted and what breaks one</li><li>Check how the rating out of 10 works and whether it&#39;s self-rated or rated by others, then decide if I&#39;d sign up and invite my friends</li></ul>
+<p class="small"><b>Knowledge:</b> Cooks most days and posts on social apps. Very familiar with gamification mechanics. Knows what she wants from a competitive app but has not seen Cookd&#39;s rules.<br><b>Constraints:</b> Won&#39;t sign up until rules look fair and hard to game. Cannot create an account in this session, so must judge from what&#39;s visible.<br>
+<b>Preferences:</b> Transparent rules, visible rankings, friend comparisons, detailed explanations over marketing copy.<br><b>Expectations:</b> A help or explainer page or visible tooltips describing streaks and scoring. If the leaderboard is hidden behind login with no explanation, you&#39;ll be annoyed but may still read whatever info exists.</p>
+</details>
+
+<details class="panel"><summary><b>Graham</b> — Literal-minded, low-tech parent looking for a recipe to make tonight <span class="muted small">(literal, patience 1/5)</span></summary>
+<p>You want a recipe for dinner tonight and you take labels at face value. You&#39;re not comfortable with social apps and get impatient when things don&#39;t do what their name says.</p>
+<p class="small"><b>Goals:</b></p><ul class="small"><li>Find a recipe for a family dinner, like a chicken traybake, by typing it in a search box</li><li>Click on &#39;Recipes&#39; and see whether I can actually read a recipe there</li><li>Work out whether this is a recipe site or something else, and whether I need to sign up to use it</li></ul>
+<p class="small"><b>Knowledge:</b> Cooks family meals from websites and cookbooks. Rarely uses social media. Doesn&#39;t know what &#39;cooking log&#39;, &#39;Explore&#39; or &#39;import&#39; mean in an app sense. Uses a laptop with a standard browser.<br><b>Constraints:</b> Short on time before dinner. Distrusts sites that ask for personal details. Will give up fast if the menu items don&#39;t match what he expects.<br>
+<b>Preferences:</b> Clear labels, plain language, step-by-step recipes with ingredients and method, no social clutter.<br><b>Expectations:</b> &#39;Recipes&#39; should show recipes to cook from. If it says &#39;save recipes from websites&#39; and shows an empty or login-gated page, you&#39;ll feel misled and consider leaving.</p>
+</details>
+
+</main>
+</body>
+</html>
