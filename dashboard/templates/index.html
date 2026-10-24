@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>Runs</h1>
+<p class="muted">Each run sends a panel of simulated users through the product and aggregates their feedback.</p>
+{% if not runs %}
+<div class="panel">No runs yet. Start one with <code>python -m agenticritic.cli run projects/ledgerly.json</code></div>
+{% endif %}
+{% for r in runs %}
+<div class="panel">
+  <a href="{{ urls.run(r.meta.run_id) }}"><b>{{ r.meta.run_id }}</b></a>
+  <span class="chip">{{ r.meta.status }}</span>
+  <div class="muted small">{{ r.meta.url }} · {{ r.meta.sessions or '?' }} sessions · {{ r.meta.findings or '?' }} findings
+    {% if r.meta.duration_s %}· {{ r.meta.duration_s }}s{% endif %}
+    {% if r.eval %}· recall {{ (r.eval.recall*100)|round|int }}% · precision {{ (r.eval.precision*100)|round|int }}%{% endif %}</div>
+</div>
+{% endfor %}
+{% endblock %}

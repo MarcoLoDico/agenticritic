@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ s.id }} · agenticritic{% endblock %}
+{% block body %}
+<p class="small"><a href="{{ urls.run(meta.run_id) }}">← {{ meta.run_id }}</a></p>
+<h1>{{ s.persona.name }} — {{ s.persona.role }}</h1>
+<p class="muted">{{ s.persona.summary }}</p>
+<p><span class="chip">{{ s.status }}</span><span class="chip">{{ s.persona.behavior.exploration }}</span>
+<span class="chip">patience {{ s.persona.behavior.patience }}/5</span><span class="chip">{{ s.steps|length }} steps</span></p>
+{% if s.error %}<div class="panel no">{{ s.error }}</div>{% endif %}
+
+{% if s.debrief %}
+{% set d = s.debrief %}
+<h2>Debrief</h2>
+<div class="panel">
+  <p><b>{{ 'Would keep using it' if d.would_continue else 'Would not keep using it' }}</b> · score {{ d.score }}/10 — {{ d.would_continue_reason }}</p>
+  <table><tr><th>Goal</th><th>Outcome</th><th>Notes</th></tr>
+  {% for g in d.goal_outcomes %}<tr><td>{{ g.goal }}</td><td class="{{ 'ok' if g.status == 'completed' else 'no' }}">{{ g.status }}</td><td class="small">{{ g.notes }}</td></tr>{% endfor %}
+  </table>
+  {% if d.frictions %}<h3 style="font-size:14px">Frictions</h3>
+  <ul>{% for f in d.frictions %}<li>{% if f.step is not none %}<a href="#step-{{ f.step }}">step {{ f.step }}</a>: {% endif %}<b>{{ f.description }}</b>
+    <div class="small muted">Expected: {{ f.expected }} · Happened: {{ f.happened }} · Why it matters: {{ f.why_it_matters }}</div></li>{% endfor %}</ul>{% endif %}
+  {% if d.missing_features %}<h3 style="font-size:14px">Missing features</h3>
+  <ul>{% for m in d.missing_features %}<li><b>{{ m.feature }}</b> — <span class="small">{{ m.why }}</span></li>{% endfor %}</ul>{% endif %}
+  {% if d.liked %}<h3 style="font-size:14px">Liked</h3><ul>{% for l in d.liked %}<li>{{ l }}</li>{% endfor %}</ul>{% endif %}
+</div>
+{% endif %}
+
+<h2>Replay — Goal → Action → Expectation → Result → Friction</h2>
+{% for st in s.steps %}
+<div class="panel" id="step-{{ st.index }}">
+  <div class="small muted">Step {{ st.index }} · {{ st.url }}</div>
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:16px;margin-top:6px" class="steprow">
+    <div>
+      <div><b>Goal:</b> {{ st.goal }}</div>
+      <div><b>Thought:</b> <i>{{ st.thought }}</i></div>
+      <div><b>Action:</b> <code>{{ st.action.type }}{% if st.action.target is defined and st.action.target is not none %} #{{ st.action.target }}{% endif %}{% if st.action.text %} “{{ st.action.text }}”{% endif %}{% if st.action.url %} {{ st.action.url }}{% endif %}</code></div>
+      <div><b>Expectation:</b> {{ st.expectation }}</div>
+      <div><b>Result:</b> {% if st.error %}<span class="no">{{ st.error }}</span>{% else %}{{ st.result }}{% endif %}</div>
+      {% if st.friction %}<div style="margin-top:6px" class="no"><b>Friction{% if st.friction_severity %} ({{ st.friction_severity }}/5){% endif %}:</b> {{ st.friction }}</div>{% endif %}
+    </div>
+    {% if st.screenshot %}<a href="{{ urls.shot(meta.run_id, st.screenshot) }}" target="_blank"><img loading="lazy" src="{{ urls.shot(meta.run_id, st.screenshot) }}" style="width:100%;border:1px solid var(--line);border-radius:6px" alt="Screenshot before step {{ st.index }}"></a>{% endif %}
+  </div>
+</div>
+{% endfor %}
+<style>@media (max-width:640px){.steprow{grid-template-columns:1fr!important}}</style>
+{% endblock %}

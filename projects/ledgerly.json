@@ -1,0 +1,9 @@
+{
+  "name": "Ledgerly",
+  "url": "http://127.0.0.1:8100/",
+  "description": "Expense-management software for startups and small companies: issue corporate cards, submit and approve expenses, and understand company spending.",
+  "target_users": ["startup founders", "finance managers / finance teams", "employees who submit expenses", "buyers evaluating expense tools"],
+  "primary_jobs": ["set up a workspace", "invite teammates", "issue cards", "submit and approve expenses", "understand spending", "understand pricing"],
+  "notes": "Users start on a brand-new trial workspace.",
+  "ground_truth": "demo_app/ground_truth.json"
+}

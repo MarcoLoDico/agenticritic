@@ -1,0 +1,16 @@
+{
+  "product": "Ledgerly",
+  "note": "Planted issues standing in for historical customer feedback. Agents never see this file.",
+  "issues": [
+    {"id": "GT1", "title": "Team invitations hard to find", "description": "Inviting a teammate is under Settings > Workspace Administration > Seats & Provisioning, using jargon ('provision seat', 'principal identifier', 'entitlement') instead of 'Team', 'Invite', 'Email', 'Role'."},
+    {"id": "GT2", "title": "Onboarding blocks on accounting integration", "description": "Onboarding step 2 requires connecting QuickBooks/Xero/NetSuite; connections fail with a technical error and the only way past is a tiny, low-contrast 'remind me later' link."},
+    {"id": "GT3", "title": "Expense form: unexplained date format and unhelpful errors", "description": "The date field silently requires DD/MM/YYYY; any validation failure shows only 'Invalid input. Please try again.' and wipes every field."},
+    {"id": "GT4", "title": "Unexplained required cost center code", "description": "Expense form requires a 'Cost center code' (format CC-####) with no explanation, example, or way to look one up."},
+    {"id": "GT5", "title": "Pricing not discoverable inside the app", "description": "No pricing in navigation; Billing shows only 'Trial' and 'Manage subscription' says to contact an account representative. Plans are only reachable via a tiny footer link."},
+    {"id": "GT6", "title": "Hidden pricing conditions", "description": "Growth plan's $12/user price has fine print: billed annually, minimum 10 seats; Scale is 'Contact sales'. Small teams can't tell what they'd actually pay."},
+    {"id": "GT7", "title": "No approval workflow or approval rules", "description": "Expenses are auto-approved; there is no way to set approval rules, approvers, or spending policies."},
+    {"id": "GT8", "title": "No bulk actions on expenses", "description": "Expense list has no multi-select or bulk approve/categorize/edit."},
+    {"id": "GT9", "title": "CSV export doesn't work", "description": "'Export CSV' button leads to a 'coming soon' page."},
+    {"id": "GT10", "title": "No audit log", "description": "There is no audit trail/activity log for compliance-minded finance users."}
+  ]
+}

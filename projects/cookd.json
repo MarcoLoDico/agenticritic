@@ -1,0 +1,9 @@
+{
+  "name": "Cookd",
+  "url": "https://cookd.ca/",
+  "description": "Cookd ('Cook together') is a social cooking log. People post what they cooked with photos, a description and a rating out of 10, keep weekly cooking streaks, and like and share friends' cooks. It also has Explore (search community cooks by title, description or ingredients), Recipes (save recipes imported from websites, YouTube, Instagram or TikTok), a Skill Map (choose a cooking goal and track what you make), a Shopping List, Friends, a Leaderboard, and an installable app.",
+  "target_users": ["friends who cook at home and want to share what they make", "students and young adults learning to cook", "people looking for meal ideas and recipes", "competitive people motivated by streaks and leaderboards"],
+  "primary_jobs": ["understand what Cookd is and whether it's for me", "browse and search what others have cooked", "find meal ideas or a recipe to try", "understand streaks, ratings, the skill map and leaderboard", "decide whether to sign up and invite friends"],
+  "notes": "The visitor is NOT signed in and cannot create an account during this session. Goals must be things a logged-out first-time visitor can attempt, or deciding whether they would sign up. Hitting a sign-in wall is a valid outcome to report.",
+  "blocked_labels": ["feedback", "log in", "sign in", "sign up", "share", "install", "like"]
+}

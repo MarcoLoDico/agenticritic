@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}{{ meta.run_id }} · agenticritic{% endblock %}
+{% block body %}
+<p class="small"><a href="{{ urls.index() }}">← Runs</a></p>
+<h1>{{ brief.name }}</h1>
+<p class="muted">{{ meta.run_id }} · {{ meta.url }} · agent {{ meta.agent_model }} · analysis {{ meta.analysis_model }}</p>
+
+{% set completed = sessions|selectattr("status", "equalto", "completed")|list|length %}
+{% set continuing = sessions|selectattr("debrief")|map(attribute="debrief")|selectattr("would_continue")|list|length %}
+{% set with_debrief = sessions|selectattr("debrief")|list|length %}
+<div class="grid">
+  <div class="panel stat"><div class="v">{{ sessions|length }}</div><div class="l">sessions · {{ n_personas }} personas</div></div>
+  <div class="panel stat"><div class="v">{{ completed }}/{{ sessions|length }}</div><div class="l">finished all goals without abandoning</div></div>
+  <div class="panel stat"><div class="v">{{ continuing }}/{{ with_debrief }}</div><div class="l">would keep using it</div></div>
+  <div class="panel stat"><div class="v">{{ findings|length }}</div><div class="l">findings</div></div>
+  {% if eval %}
+  <div class="panel stat"><div class="v">{{ (eval.recall*100)|round|int }}%</div><div class="l">recall vs known issues</div></div>
+  <div class="panel stat"><div class="v">{{ (eval.precision*100)|round|int }}%</div><div class="l">precision (lower bound)</div></div>
+  {% endif %}
+</div>
+
+<h2>Findings</h2>
+{% for f in findings %}
+<div class="panel cat-{{ f.category }}" id="{{ f.id }}">
+  <div><span class="muted small">{{ f.id }} · {{ f.category|replace("_"," ") }} · severity <span class="sev">{{ f.severity }}</span>/5</span></div>
+  <div style="font-size:15px;font-weight:600;margin:2px 0 4px">
+    {{ f.persona_ids|length }}/{{ n_personas }} personas — {{ f.title }}</div>
+  <div>{{ f.description }}</div>
+  {% if f.recommendation %}<div class="small" style="margin-top:6px"><b>Suggested:</b> {{ f.recommendation }}</div>{% endif %}
+  <div style="margin-top:8px">
+    {% for pid in f.persona_ids %}<span class="chip">{{ persona_by_id[pid].role if pid in persona_by_id else pid }}</span>{% endfor %}
+  </div>
+  {% if f.evidence %}
+  <details style="margin-top:8px"><summary class="small">Evidence ({{ f.evidence|length }}) — replay sessions</summary>
+    <ul class="small">
+    {% for e in f.evidence %}
+      <li><a href="{{ urls.session(meta.run_id, e.session_id) }}{% if e.step is not none %}#step-{{ e.step }}{% endif %}">{{ e.session_id }}{% if e.step is not none %} · step {{ e.step }}{% endif %}</a>
+        {% if e.quote %}— <i>“{{ e.quote }}”</i>{% endif %}</li>
+    {% endfor %}
+    </ul>
+  </details>
+  {% endif %}
+</div>
+{% else %}
+<div class="panel muted">No findings{% if meta.status == "running" %} yet — run in progress{% endif %}.</div>
+{% endfor %}
+
+{% if eval %}
+<h2>Validation against known issues</h2>
+<div class="panel">
+<table>
+<tr><th></th><th>Known issue</th><th>Matched findings</th><th class="hide-sm">Judge reasoning</th></tr>
+{% for m in eval.matches %}
+<tr><td class="{{ 'ok' if m.found else 'no' }}">{{ '✓' if m.found else '✗' }}</td><td><b>{{ m.issue_id }}</b> {{ m.title }}</td>
+<td>{% for fid in m.finding_ids %}<a href="#{{ fid }}">{{ fid }}</a> {% endfor %}</td><td class="small muted hide-sm">{{ m.reason }}</td></tr>
+{% endfor %}
+</table>
+{% if eval.unmatched_findings %}<p class="small muted">Findings not matching any known issue (new discoveries or false positives):
+{% for fid in eval.unmatched_findings %}<a href="#{{ fid }}">{{ fid }}</a> {% endfor %}</p>{% endif %}
+</div>
+{% endif %}
+
+<h2>Sessions</h2>
+<div class="panel">
+<table>
+<tr><th>Session</th><th>Persona</th><th>Status</th><th>Steps</th><th>Frictions</th><th>Continue?</th><th>Score</th></tr>
+{% for s in sessions %}
+<tr>
+  <td><a href="{{ urls.session(meta.run_id, s.id) }}">{{ s.id }}</a></td>
+  <td>{{ s.persona.role }}<div class="small muted">{{ s.persona.behavior.exploration }} · patience {{ s.persona.behavior.patience }}</div></td>
+  <td>{{ s.status }}</td>
+  <td>{{ s.steps|length }}</td>
+  <td>{{ s.steps|selectattr("friction")|list|length }}</td>
+  <td>{% if s.debrief %}<span class="{{ 'ok' if s.debrief.would_continue else 'no' }}">{{ 'yes' if s.debrief.would_continue else 'no' }}</span>{% endif %}</td>
+  <td>{{ s.debrief.score if s.debrief else '' }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+<h2>Personas</h2>
+{% for p in personas %}
+<details class="panel"><summary><b>{{ p.name }}</b> — {{ p.role }} <span class="muted small">({{ p.behavior.exploration }}, patience {{ p.behavior.patience }}/5)</span></summary>
+<p>{{ p.summary }}</p>
+<p class="small"><b>Goals:</b></p><ul class="small">{% for g in p.goals %}<li>{{ g }}</li>{% endfor %}</ul>
+<p class="small"><b>Knowledge:</b> {{ p.knowledge }}<br><b>Constraints:</b> {{ p.constraints }}<br>
+<b>Preferences:</b> {{ p.preferences }}<br><b>Expectations:</b> {{ p.expectations }}</p>
+</details>
+{% endfor %}
+{% endblock %}
